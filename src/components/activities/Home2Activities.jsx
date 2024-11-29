@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import image1 from '../../../public/image/girlImage.png'
+import image1 from '../../../public/image/girl-image.png'
 import imagelogo1 from '../../../public/image/girl-logo1.svg'
 import imagelogo2 from '../../../public/image/girl-logo2.svg'
 import imagelogo3 from '../../../public/image/girl-logo3.svg'
