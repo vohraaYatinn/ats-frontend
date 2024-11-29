@@ -1,0 +1,246 @@
+
+
+  /* General styles */
+  .footer-boxes {
+    display: flex;
+    flex-direction: column;
+
+    /* align-items: center; */
+    width: 100%;
+  }
+  .footer-boxes hr{
+    width: 90%;
+    margin: auto;
+  }
+  .footer-box1{
+    text-align: center;
+  }
+  .footer-box1, .footer-box2, .footer-box3 {
+ 
+    padding: 40px;
+  }
+  
+  .footer-box1 h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  
+  .footer-box1 p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    opacity: 50%;
+  }
+  
+  .footer-box1 input {
+    padding: 10px;
+    width: 250px;
+    margin-right: 10px;
+  }
+  
+  .footer-box1 button {
+    padding: 10px 20px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 40px;
+  }
+  
+  /* .footer-box2 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+width: 100%;
+  } */
+  
+  .footer-box2-boxes {
+    padding:0rem 197px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+  }
+  
+  .footer-box-boxes-box {
+    /* width: 22%; */
+    margin-bottom: 20px;
+
+  }
+  
+  .footer-box-boxes-box h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-weight: 300;
+  }
+  
+  .footer-box-boxes-box h5 {
+    font-size: 15px;
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .footer-box3 {
+    padding: 0;
+    color: white;
+    text-align: center;
+height: 300px;
+    background-size: cover;
+    background-image: url('../../../public/image/footer-last.png');
+    background-position: center;
+  }
+  
+  .footer-box3-box h6{
+    color: #292929;
+    font-family: Manrope-medium;
+
+  }
+  .footer-box1 p{
+    font-family: manrope;
+  }
+  .footer-box1 h1{
+    font-family: Nexa;
+  }
+  .footer-box3-box {
+    
+    padding: 1.3rem 197px;
+width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+  flex-wrap: wrap;
+  }
+  
+  .footer-box3 h6 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-box3 img {
+    width: 150px;
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 1214px) {
+    .footer-box2-boxes {
+      padding: 0rem 150px;
+    }
+    .footer-box3-box {
+      padding: 0rem 150px;
+    }
+
+  }
+  @media (max-width: 1214px) {
+    .footer-box2-boxes {
+      padding: 0rem 80px;
+    }
+    .footer-box3-box {
+      padding: 0rem 80px;
+    }
+
+  }
+  @media (max-width: 900px) {
+    .footer-box2-boxes {
+      padding: 0rem 50px;
+    }
+    .footer-box3-box 
+      {
+      padding: 0rem 50px;
+    }
+
+  }
+  @media (max-width: 757px) {
+
+.footer-box3-box {
+  padding: 0rem 0px;
+
+}
+    .footer-box2-boxes {
+      padding: 0rem 0px;
+    }
+
+  }
+
+
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+
+  
+    .footer-box1 input {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .footer-box1 button {
+      width: 100%;
+    }
+  
+    .footer-box2 {
+      flex-direction: column;
+    }
+  
+    .footer-box-boxes-box {
+      width: 100%;
+    }
+  
+    /* .footer-box3-box {
+      padding: 20px;
+    } */
+  
+    .footer-box3 h6 {
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-box1 h1 {
+      font-size: 20px;
+    }
+  
+    .footer-box1 p {
+      font-size: 14px;
+    }
+  
+    .footer-box1 input {
+      width: 100%;
+    }
+  
+    .footer-box1 button {
+      width: 100%;
+    }
+  
+    .footer-box2-boxes {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-box-boxes-box {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .footer-box3 {
+      padding: 10px;
+    }
+  
+    .footer-box3 h6 {
+      font-size: 10px;
+    }
+  
+    .footer-box3 img {
+      width: 120px;
+    }
+  }
+  
+  .footer-box1 button {
+  background: linear-gradient(95.27deg, #F1871C 1.46%, #E35515 105.76%) !important;
+}
+
+.footer-comment-box-header h3{
+  font-family: Manrope-medium !important;
+}
+.footer-comment-box-comment{
+  font-family: Manrope !important;
+  font-weight: 500;
+
+}

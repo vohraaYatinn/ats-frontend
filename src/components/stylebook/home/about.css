@@ -1,0 +1,41 @@
+@media (max-width: 1148px) {
+    .height-above {
+        padding-left: 4rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .height-above {
+       padding-top: 0rem;
+       padding-left: 0rem;
+    }
+    
+}
+
+@media (max-width: 778px) {
+    .tour-box-img {
+        height: 338px;
+        width: 232px;
+    }
+    .tour-boxes {
+        gap: 0rem !important;
+    }
+}
+
+
+@media (max-width: 450px) {
+    .heading-for-all h2{
+        font-size: 1.3rem;
+    }
+    .heading-for-all span{
+        font-size: 0.9rem;
+    }
+    .tour-box-img {
+        height: 280px;
+        width: 200px;
+    }
+    .tour-box {
+        flex: -1 0 210px;
+    }
+}
+
