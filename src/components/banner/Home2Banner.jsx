@@ -231,7 +231,7 @@ const Home2Banner = () => {
                       </div>
                     </div>
                   </div>
-                  <button type="submit">Search</button>
+                  <button type="submit"               >Search</button>
                 </form>
               </div>
               <div className="tab-pane fade" id="hotel" role="tabpanel">

@@ -5245,8 +5245,30 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   position: relative;
 }
 .login-modal .modal-dialog .modal-content .modal-body .login-registration-form .form-inner input {
-  border: 1px solid var(--title-color);
-  border-radius: 200px;
+  border: 0.3px solid var(--title-color);
+  border-radius: 13px;
+  background-color: transparent;
+  width: 100%;
+  height: 46px;
+  color: var(--title-color);
+  font-family: var(--font-rubik);
+  font-size: 13px;
+  padding: 15px 20px;
+}
+.login-modal .modal-dialog .modal-content .modal-body .login-registration-form .form-inner textarea {
+  border: 0.3px solid var(--title-color);
+  border-radius: 13px;
+  background-color: transparent;
+  width: 100%;
+  height: 46px;
+  color: var(--title-color);
+  font-family: var(--font-rubik);
+  font-size: 13px;
+  padding: 15px 20px;
+}
+.login-modal .modal-dialog .modal-content .modal-body .login-registration-form .form-inner select {
+  border: 0.3px solid var(--title-color);
+  border-radius: 13px;
   background-color: transparent;
   width: 100%;
   height: 46px;
@@ -29226,4 +29248,12 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 }
 .swiper-slide .swiper-slide-next{
   margin-bottom: 0rem !important;
+}
+.error-text {
+  color: red; /* Error text color */
+  font-size: 0.875rem; /* Slightly smaller than default font size */
+  margin-top: 5px; /* Space between input and error text */
+  display: block; /* Ensures the error text appears on a new line */
+  font-weight: 500; /* Medium font weight for visibility */
+  margin-left: 0.4rem;
 }

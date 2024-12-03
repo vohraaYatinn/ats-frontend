@@ -51,6 +51,8 @@ const Home2Destinationslide = () => {
           {details.map((item, index) => (
             <div
               key={index}
+              data-bs-toggle="modal"
+              data-bs-target="#user-login"
               className={`tour-box ${index % 2 === 0 ? "up" : "down-box" } country-check-box`} 
             >
               <div className="country-box-img">

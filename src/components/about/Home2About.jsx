@@ -49,6 +49,8 @@ const Home2about = () => {
           {details.map((item, index) => (
             <div
               key={index}
+              data-bs-toggle="modal"
+              data-bs-target="#user-login"
               className={`tour-box ${index % 2 === 0 ? "up" : "down"}`} // Staggered effect
             >
               <div className="tour-box-img">

@@ -29,7 +29,10 @@ const Home2Blog = () => {
                   <h3>Luxury Staycation Tour</h3>
                   <h1>5D/4N</h1>
                 </div>
-                <button className="primary-btn1 two d-xl-flex d-none home-button"><span style={{
+                <button 
+                data-bs-toggle="modal"
+              data-bs-target="#user-login"
+                className="primary-btn1 two d-xl-flex d-none home-button"><span style={{
                   fontWeight:500
                 }}>AED 27000/-</span></button>
                 </div>

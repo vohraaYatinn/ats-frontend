@@ -50,6 +50,8 @@ const ExploreCities = () => {
         <div className="tour-boxes tour-boxes-countries ">
           {details.map((item, index) => (
             <div
+            data-bs-toggle="modal"
+              data-bs-target="#user-login"
               key={index}
               className={`tour-box ${index % 2 === 0 ? "up" : "down-box" } country-check-box`} 
             >
