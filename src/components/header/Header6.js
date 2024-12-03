@@ -66,13 +66,8 @@ function reducer(state, action) {
 }
 
 const Header6 = () => {
-  const [leadFormDetails, setLeadFormDetails] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: "",
-  });  const [state, dispatch] = useReducer(reducer, initialState);
+ 
+  const [state, dispatch] = useReducer(reducer, initialState);
   const headerRef = useRef(null);
   const pathname = usePathname();
   const handleScroll = () => {
@@ -150,7 +145,7 @@ const Header6 = () => {
 
   return (
     <>
-<LoginModal leadFormDetails={leadFormDetails} setLeadFormDetails={setLeadFormDetails} />
+<LoginModal />
 <header
         className={`header-area style-3 four home-header${
           state.scrollY > 10 ? "sticky" : ""
