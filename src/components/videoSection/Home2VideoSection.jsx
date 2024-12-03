@@ -111,7 +111,8 @@ const Home2VideoSection = () => {
                     >
                               {details.map((item, index) => (
                         <SwiperSlide >
-          <div key={index} className="events-box">
+          <div key={index} className="events-box" data-bs-toggle="modal"
+              data-bs-target="#user-login">
             <div
               className="event-bg-box-img"
             >
