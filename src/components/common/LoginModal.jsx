@@ -71,7 +71,7 @@ const LoginModal = ({ leadFormDetails, setLeadFormDetails }) => {
           value={leadFormDetails.name}
           onChange={handleChange}
         />
-        {errors.name && <span className="error-text">{errors.name}</span>}
+        {errors?.name && <span className="error-text">{errors?.name}</span>}
       </div>
 
       <div className="form-inner mb-3">
@@ -82,7 +82,7 @@ const LoginModal = ({ leadFormDetails, setLeadFormDetails }) => {
           value={leadFormDetails.email}
           onChange={handleChange}
         />
-        {errors.email && <span className="error-text">{errors.email}</span>}
+        {errors?.email && <span className="error-text">{errors?.email}</span>}
       </div>
 
       <div className="form-inner mb-3">
@@ -93,7 +93,7 @@ const LoginModal = ({ leadFormDetails, setLeadFormDetails }) => {
           value={leadFormDetails.phone}
           onChange={handleChange}
         />
-        {errors.phone && <span className="error-text">{errors.phone}</span>}
+        {errors?.phone && <span className="error-text">{errors?.phone}</span>}
       </div>
 
       <div className="form-inner mb-3">
@@ -114,7 +114,7 @@ const LoginModal = ({ leadFormDetails, setLeadFormDetails }) => {
           <option value="Visa">Visa</option>
           <option value="Cab Service">Cab Service</option>
         </select>
-        {errors.service && <span className="error-text">{errors.service}</span>}
+        {errors?.service && <span className="error-text">{errors?.service}</span>}
       </div>
 
       <div className="form-inner mb-10">
