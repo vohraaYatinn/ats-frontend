@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import navData from "../../data/nav.json";
-import { useEffect, useMemo, useReducer, useRef } from "react";
+import { useEffect, useMemo, useReducer, useRef, useState } from "react";
 import LoginModal from "../common/LoginModal";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {
@@ -21,6 +21,7 @@ const initialState = {
   isRightSidebar: false,
   isLang: false,
 };
+
 function reducer(state, action) {
   switch (action.type) {
     case "TOGGLE_MENU":
@@ -65,7 +66,13 @@ function reducer(state, action) {
 }
 
 const Header6 = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [leadFormDetails, setLeadFormDetails] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
+  });  const [state, dispatch] = useReducer(reducer, initialState);
   const headerRef = useRef(null);
   const pathname = usePathname();
   const handleScroll = () => {
@@ -136,12 +143,14 @@ const Header6 = () => {
         },
       },
     };
+
   });
+
 
   return (
     <>
-      <LoginModal />
-      <header
+<LoginModal leadFormDetails={leadFormDetails} setLeadFormDetails={setLeadFormDetails} />
+<header
         className={`header-area style-3 four home-header${
           state.scrollY > 10 ? "sticky" : ""
         }`}
@@ -247,9 +256,10 @@ const Header6 = () => {
                 color:"white",
                 padding:"1rem"
               }}
+              
               // className="modal-btn header-cart-btn"
-              // data-bs-toggle="modal"
-              // data-bs-target="#user-login"
+              data-bs-toggle="modal"
+              data-bs-target="#user-login"
             >
             
               Book A Trip
@@ -294,9 +304,9 @@ const Header6 = () => {
         
           </ul>
           <div className="padding-left-58">
-          <Link href="" className="primary-btn1 two d-xl-flex d-none home-button " >
+          <a href="" data-bs-toggle="modal" data-bs-target="#user-login" className="primary-btn1 two d-xl-flex d-none home-button " >
             Book A Trip
-          </Link>
+          </a>
           </div>
           <div
             className="sidebar-button mobile-menu-btn"

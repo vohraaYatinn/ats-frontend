@@ -175,7 +175,8 @@ const Home2Destinationslide = () => {
                     <p className="upper-head">{detail.flightname}</p>
                     <h3 className="medium-head">{detail.title}</h3>
                     <p className="lower-head">{detail.desc}</p>
-                    <button className="primary-btn1 two d-xl-flex d-none home-button book-now-thrill">Book Now</button>
+                    <button className="primary-btn1 two d-xl-flex d-none home-button book-now-thrill" data-bs-toggle="modal"
+              data-bs-target="#user-login">Book Now</button>
                   </div>
              </div>
                   </SwiperSlide>
