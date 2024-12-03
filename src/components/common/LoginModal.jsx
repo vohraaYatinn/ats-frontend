@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const LoginModal = () => {
-  const [leadFormDetails, setLeadFormDetails] = useState({
+  const [leadFormDetails, setLeadFormDetails] = useState({ 
     name: "",
     email: "",
     phone: "",
