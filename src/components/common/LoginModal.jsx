@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import axios from 'axios';
 
 const LoginModal = () => {
+  const currentDate = new Date();
+  const apiKeyEmail = process.env.NEXT_PUBLIC_EMAIL_API_KEY;
 
+  const formattedDate = currentDate.toLocaleString(); 
   const [leadFormDetails, setLeadFormDetails] = useState({
     name: "",
     email: "",
@@ -45,11 +49,50 @@ const LoginModal = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
+      sendEmail()
       setFormPartToShow(2)
       // You can add further code here for form submission
     }
   };
-
+  const sendEmail = async () => {
+    const apiKey = apiKeyEmail
+    const apiUrl = "https://api.brevo.com/v3/smtp/email";
+  
+    // Prepare email data
+    const emailData = {
+      to: [{ email: "connectwithyatin@gmail.com" }], // Replace with the recipient's email address
+      subject : `ATS new Leads - ${formattedDate}`,
+      textContent: "This is the plain text content of your email.",
+      htmlContent: `
+        <div style=" line-height: 1.6; color: #fff; padding: 20px; background-color: #006370; border-radius: 10px;">
+          <h1 style="color: #fff; font-size: 24px; text-align: center;">New Lead Details</h1>
+          </div>
+          <p style="margin: 8px 0; font-size:20px ; "><strong>Name:</strong> ${leadFormDetails?.name}</p>
+          <p style="margin: 8px 0;  font-size:20px ; "><strong>Email:</strong> ${leadFormDetails?.email}</p>
+          <p style="margin: 8px 0;  font-size:20px ; "><strong>Phone:</strong> ${leadFormDetails?.phone}</p>
+          <p style="margin: 8px 0;  font-size:20px ; "><strong>Service:</strong> ${leadFormDetails?.service}</p>
+          <p style="margin: 8px 0;  font-size:20px ; "><strong>Message:</strong> ${leadFormDetails?.message}</p>
+      `,
+      sender: { email: "holidays@atstourstravels.com", name: "ATS" },
+    };
+    
+  
+    try {
+      const response = await axios.post(apiUrl, emailData, {
+        headers: {
+          "api-key": apiKey,
+          "Content-Type": "application/json",
+        },
+      });
+  
+      console.log("Email sent successfully:", response.data);
+      setErrors({});
+    } catch (error) {
+      console.error("Error sending email:", error);
+      // setShowErrorMessage("Failed to send email. Please try again.");
+    }
+  };
+  
 
   return (
     <>
