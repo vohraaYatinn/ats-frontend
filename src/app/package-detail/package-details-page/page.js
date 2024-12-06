@@ -53,7 +53,7 @@ const Page = () => {
     <>
     <Topbar/>
     <Header/>
-    <Breadcrumb pagename="Activities Details" pagetitle="Activitis Details"/>
+    <Breadcrumb pagename="Package Details" pagetitle="Package Details"/>
      <div className="package-details-area mb-120">
       <div className="container">
         <div className="row">
