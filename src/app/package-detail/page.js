@@ -2,6 +2,7 @@ import Breadcrumb from "@/components/common/Breadcrumb";
 import Newslatter from "@/components/common/Newslatter";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
+import Header6 from "@/components/header/Header6";
 import Topbar from "@/components/topbar/Topbar";
 import Link from "next/link";
 import React from "react";
@@ -17,7 +18,7 @@ const page = () => {
   return (
     <>
       <Topbar />
-      <Header />
+      <Header6 />
       <Breadcrumb pagename="Activitis" pagetitle="Activitis" />
       <div className="activites-pages pt-120 mb-120">
         <div className="container">

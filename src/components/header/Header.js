@@ -12,6 +12,7 @@ import SwiperCore, {
   Pagination,
 } from "swiper";
 SwiperCore.use([Autoplay, EffectFade, Navigation, Pagination]);
+import "./header-second.css"
 
 const initialState = {
   activeMenu: "",
@@ -145,11 +146,11 @@ const Header = () => {
         ref={headerRef}
         className={`header-area style-1 ${state.scrollY > 10 ? "sticky" : ""}`}
       >
-        <div className="header-logo d-lg-none d-flex">
-          <Link href="/">
-            <img alt="image" className="img-fluid" src="/assets/img/logo.svg" />
-          </Link>
-        </div>
+            <div className="header-logo d-lg-none d-flex">
+              <Link href="/">
+                <img alt="image" className="img-fluid" src="/assets/img/logo.svg" />
+              </Link>
+            </div>
         <div className="company-logo d-lg-flex d-none">
           <Link href="/">
             <img src="/assets/img/logo.svg" alt="" />
@@ -241,8 +242,8 @@ const Header = () => {
             <button
               type="button"
               className="modal-btn header-cart-btn"
-              data-bs-toggle="modal"
-              data-bs-target="#user-login"
+              // data-bs-toggle="modal"
+              // data-bs-target="#user-login"
             >
               <svg
                 width={16}
@@ -312,7 +313,7 @@ const Header = () => {
                 </svg>
               </a>
             </li>
-            <li className="right-sidebar-button" onClick={toggleRightSidebar}>
+            <li className="right-sidebar-button" >
               <svg
                 className="sidebar-toggle-button"
                 width={25}

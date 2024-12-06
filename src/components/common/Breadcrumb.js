@@ -6,8 +6,10 @@ const Breadcrumb = ({ pagename, pagetitle }) => {
     <div
       className="breadcrumb-section"
       style={{
+        display:'flex',
+        alignItems:"center",
         backgroundImage:
-          "linear-gradient(270deg, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.3) 101.02%), url(/assets/img/innerpage/inner-banner-bg.png)",
+          "linear-gradient(270deg, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.3) 101.02%), url(/assets/img/activities/banner.png)",
       }}
     >
       <div className="container">

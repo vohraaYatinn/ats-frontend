@@ -12,6 +12,7 @@ import Newslatter from "@/components/common/Newslatter";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import Topbar from "@/components/topbar/Topbar";
+import Header6 from "@/components/header/Header6";
 const Page = () => {
   const [isOpen, setOpen] = useState(false);
   const [isOpenimg, setOpenimg] = useState({
@@ -47,7 +48,7 @@ const Page = () => {
   return (
     <>
       <Topbar />
-      <Header />
+      <Header6 />
       <Breadcrumb pagename="Package Details" pagetitle="Package Details" />
       <div className="package-details-area pt-120 mb-120 position-relative">
         <div className="container">
