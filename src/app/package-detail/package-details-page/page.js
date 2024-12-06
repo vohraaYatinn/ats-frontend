@@ -55,7 +55,7 @@ const Page = () => {
     <Header/>
     <Breadcrumb pagename="Package Details" pagetitle="Package Details"/>
      <div className="package-details-area mb-120">
-      <div className="container">
+      <div className="container"> 
         <div className="row">
           <div className="co-lg-12">
             <div className="package-img-group" style={{
