@@ -1,5 +1,7 @@
 "use client"
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+
 import Image from 'next/image';
 import image1 from '../../../public/assets/img/home1/image/image-1.jpg';
 import image2 from '../../../public/assets/img/home1/image/image-2.jpg';
@@ -15,7 +17,11 @@ import "./change-bar-section.css"
 import Link from 'next/link';
 
 const Home2Blog = () => {
+  const router = useRouter();
 
+  const handleRedirect = () => {
+    router.push(item.link);
+  };
   const data1=[
     {
       title:"Private Full Day Khor Fakkan Tour",
