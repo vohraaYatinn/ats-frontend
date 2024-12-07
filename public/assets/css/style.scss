@@ -21300,13 +21300,14 @@ header.style-3 {
       li{
         color: var(--white-color);
         font-family: var(--font-rubik);
-        font-size: 15px;
+        font-size: 10px !important;
         font-weight: 400;
         text-transform: capitalize;   
         position: relative;
         padding-left: 26px;
         a{
-          color: var(--primary-color1);
+          font-size: 10px;
+          color: var(--primary-color2);
         } 
         &::before{
           content: url(../img/innerpage/icon/arrow.svg);

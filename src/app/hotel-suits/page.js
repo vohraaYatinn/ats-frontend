@@ -11,6 +11,10 @@ SwiperCore.use([Autoplay, EffectFade, Navigation, Pagination]);
 import Breadcrumb from "@/components/common/Breadcrumb";
 import RoomSidebar from "@/components/sidebar/RoomSidebar";
 import Link from "next/link";
+import "./hotel-suits-breadcum.css"
+import "./hotel-suits.css"
+
+
 
 const Page = () => {
   const settings = useMemo(() => {
@@ -43,7 +47,7 @@ const Page = () => {
               <RoomSidebar />
             </div>
             <div className="col-xl-8 order-lg-2 order-1">
-              <div className="room-suits-card mb-30">
+              {/* <div className="room-suits-card mb-30">
                 <div className="row g-0">
                   <div className="col-md-4">
                     <Swiper {...settings} className="swiper hotel-img-slider">
@@ -242,8 +246,8 @@ const Page = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="room-suits-card mb-30">
+              </div> */}
+              {/* <div className="room-suits-card mb-30">
                 <div className="row g-0">
                   <div className="col-md-4">
                     <div className="room-img">
@@ -1155,7 +1159,7 @@ const Page = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className="row mt-70">
                 <div className="col-lg-12">
                   <nav className="inner-pagination-area">

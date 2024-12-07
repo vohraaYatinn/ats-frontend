@@ -15,12 +15,11 @@ const Footer3 = () => {
           <button type="sub-home-button">Subscribe</button>
         </form>
       </div>
-<hr />
       {/* Footer links sections */}
       <div className="footer-box2">
         <div className="footer-box2-boxes">
           <div className="footer-box-boxes-box">
-            <h2>Top Destinations</h2>
+            <h2>TOP DESTINATION</h2>
             <h5>Abu Dhabi</h5>
             <h5>Dubai</h5>
             <h5>Europe</h5>
@@ -28,14 +27,14 @@ const Footer3 = () => {
             <h5>South America</h5>
           </div>
           <div className="footer-box-boxes-box">
-            <h2>Popular Cities</h2>
+            <h2>POPULAR CITIES</h2>
             <h5>Dubai</h5>
             <h5>Europe</h5>
             <h5>Africa</h5>
             <h5>South America</h5>
           </div>
           <div className="footer-box-boxes-box">
-            <h2>Company</h2>
+            <h2>COMPANY</h2>
             <h5>About Us</h5>
             <h5>Contact Us</h5>
             <h5>Activities</h5>
@@ -43,7 +42,7 @@ const Footer3 = () => {
             <h5>Cookies Policy</h5>
           </div>
           <div className="footer-box-boxes-box">
-            <h2>Quick Links</h2>
+            <h2>QUICK LINKS</h2>
             <h5>Become Host</h5>
             <h5>Become Agent</h5>
             <h5>Our Partners</h5>

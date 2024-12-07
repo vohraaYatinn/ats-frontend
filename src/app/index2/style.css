@@ -2,21 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@font-face {
-  font-family: 'Nexa';
-  src: url('fonts/nexa/Nexa-Heavy.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Manrope';
-  src: url('fonts/Manrope/static/Manrope-ExtraLight.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Manrope-medium';
-  src: url('fonts/Manrope/static/Manrope-Medium.ttf') format('truetype');
-}
 body{
   overflow-x: hidden !important;}
 :root{
@@ -512,12 +497,7 @@ height: 100%;
 width: 100%;
   } */
   
-  .footer-box2-boxes {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
 
-  }
   
   .footer-box-boxes-box {
     /* width: 22%; */
@@ -531,13 +511,7 @@ width: 100%;
     font-weight: 200 ;
   }
   
-  .footer-box-boxes-box h5 {
-    font-size: 15px;
-    margin: 10px 3px !important;
-    color: black;
-    opacity: 45%;
-  }
-  
+
   .footer-box3 {
   
     color: white;
@@ -548,13 +522,7 @@ height: 300px;
     background-position: center;
   }
   
-  .footer-box3-box {
-width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: top;
-  flex-wrap: wrap;
-  }
+
   
   .footer-box3 h6 {
     font-size: 14px;
@@ -587,10 +555,7 @@ width: 100%;
       width: 100%;
     }
   
-    /* .footer-box3-box {
-      padding: 20px;
-    } */
-  
+
     .footer-box3 h6 {
       font-size: 12px;
     }

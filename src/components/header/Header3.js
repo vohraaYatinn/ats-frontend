@@ -315,7 +315,7 @@ const Header3 = () => {
                 </svg>
               </a>
             </li>
-            <li className="right-sidebar-button" onClick={toggleRightSidebar}>
+            <li className="right-sidebar-button" >
               <svg
                 className="sidebar-toggle-button"
                 width={25}

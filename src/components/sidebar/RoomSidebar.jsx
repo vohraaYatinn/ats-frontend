@@ -1,4 +1,5 @@
 import React from "react";
+import "./widgetFilter.css"
 
 const RoomSidebar = () => {
   return (
@@ -16,7 +17,7 @@ const RoomSidebar = () => {
           </form>
         </div>
         <div className="single-widget mb-30">
-          <h5 className="widget-title">Popular Filters</h5>
+          <h5 className="widget-title padding-popular-title">Popular Filters <img src="/assets/img/room/filter.svg"/></h5>
           <div className="checkbox-container">
             <ul>
               <li>
@@ -64,7 +65,7 @@ const RoomSidebar = () => {
         </div>
 
         <div className="single-widget mb-30">
-          <h5 className="widget-title">Facilities</h5>
+          <h5 className="widget-title padding-popular-title">Facilities </h5>
           <div className="checkbox-container">
             <ul>
               <li>
@@ -134,8 +135,56 @@ const RoomSidebar = () => {
             </ul>
           </div>
         </div>
+
         <div className="single-widget mb-30">
-          <h5 className="widget-title">Star Rating</h5>
+          <h5 className="widget-title padding-popular-title">Room Accessibility </h5>
+          <div className="checkbox-container">
+            <ul>
+              <li>
+                <label className="containerss">
+                  <input type="checkbox" />
+                  <span className="checkmark" />
+                  <span className="text">Adapted bath</span>
+                  <span className="qty">250</span>
+                </label>
+              </li>
+              <li>
+                <label className="containerss">
+                  <input type="checkbox" />
+                  <span className="checkmark" />
+                  <span className="text">Roll-in shower</span>
+                  <span className="qty">90</span>
+                </label>
+              </li>
+              <li>
+                <label className="containerss">
+                  <input type="checkbox" />
+                  <span className="checkmark" />
+                  <span className="text">Raised toilet</span>
+                  <span className="qty">35</span>
+                </label>
+              </li>
+              <li>
+                <label className="containerss">
+                  <input type="checkbox" />
+                  <span className="checkmark" />
+                  <span className="text">Emergency cord in bathroom</span>
+                  <span className="qty">28</span>
+                </label>
+              </li>
+              <li>
+                <label className="containerss">
+                  <input type="checkbox" />
+                  <span className="checkmark" />
+                  <span className="text">Shower chair</span>
+                  <span className="qty">12</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="single-widget ">
+          <h5 className="widget-title padding-popular-title">Star Rating </h5>
           <div className="checkbox-container">
             <ul>
               <li>
@@ -251,53 +300,6 @@ const RoomSidebar = () => {
                       (1.0)
                     </a>
                   </span>
-                </label>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="single-widget">
-          <h5 className="widget-title">Room Accessibility</h5>
-          <div className="checkbox-container">
-            <ul>
-              <li>
-                <label className="containerss">
-                  <input type="checkbox" />
-                  <span className="checkmark" />
-                  <span className="text">Adapted bath</span>
-                  <span className="qty">250</span>
-                </label>
-              </li>
-              <li>
-                <label className="containerss">
-                  <input type="checkbox" />
-                  <span className="checkmark" />
-                  <span className="text">Roll-in shower</span>
-                  <span className="qty">90</span>
-                </label>
-              </li>
-              <li>
-                <label className="containerss">
-                  <input type="checkbox" />
-                  <span className="checkmark" />
-                  <span className="text">Raised toilet</span>
-                  <span className="qty">35</span>
-                </label>
-              </li>
-              <li>
-                <label className="containerss">
-                  <input type="checkbox" />
-                  <span className="checkmark" />
-                  <span className="text">Emergency cord in bathroom</span>
-                  <span className="qty">28</span>
-                </label>
-              </li>
-              <li>
-                <label className="containerss">
-                  <input type="checkbox" />
-                  <span className="checkmark" />
-                  <span className="text">Shower chair</span>
-                  <span className="qty">12</span>
                 </label>
               </li>
             </ul>

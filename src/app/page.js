@@ -70,7 +70,9 @@ const page = () => {
         <Home2VideoSection/>
       <Home2WhyChoose /> 
 
-          {/* </div> */}
+        {/* </div> */}
+          <hr/>
+
         <Footer/> 
     </>
   );
