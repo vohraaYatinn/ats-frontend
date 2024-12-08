@@ -25,10 +25,10 @@ const page = () => {
                 </div>
                 <div className="content">
                   <h6>
-                    <a href="tel:">+990-737 621 432</a>
+                    <a href="tel:">+971-529745592</a>
                   </h6>
                   <h6>
-                    <a href="tel:">+990-737 621 432</a>
+                    <a href="tel:">+971-529745592</a>
                   </h6>
                 </div>
               </div>

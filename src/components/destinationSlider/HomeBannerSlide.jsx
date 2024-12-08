@@ -1,6 +1,5 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
-import { useRouter } from 'next/router';
 
 import Image from 'next/image';
 import image1 from '../../../public/assets/img/home1/image/image-1.jpg';
@@ -17,10 +16,10 @@ import "./change-bar-section.css"
 import Link from 'next/link';
 
 const Home2Blog = () => {
-  const router = useRouter();
-
-  const handleRedirect = () => {
-    router.push(item.link);
+  const handleRedirect = (link) => {
+    if (link) {
+      window.location.href = link; // Navigate to the link
+    }
   };
   const data1=[
     {
@@ -112,7 +111,7 @@ const Home2Blog = () => {
       <div className="Home2Blog-boxes">
         {selectedOne == 1 &&
         data1.map((item, index) => (
-          <div className="Home2Blog-box" key={index} href={item.link}>
+          <div className="Home2Blog-box" key={index} onClick={() => handleRedirect(item.link)} >
             <div className="image-wrapper">
               <Image
                 src={item.image}
@@ -145,7 +144,7 @@ const Home2Blog = () => {
       }
         {selectedOne == 2 &&
         data2.map((item, index) => (
-          <div className="Home2Blog-box" key={index} href={item.link}>
+          <div className="Home2Blog-box" key={index+4} onClick={() => handleRedirect(item.link)}>
             <div className="image-wrapper">
               <Image
                 src={item.image}
@@ -178,7 +177,7 @@ const Home2Blog = () => {
       }
         {selectedOne == 3 &&
         data3.map((item, index) => (
-          <div className="Home2Blog-box" key={index} href={item.link}>
+          <div className="Home2Blog-box" key={index+10} onClick={() => handleRedirect(item.link)}>
             <div className="image-wrapper">
               <Image
                 src={item.image}
@@ -211,7 +210,7 @@ const Home2Blog = () => {
       }
         {selectedOne == 4 &&
         data4.map((item, index) => (
-          <div className="Home2Blog-box" key={index} href={item.link}>
+          <div className="Home2Blog-box" key={index+14} onClick={() => handleRedirect(item.link)}>
             <div className="image-wrapper">
               <Image
                 src={item.image}
