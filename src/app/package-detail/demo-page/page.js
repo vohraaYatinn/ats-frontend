@@ -15,9 +15,11 @@ import "./package-details-page.css"
 import Newslatter from "@/components/common/Newslatter";
 import "./activites-breadcrum.css"
 import StarRating from "@/components/common/StarRating";
-
+import ThankYouModal from "@/components/common/ThankYouModal";
 
 const Page = () => {
+  const [showModal, setShowModal] = useState(false)
+
   const [isOpenModalVideo, setOpenModalVideo] = useState(false);
   const [isOpenimg, setOpenimg] = useState({
     openingState: false,

@@ -16,10 +16,13 @@ import Newslatter from "@/components/common/Newslatter";
 import "./activites-breadcrum.css"
 import StarRating from "@/components/common/StarRating";
 import { countryCodes, sendEmail } from "@/hooks/CommonFunctions";
+import ThankYouModal from "@/components/common/ThankYouModal";
 
 
 const Page = () => {
   const [isOpenModalVideo, setOpenModalVideo] = useState(false);
+  const [showModal, setShowModal] = useState(false)
+
   const [isOpenimg, setOpenimg] = useState({
     openingState: false,
     openingIndex: 0,
@@ -89,6 +92,8 @@ const Page = () => {
     if (Object.keys(newErrors).length === 0) {
       sendEmail(formData?.fullName, formData?.email, formData?.countryCode + formData?.phone, "Sunset Dubai Desert Safari with BBQ & Entertainment", formData?.message)
       console.log("Form submitted successfully:", formData);
+      setShowModal(true)
+
       // Reset form or handle the successful form submission
       setFormData({ fullName: "", email: "", countryCode: "+1", phone: "", message: "" });
       setErrors({});
@@ -801,6 +806,8 @@ const Page = () => {
           onClose={() => setOpenModalVideo(false)}
         />
       </React.Fragment>
+      <ThankYouModal showModal={showModal} setShowModal={setShowModal}/>
+
       {/* <Lightbox
         className="img-fluid"
         open={isOpenimg.openingState}
