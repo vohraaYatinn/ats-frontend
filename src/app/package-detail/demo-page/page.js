@@ -466,7 +466,7 @@ const Page = () => {
                   </div>
                   <div className="tab-pane fade active show" id="v-pills-contact" role="tabpanel" aria-labelledby="v-pills-contact-tab">
                     <div className="sidebar-booking-form">
-                      <form onSubmit={handleSubmit}>
+                      <form>
                         <div className="form-inner mb-20">
                           <label>
                             Full Name <span>*</span>
