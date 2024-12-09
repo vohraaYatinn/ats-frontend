@@ -1383,7 +1383,7 @@ const Page = () => {
                         </div>
                         <div className="form-inner mb-20">
                           <label>
-                            Email Address <span>*</span>
+                            Email Address
                           </label>
                           <input
                             type="email"

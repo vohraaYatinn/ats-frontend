@@ -15,12 +15,14 @@ import "./package-details-page.css"
 import Newslatter from "@/components/common/Newslatter";
 import "./activites-breadcrum.css"
 import StarRating from "@/components/common/StarRating";
-import { countryCodes, sendEmail } from "@/hooks/CommonFunctions";
+import { countryCodes, customLabels, sendEmail } from "@/hooks/CommonFunctions";
 import ThankYouModal from "@/components/common/ThankYouModal";
+import ReactFlagsSelect from "react-flags-select";
 
 
 const Page = () => {
   const [showModal, setShowModal] = useState(false)
+  const [selected, setSelected] = useState("");
 
   const [isOpenModalVideo, setOpenModalVideo] = useState(false);
   const [isOpenimg, setOpenimg] = useState({
@@ -73,9 +75,7 @@ const Page = () => {
     if (!formData.fullName.trim()) {
       newErrors.fullName = "Full Name is required.";
     }
-    if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Valid email is required.";
-    }
+ 
     if (!formData.phone.trim() || !/^\d{7,15}$/.test(formData.phone)) {
       newErrors.phone = "Valid phone number (7-15 digits) is required.";
     }
@@ -407,73 +407,78 @@ const Page = () => {
                   <div className="tab-pane fade active show" id="v-pills-contact" role="tabpanel" aria-labelledby="v-pills-contact-tab">
                     <div className="sidebar-booking-form">
                       <form onSubmit={handleSubmit}>
-  <div className="form-inner mb-20">
-        <label>
-          Full Name <span>*</span>
-        </label>
-        <input
-          type="text"
-          name="fullName"
-          placeholder="Enter your full name"
-          value={formData.fullName}
-          onChange={handleChange}
-        />
-        {errors.fullName && <small style={{ color: "red", marginLeft:"0.7rem", marginTop:"0.4rem"}}>{errors.fullName}</small>}
-      </div>
-      <div className="form-inner mb-20">
-        <label>
-          Email Address <span>*</span>
-        </label>
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email address"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        {errors.email && <small style={{ color: "red", marginLeft:"0.7rem", marginTop:"0.4rem" }}>{errors.email}</small>}
-      </div>
-      <div className="form-inner mb-20">
-        <label>
-          Phone Number <span>*</span>
-        </label>
-        <div style={{ display: "flex", gap: "10px" }}>
-          <select
-            name="countryCode"
-            value={formData.countryCode}
-            onChange={handleChange}
-            style={{ width: "25%" }}
-          >
-            {countryCodes.map((country) => (
-              <option key={country.code} value={country.code}>
-                {country.label}
-              </option>
-            ))}
-          </select>
-          <input
-            type="text"
-            name="phone"
-            placeholder="Enter your phone number"
-            value={formData.phone}
-            onChange={handleChange}
-            style={{ flex: 1 }}
-          />
-        </div>
-        {errors.phone && <small style={{ color: "red", marginLeft:"0.7rem", marginTop:"0.4rem" }}>{errors.phone}</small>}
-      </div>
-      <div className="form-inner mb-30">
-        <label>
-          Write Your Message <span>*</span>
-        </label>
-        <textarea
-          name="message"
-          placeholder="Write your query"
-          value={formData.message}
-          onChange={handleChange}
-        />
-        {errors.message && <small style={{ color: "red", marginLeft:"0.7rem", marginTop:"0.4rem" }}>{errors.message}</small>}
-      </div>
-      <div className="form-inner">
+                        <div className="form-inner mb-20">
+                          <label>
+                            Full Name <span>*</span>
+                          </label>
+                          <input
+                            type="text"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            value={formData.fullName}
+                            onChange={handleChange}
+                          />
+                          {errors.fullName && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.fullName}</small>}
+                        </div>
+                        <div className="form-inner mb-20">
+                          <label>
+                            Email Address
+                          </label>
+                          <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            value={formData.email}
+                            onChange={handleChange}
+                          />
+                          {errors.email && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.email}</small>}
+                        </div>
+                        <div className="form-inner mb-20">
+                          <label>
+                            Phone Number <span>*</span>
+                          </label>
+                          <div style={{ display: "flex", gap: "10px" }}>
+                            <ReactFlagsSelect
+                              className="react-select-select-phone"
+                              selected={selected}
+                              showSelectedLabel={false}
+                              optionsSize={17}
+                              customLabels={customLabels}
+                              countries={Object.keys(customLabels)}
+                              placeholder="+"
+                              selectedSize={24}
+                              onSelect={(code) => {
+                                setFormData({ ...formData, countryCode: customLabels[code].secondary })
+                                setSelected(code)
+                              }
+                              }
+
+                            />
+
+                            <input
+                              type="text"
+                              name="phone"
+                              placeholder="Enter your phone number"
+                              value={formData.phone}
+                              onChange={handleChange}
+                              style={{ flex: 1 }}
+                            />
+                          </div>
+                          {errors.phone && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.phone}</small>}
+                        </div>
+                        <div className="form-inner mb-30">
+                          <label>
+                            Write Your Message <span>*</span>
+                          </label>
+                          <textarea
+                            name="message"
+                            placeholder="Write your query"
+                            value={formData.message}
+                            onChange={handleChange}
+                          />
+                          {errors.message && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.message}</small>}
+                        </div>
+                        <div className="form-inner">
                           <button type="submit" className="primary-btn1 two book-now-activity">Submit Now</button>
                         </div>                      </form>
                     </div>
@@ -482,7 +487,7 @@ const Page = () => {
                 </div>
               </div>
 
- 
+
               
      
       </div>

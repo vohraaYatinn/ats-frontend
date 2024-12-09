@@ -15,13 +15,15 @@ import "./package-details-page.css"
 import Newslatter from "@/components/common/Newslatter";
 import "./activites-breadcrum.css"
 import StarRating from "@/components/common/StarRating";
-import { countryCodes, sendEmail } from "@/hooks/CommonFunctions";
+import { countryCodes, customLabels, sendEmail } from "@/hooks/CommonFunctions";
 import ThankYouModal from "@/components/common/ThankYouModal";
+import ReactFlagsSelect from "react-flags-select";
 
 
 const Page = () => {
   const [isOpenModalVideo, setOpenModalVideo] = useState(false);
   const [showModal, setShowModal] = useState(false)
+  const [selected, setSelected] = useState("");
 
   const [isOpenimg, setOpenimg] = useState({
     openingState: false,
@@ -73,9 +75,7 @@ const Page = () => {
     if (!formData.fullName.trim()) {
       newErrors.fullName = "Full Name is required.";
     }
-    if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Valid email is required.";
-    }
+ 
     if (!formData.phone.trim() || !/^\d{7,15}$/.test(formData.phone)) {
       newErrors.phone = "Valid phone number (7-15 digits) is required.";
     }
@@ -574,7 +574,7 @@ const Page = () => {
                         </div>
                         <div className="form-inner mb-20">
                           <label>
-                            Email Address <span>*</span>
+                            Email Address
                           </label>
                           <input
                             type="email"
@@ -590,18 +590,23 @@ const Page = () => {
                             Phone Number <span>*</span>
                           </label>
                           <div style={{ display: "flex", gap: "10px" }}>
-                            <select
-                              name="countryCode"
-                              value={formData.countryCode}
-                              onChange={handleChange}
-                              style={{ width: "25%" }}
-                            >
-                              {countryCodes.map((country) => (
-                                <option key={country.code} value={country.code}>
-                                  {country.label}
-                                </option>
-                              ))}
-                            </select>
+                            <ReactFlagsSelect
+                              className="react-select-select-phone"
+                              selected={selected}
+                              showSelectedLabel={false}
+                              optionsSize={17}
+                              customLabels={customLabels}
+                              countries={Object.keys(customLabels)}
+                              placeholder="+"
+                              selectedSize={24}
+                              onSelect={(code) => {
+                                setFormData({ ...formData, countryCode: customLabels[code].secondary })
+                                setSelected(code)
+                              }
+                              }
+
+                            />
+
                             <input
                               type="text"
                               name="phone"
@@ -633,6 +638,7 @@ const Page = () => {
 
                 </div>
               </div>
+
 
 
 

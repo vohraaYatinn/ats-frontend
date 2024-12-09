@@ -105,7 +105,7 @@ height: 300px;
     font-family: Nexa;
   }
   .footer-box3-box {
-    
+    margin: -1rem;
     padding: 0rem 197px;
 width: 100%;
     display: flex;

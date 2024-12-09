@@ -15,7 +15,7 @@ const Home2VideoSection = () => {
     return {
       slidesPerView: "auto",
       speed: 1500,
-      spaceBetween: 20,
+      spaceBetween: 10,
       loop: true,
       autoplay: {
         delay: 2500, 
@@ -45,18 +45,20 @@ const Home2VideoSection = () => {
         },
         992: {
           slidesPerView: 3,
-          spaceBetween: 300,
+          spaceBetween: 10,
         },
         1024: {
           slidesPerView: 3,
-          spaceBetween: 280,
+          spaceBetween: 10,
         },
         1200: {
           slidesPerView: 3,
-          spaceBetween: 20,
+          spaceBetween: 10,
         },
         1400: {
           slidesPerView: 3,
+          spaceBetween: 10,
+
 
         },
       },

@@ -16,10 +16,13 @@ import Newslatter from "@/components/common/Newslatter";
 import "./activites-breadcrum.css"
 import StarRating from "@/components/common/StarRating";
 import ThankYouModal from "@/components/common/ThankYouModal";
+import ReactFlagsSelect from "react-flags-select";
+import { customLabels } from "@/hooks/CommonFunctions";
 
 
 const Page = () => {
   const [showModal, setShowModal] = useState(false)
+  const [selected, setSelected] = useState("");
 
   const [isOpenModalVideo, setOpenModalVideo] = useState(false);
   const [isOpenimg, setOpenimg] = useState({
@@ -374,123 +377,178 @@ const Page = () => {
               <img src="/assets/img/activities/tele-cal.jpg" alt="" />
              
         </div>
-            <div className="booking-form-wrap">
-              <h4>Book Your Tour</h4>
-              <p>Reserve your ideal Room early for a hassle-free
-              trip secure comfort and convenience!</p>
-              {/* <div className="nav nav-pills mb-40" role="tablist">
+        <div className="booking-form-wrap">
+                <h4>Book Your Tour</h4>
+                <p>Reserve your ideal Room early for a hassle-free
+                  trip secure comfort and convenience!</p>
+                {/* <div className="nav nav-pills mb-40" role="tablist">
                 <button className="nav-link show active" id="v-pills-booking-tab" data-bs-toggle="pill" data-bs-target="#v-pills-booking" type="button" role="tab" aria-controls="v-pills-booking" aria-selected="true">Online Booking</button>
                 <button className="nav-link" id="v-pills-contact-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contact" type="button" role="tab" aria-controls="v-pills-contact" aria-selected="false">Inquiry Form</button>
               </div> */}
-              <div className="tab-content" id="v-pills-tabContent2">
-                <div className="tab-pane fade" id="v-pills-booking" role="tabpanel" aria-labelledby="v-pills-booking-tab">
-                  <div className="sidebar-booking-form">
-                    <form>
-                      <div className="tour-date-wrap mb-50">
-                        <h6>Select Your Booking Date:</h6>
-                        <div className="form-inner mb-20">
-                          <div className="form-group">
-                            <input type="date" name="inOut" placeholder="5 Jan, 2024" />
-                           
+                <div className="tab-content" id="v-pills-tabContent2">
+                  <div className="tab-pane fade" id="v-pills-booking" role="tabpanel" aria-labelledby="v-pills-booking-tab">
+                    <div className="sidebar-booking-form">
+                      <form>
+                        <div className="tour-date-wrap mb-50">
+                          <h6>Select Your Booking Date:</h6>
+                          <div className="form-inner mb-20">
+                            <div className="form-group">
+                              <input type="date" name="inOut" placeholder="5 Jan, 2024" />
+
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div className="booking-form-item-type mb-45">
-                        <div className="number-input-item adults">
-                          <label className="number-input-lable">Adult:<span>
+                        <div className="booking-form-item-type mb-45">
+                          <div className="number-input-item adults">
+                            <label className="number-input-lable">Adult:<span>
                             </span><span> $60 <del>$80</del></span></label>
-                          <QuantityCounter incIcon="bx bx-plus" dcrIcon="bx bx-minus" />
-                        </div>
-                        <div className="number-input-item children">
-                          <label className="number-input-lable">Children:<span> 
+                            <QuantityCounter incIcon="bx bx-plus" dcrIcon="bx bx-minus" />
+                          </div>
+                          <div className="number-input-item children">
+                            <label className="number-input-lable">Children:<span>
                             </span><span>$15</span></label>
-                            <QuantityCounter incIcon="bx bx-plus" dcrIcon="bx bx-minus"/>
+                            <QuantityCounter incIcon="bx bx-plus" dcrIcon="bx bx-minus" />
+                          </div>
                         </div>
-                      </div>
-                      <div className="booking-form-item-type">
-                        <h5>Other Extra Services</h5>
-                        <div className="checkbox-container">
-                          <label className="check-container">Home Pickup
-                            <input type="checkbox" className="services_check" name="services_list[]" defaultValue={0} />
-                            <span className="checkmark" />
-                            <span className="price">$10 </span>
-                          </label>
-                          <label className="check-container">Night Food
-                            <input type="checkbox" className="services_check" name="services_list[]" defaultValue={1} />
-                            <span className="checkmark" />
-                            <span className="price">$15 </span>
-                          </label>
-                          <label className="check-container">Seaplane Fyling
-                            <input type="checkbox" className="services_check" name="services_list[]" defaultValue={2} />
-                            <span className="checkmark" />
-                            <span className="price">$20 </span>
-                          </label>
+                        <div className="booking-form-item-type">
+                          <h5>Other Extra Services</h5>
+                          <div className="checkbox-container">
+                            <label className="check-container">Home Pickup
+                              <input type="checkbox" className="services_check" name="services_list[]" defaultValue={0} />
+                              <span className="checkmark" />
+                              <span className="price">$10 </span>
+                            </label>
+                            <label className="check-container">Night Food
+                              <input type="checkbox" className="services_check" name="services_list[]" defaultValue={1} />
+                              <span className="checkmark" />
+                              <span className="price">$15 </span>
+                            </label>
+                            <label className="check-container">Seaplane Fyling
+                              <input type="checkbox" className="services_check" name="services_list[]" defaultValue={2} />
+                              <span className="checkmark" />
+                              <span className="price">$20 </span>
+                            </label>
+                          </div>
                         </div>
-                      </div>
-                      <div className="booking-form-item-type">
-                        <div className="single-total mb-30">
-                          <span>Adult</span>
-                          <ul>
-                            <li><strong>$195</strong> PRICE</li>
-                            <li><i className="bi bi-x-lg" /></li>
-                            <li><strong>02</strong> QTY</li>
-                            <li><i className="bi bi-x-lg" /></li>
-                            <li><strong>04</strong> DAYS</li>
-                          </ul>
-                          <svg xmlns="http://www.w3.org/2000/svg" width={27} height={15} viewBox="0 0 27 15">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M23.999 5.44668L25.6991 7.4978L23.9991 9.54878H0V10.5743H23.1491L20.0135 14.3575L20.7834 14.9956L26.7334 7.81687L26.9979 7.4978L26.7334 7.17873L20.7834 0L20.0135 0.638141L23.149 4.42114H0V5.44668H23.999Z" />
-                          </svg>
-                          <div className="total">$390</div>
+                        <div className="booking-form-item-type">
+                          <div className="single-total mb-30">
+                            <span>Adult</span>
+                            <ul>
+                              <li><strong>$195</strong> PRICE</li>
+                              <li><i className="bi bi-x-lg" /></li>
+                              <li><strong>02</strong> QTY</li>
+                              <li><i className="bi bi-x-lg" /></li>
+                              <li><strong>04</strong> DAYS</li>
+                            </ul>
+                            <svg xmlns="http://www.w3.org/2000/svg" width={27} height={15} viewBox="0 0 27 15">
+                              <path fillRule="evenodd" clipRule="evenodd" d="M23.999 5.44668L25.6991 7.4978L23.9991 9.54878H0V10.5743H23.1491L20.0135 14.3575L20.7834 14.9956L26.7334 7.81687L26.9979 7.4978L26.7334 7.17873L20.7834 0L20.0135 0.638141L23.149 4.42114H0V5.44668H23.999Z" />
+                            </svg>
+                            <div className="total">$390</div>
+                          </div>
+                          <div className="single-total mb-30">
+                            <span>Children</span>
+                            <ul>
+                              <li><strong>$195</strong> PRICE</li>
+                              <li><i className="bi bi-x-lg" /></li>
+                              <li><strong>02</strong> QTY</li>
+                              <li><i className="bi bi-x-lg" /></li>
+                              <li><strong>04</strong> DAYS</li>
+                            </ul>
+                            <svg xmlns="http://www.w3.org/2000/svg" width={27} height={15} viewBox="0 0 27 15">
+                              <path fillRule="evenodd" clipRule="evenodd" d="M23.999 5.44668L25.6991 7.4978L23.9991 9.54878H0V10.5743H23.1491L20.0135 14.3575L20.7834 14.9956L26.7334 7.81687L26.9979 7.4978L26.7334 7.17873L20.7834 0L20.0135 0.638141L23.149 4.42114H0V5.44668H23.999Z" />
+                            </svg>
+                            <div className="total">$390</div>
+                          </div>
                         </div>
-                        <div className="single-total mb-30">
-                          <span>Children</span>
-                          <ul>
-                            <li><strong>$195</strong> PRICE</li>
-                            <li><i className="bi bi-x-lg" /></li>
-                            <li><strong>02</strong> QTY</li>
-                            <li><i className="bi bi-x-lg" /></li>
-                            <li><strong>04</strong> DAYS</li>
-                          </ul>
-                          <svg xmlns="http://www.w3.org/2000/svg" width={27} height={15} viewBox="0 0 27 15">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M23.999 5.44668L25.6991 7.4978L23.9991 9.54878H0V10.5743H23.1491L20.0135 14.3575L20.7834 14.9956L26.7334 7.81687L26.9979 7.4978L26.7334 7.17873L20.7834 0L20.0135 0.638141L23.149 4.42114H0V5.44668H23.999Z" />
-                          </svg>
-                          <div className="total">$390</div>
-                        </div>
-                      </div>
-                      <div className="total-price"><span>Total Price:</span> $470</div>
-                      <button type="submit" className="primary-btn1 two book-now-activity">Book Now</button>
-                    </form>
+                        <div className="total-price"><span>Total Price:</span> $470</div>
+                        <button type="submit" className="primary-btn1 two book-now-activity">Book Now</button>
+                      </form>
+                    </div>
                   </div>
-                </div>
-                <div className="tab-pane fade active show" id="v-pills-contact" role="tabpanel" aria-labelledby="v-pills-contact-tab">
-                  <div className="sidebar-booking-form">
-                    <form>
-                      <div className="form-inner mb-20">
-                        <label>Full Name <span>*</span></label>
-                        <input type="text" placeholder="Enter your full name" />
-                      </div>
-                      <div className="form-inner mb-20">
-                        <label>Email Address <span>*</span></label>
-                        <input type="email" placeholder="Enter your email address" />
-                      </div>
-                      <div className="form-inner mb-20">
-                        <label>Phone Number  <span>*</span></label>
-                        <input type="text" placeholder="Enter your phone number" />
-                      </div>
-                      <div className="form-inner mb-30">
-                        <label>Write Your Massage <span>*</span></label>
-                        <textarea placeholder="Write your quiry" defaultValue={""} />
-                      </div>
-                      <div className="form-inner">
-                        <button type="submit" className="primary-btn1 two book-now-activity">Submit Now</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
+                  <div className="tab-pane fade active show" id="v-pills-contact" role="tabpanel" aria-labelledby="v-pills-contact-tab">
+                    <div className="sidebar-booking-form">
+                      <form onSubmit={handleSubmit}>
+                        <div className="form-inner mb-20">
+                          <label>
+                            Full Name <span>*</span>
+                          </label>
+                          <input
+                            type="text"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            value={formData.fullName}
+                            onChange={handleChange}
+                          />
+                          {errors.fullName && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.fullName}</small>}
+                        </div>
+                        <div className="form-inner mb-20">
+                          <label>
+                            Email Address
+                          </label>
+                          <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            value={formData.email}
+                            onChange={handleChange}
+                          />
+                          {errors.email && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.email}</small>}
+                        </div>
+                        <div className="form-inner mb-20">
+                          <label>
+                            Phone Number <span>*</span>
+                          </label>
+                          <div style={{ display: "flex", gap: "10px" }}>
+                            <ReactFlagsSelect
+                              className="react-select-select-phone"
+                              selected={selected}
+                              showSelectedLabel={false}
+                              optionsSize={17}
+                              customLabels={customLabels}
+                              countries={Object.keys(customLabels)}
+                              placeholder="+"
+                              selectedSize={24}
+                              onSelect={(code) => {
+                                setFormData({ ...formData, countryCode: customLabels[code].secondary })
+                                setSelected(code)
+                              }
+                              }
 
-      </div>
-      </div>
- 
+                            />
+
+                            <input
+                              type="text"
+                              name="phone"
+                              placeholder="Enter your phone number"
+                              value={formData.phone}
+                              onChange={handleChange}
+                              style={{ flex: 1 }}
+                            />
+                          </div>
+                          {errors.phone && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.phone}</small>}
+                        </div>
+                        <div className="form-inner mb-30">
+                          <label>
+                            Write Your Message <span>*</span>
+                          </label>
+                          <textarea
+                            name="message"
+                            placeholder="Write your query"
+                            value={formData.message}
+                            onChange={handleChange}
+                          />
+                          {errors.message && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.message}</small>}
+                        </div>
+                        <div className="form-inner">
+                          <button type="submit" className="primary-btn1 two book-now-activity">Submit Now</button>
+                        </div>                      </form>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
  
               
      

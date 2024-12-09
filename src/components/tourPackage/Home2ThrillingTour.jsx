@@ -154,7 +154,9 @@ const Home2Destinationslide = () => {
   </div>
   <div className="testimonial-card-slider-area">
           <div className="row">
-            <div className="col-lg-12">
+            <div className="col-lg-12" style={{
+              zIndex:"-1"
+            }}>
               <Swiper
               style={{
                 padding:"1rem"

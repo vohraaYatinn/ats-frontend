@@ -15,13 +15,15 @@ import "./package-details-page.css"
 import Newslatter from "@/components/common/Newslatter";
 import "./activites-breadcrum.css"
 import StarRating from "@/components/common/StarRating";
-import { countryCodes, sendEmail } from "@/hooks/CommonFunctions";
+import { countryCodes, customLabels, sendEmail } from "@/hooks/CommonFunctions";
 import ThankYouModal from "@/components/common/ThankYouModal";
-
+import ReactFlagsSelect from "react-flags-select";
 
 const Page = () => {
   const [isOpenModalVideo, setOpenModalVideo] = useState(false);
   const [showModal, setShowModal] = useState(false)
+  const [selected, setSelected] = useState("");
+
 
   const [isOpenimg, setOpenimg] = useState({
     openingState: false,
@@ -56,7 +58,7 @@ const Page = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
-    countryCode: "+1", // Default country code
+    countryCode: "", // Default country code
     phone: "",
     message: "",
   });
@@ -73,11 +75,12 @@ const Page = () => {
     if (!formData.fullName.trim()) {
       newErrors.fullName = "Full Name is required.";
     }
-    if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Valid email is required.";
-    }
+
     if (!formData.phone.trim() || !/^\d{7,15}$/.test(formData.phone)) {
       newErrors.phone = "Valid phone number (7-15 digits) is required.";
+    }
+    else if (!formData.countryCode) {
+      newErrors.phone = "Country code is required.";
     }
     if (!formData.message.trim()) {
       newErrors.message = "Message cannot be empty.";
@@ -90,6 +93,7 @@ const Page = () => {
     e.preventDefault();
     const newErrors = validate();
     if (Object.keys(newErrors).length === 0) {
+      console.log(selected)
       sendEmail(formData?.fullName, formData?.email, formData?.countryCode + formData?.phone, "Sunset Dubai Desert Safari with BBQ & Entertainment", formData?.message)
       console.log("Form submitted successfully:", formData);
       setShowModal(true)
@@ -104,435 +108,436 @@ const Page = () => {
   };
   return (
     <>
-    <Topbar/>
-    <Header/>
-    <Breadcrumb pagename="Package Details" pagetitle="Package Details"/>
-     <div className="package-details-area mb-120">
-      <div className="container"> 
-        <div className="row">
-          <div className="co-lg-12">
-            <div className="package-img-group" style={{
-              marginBottom:"35px"
-            }}>
-              <div className="row align-items-center g-3">
-                <div className="col-lg-9" style={{
-                    marginTop:"0rem",
-                    padding:"0rem"
+      <Topbar />
+      <Header />
+      <Breadcrumb pagename="Package Details" pagetitle="Package Details" />
+      <div className="package-details-area mb-120">
+        <div className="container">
+          <div className="row">
+            <div className="co-lg-12">
+              <div className="package-img-group" style={{
+                marginBottom: "35px"
+              }}>
+                <div className="row align-items-center g-3">
+                  <div className="col-lg-9" style={{
+                    marginTop: "0rem",
+                    padding: "0rem"
 
                   }}>
-                  <div className="gallery-img-wrap first-wrap-image flip-image-check" style={{
-                    marginTop:"0rem",
-                    padding:"0rem"
-                  }}>
-                    <img src="/assets/img/activities/inner-banner-1.png" alt="" />
+                    <div className="gallery-img-wrap first-wrap-image flip-image-check" style={{
+                      marginTop: "0rem",
+                      padding: "0rem"
+                    }}>
+                      <img src="/assets/img/activities/inner-banner-1.png" alt="" />
+                    </div>
                   </div>
-                </div>
-                <div className="col-lg-3 h-100" style={{
-                    marginTop:"0rem"
+                  <div className="col-lg-3 h-100" style={{
+                    marginTop: "0rem"
                   }}>
-                  <div className="row g-3 h-100 ">
-                    <div className="col-12">
-                      <div className="gallery-img-wrap">
-                        <img src="/assets/img/activities/inner-banner-2.png" alt="" />
+                    <div className="row g-3 h-100 ">
+                      <div className="col-12">
+                        <div className="gallery-img-wrap">
+                          <img src="/assets/img/activities/inner-banner-2.png" alt="" />
+                        </div>
                       </div>
-                    </div>
-                    <div className="col-12">
-                      <div className="gallery-img-wrap">
-                        <img src="/assets/img/activities/inner-banner-3.png" alt="" />
+                      <div className="col-12">
+                        <div className="gallery-img-wrap">
+                          <img src="/assets/img/activities/inner-banner-3.png" alt="" />
+                        </div>
                       </div>
-                    </div>
 
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="others-image-wrap d-none">
-          <a href="assets/img/innerpage/ski-touring-01.jpg" data-fancybox="images"><img src="/assets/img/innerpage/ski-touring-01.jpg" alt="" /></a>   
-          <a href="assets/img/innerpage/ski-touring-02.jpg" data-fancybox="images"><img src="/assets/img/innerpage/ski-touring-02.jpg" alt="" /></a>   
-          <a href="assets/img/innerpage/ski-touring-03.jpg" data-fancybox="images"><img src="/assets/img/innerpage/ski-touring-03.jpg" alt="" /></a>   
-          <a href="assets/img/innerpage/ski-touring-04.jpg" data-fancybox="images"><img src="/assets/img/innerpage/ski-touring-04.jpg" alt="" /></a>   
-          <a href="assets/img/innerpage/ski-touring-05.jpg" data-fancybox="images"><img src="/assets/img/innerpage/ski-touring-05.jpg" alt="" /></a>   
-        </div> 
-        <div className="row g-xl-4 gy-5 main-package-details-div">
-          <div className="col-xl-8">
-    
-            <h2>Sunset Dubai Desert Safari with BBQ & Entertainment
+          <div className="others-image-wrap d-none">
+            <a href="assets/img/innerpage/ski-touring-01.jpg" data-fancybox="images"><img src="/assets/img/innerpage/ski-touring-01.jpg" alt="" /></a>
+            <a href="assets/img/innerpage/ski-touring-02.jpg" data-fancybox="images"><img src="/assets/img/innerpage/ski-touring-02.jpg" alt="" /></a>
+            <a href="assets/img/innerpage/ski-touring-03.jpg" data-fancybox="images"><img src="/assets/img/innerpage/ski-touring-03.jpg" alt="" /></a>
+            <a href="assets/img/innerpage/ski-touring-04.jpg" data-fancybox="images"><img src="/assets/img/innerpage/ski-touring-04.jpg" alt="" /></a>
+            <a href="assets/img/innerpage/ski-touring-05.jpg" data-fancybox="images"><img src="/assets/img/innerpage/ski-touring-05.jpg" alt="" /></a>
+          </div>
+          <div className="row g-xl-4 gy-5 main-package-details-div">
+            <div className="col-xl-8">
+
+              <h2>Sunset Dubai Desert Safari with BBQ & Entertainment
 
 
-            </h2>
-            
-            <ul className="tour-info-metalist">
-              <li>
-                <svg width={14} height={14} viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14 7C14 8.85652 13.2625 10.637 11.9497 11.9497C10.637 13.2625 8.85652 14 7 14C5.14348 14 3.36301 13.2625 2.05025 11.9497C0.737498 10.637 0 8.85652 0 7C0 5.14348 0.737498 3.36301 2.05025 2.05025C3.36301 0.737498 5.14348 0 7 0C8.85652 0 10.637 0.737498 11.9497 2.05025C13.2625 3.36301 14 5.14348 14 7ZM7 3.0625C7 2.94647 6.95391 2.83519 6.87186 2.75314C6.78981 2.67109 6.67853 2.625 6.5625 2.625C6.44647 2.625 6.33519 2.67109 6.25314 2.75314C6.17109 2.83519 6.125 2.94647 6.125 3.0625V7.875C6.12502 7.95212 6.14543 8.02785 6.18415 8.09454C6.22288 8.16123 6.27854 8.2165 6.3455 8.25475L9.408 10.0048C9.5085 10.0591 9.62626 10.0719 9.73611 10.0406C9.84596 10.0092 9.93919 9.93611 9.99587 9.83692C10.0525 9.73774 10.0682 9.62031 10.0394 9.50975C10.0107 9.39919 9.93982 9.30426 9.842 9.24525L7 7.62125V3.0625Z">
-                  </path>
-                </svg>
-               7 Hours
-              </li>
-          
-            </ul>
-            <p className="para-activity">Experience the magic of the Dubai desert at sunset with a thrilling safari adventure. This 7-hour tour offers a perfect blend of excitement and relaxation, featuring dune bashing, sandboarding, and a variety of traditional Bedouin-style camp activities. Enjoy a sumptuous barbecue dinner under the stars, accompanied by live entertainment including belly dancing and a fire show. This tour is designed to provide a memorable and immersive desert experience for all participants.
+              </h2>
 
-
-
-
-
-            </p>
-           
-            <div className="highlight-tour mb-20">
-              <h4>Highlights of the Tour</h4>
-              <ul>
-                <li><span className="activity-back-icon"><i className="bi bi-check" /></span>Dune bashing in the Dubai desert
-
-
-
-
+              <ul className="tour-info-metalist">
+                <li>
+                  <svg width={14} height={14} viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 7C14 8.85652 13.2625 10.637 11.9497 11.9497C10.637 13.2625 8.85652 14 7 14C5.14348 14 3.36301 13.2625 2.05025 11.9497C0.737498 10.637 0 8.85652 0 7C0 5.14348 0.737498 3.36301 2.05025 2.05025C3.36301 0.737498 5.14348 0 7 0C8.85652 0 10.637 0.737498 11.9497 2.05025C13.2625 3.36301 14 5.14348 14 7ZM7 3.0625C7 2.94647 6.95391 2.83519 6.87186 2.75314C6.78981 2.67109 6.67853 2.625 6.5625 2.625C6.44647 2.625 6.33519 2.67109 6.25314 2.75314C6.17109 2.83519 6.125 2.94647 6.125 3.0625V7.875C6.12502 7.95212 6.14543 8.02785 6.18415 8.09454C6.22288 8.16123 6.27854 8.2165 6.3455 8.25475L9.408 10.0048C9.5085 10.0591 9.62626 10.0719 9.73611 10.0406C9.84596 10.0092 9.93919 9.93611 9.99587 9.83692C10.0525 9.73774 10.0682 9.62031 10.0394 9.50975C10.0107 9.39919 9.93982 9.30426 9.842 9.24525L7 7.62125V3.0625Z">
+                    </path>
+                  </svg>
+                  7 Hours
                 </li>
-                <li><span className="activity-back-icon"><i className="bi bi-check" /></span> Sandboarding on the golden dunes
 
-
-
-
-
-
-                </li>
-                <li><span className="activity-back-icon"><i className="bi bi-check" /></span> Camel riding at a traditional Bedouin camp
-
-
-
-
-                </li>
-                <li><span className="activity-back-icon"><i className="bi bi-check" /></span> Axe Throwing
-
-
-
-
-
-                </li>
-                <li><span className="activity-back-icon"><i className="bi bi-check" /></span>Henna painting and shisha smoking
-
-
-
-
-
-                </li>
-                <li><span className="activity-back-icon"><i className="bi bi-check" /></span>Wall Climbing
-
-
-
-
-
-                </li>
-                <li><span className="activity-back-icon"><i className="bi bi-check" /></span> Live entertainment: belly dancing, tenoura, and fire show
-
-
-
-
-
-
-
-                </li>
-                <li><span className="activity-back-icon"><i className="bi bi-check" /></span> Barbecue dinner with a variety of dishes
-
-
-
-
-
-
-
-                </li>
-                <li><span className="activity-back-icon"><i className="bi bi-check" /></span>Tea, coffee, water, and soft drinks included
-
-
-
-
-
-
-
-
-                </li>
-                <li><span className="activity-back-icon"><i className="bi bi-check" /></span>Scenic photo stops at sunset and during stargazing
-
-
-
-
-
-
-
-
-
-                </li>
               </ul>
-            </div>
-            <h4 className="para-highlight">Good To Know </h4>
-            <div className="includ-and-exclud-area mb-20 good-to-know">
-              <ul>
-              <li><b className="bold-activity">Booking Confirmation:</b> We will reconfirm the pick-up time a few hours before the tour starts to ensure punctuality and convenience.
-              </li><br/>
-    <li><b className="bold-activity">Pet Policy:</b> Please note that pets are not allowed on this tour.
-    </li><br/>
-    <li><b className="bold-activity">Children Policy:</b> Children below 12 years are considered children. They are under adult responsibility during the tour. A child seat is not provided.
-    </li><br/>
-    <li><b className="bold-activity">Luggage Policy:</b> Due to space constraints in the vehicle, large luggage cannot be accommodated. We recommend bringing only small bags or backpacks to ensure your comfort and convenience throughout the tour.
-    </li><br/>
-    <li><b className="bold-activity">Personal Belongings:</b> Avoid carrying expensive items. Your belongings are your responsibility. ATS is not liable for any lost items, but we will assist in locating them if lost.
-    </li><br/>
-    <li><b className="bold-activity">Health Considerations:</b> Pregnant women and individuals with back or neck problems should evaluate their condition before participating in this tour.
-    </li><br/>
-    <li><b className="bold-activity">Liability And Insurance:</b>  ATS is not responsible for any damage, loss, accidents, sickness, injury, or death that may occur during the tour. Comprehensive travel and health insurance are advised. All personal effects are solely your responsibility during the activity.
-
-
-
-
-    </li><br/>
-    <li><b className="bold-activity">Participation Responsibility:</b>  Ensure you are mentally and physically prepared for the activities of the tour. You are responsible for assessing your capability to participate in these activities.
+              <p className="para-activity">Experience the magic of the Dubai desert at sunset with a thrilling safari adventure. This 7-hour tour offers a perfect blend of excitement and relaxation, featuring dune bashing, sandboarding, and a variety of traditional Bedouin-style camp activities. Enjoy a sumptuous barbecue dinner under the stars, accompanied by live entertainment including belly dancing and a fire show. This tour is designed to provide a memorable and immersive desert experience for all participants.
 
 
 
 
 
-    </li><br/>
+              </p>
 
-    <li><b className="bold-activity">Wheelchair Accessibility:</b> This tour is partially wheelchair accessible. The transportation provided and some of the tour locations may not be equipped to accommodate wheelchair users comfortably. We apologize for any inconvenience this may cause and are available to discuss alternative arrangements or provide recommendations for more accessible tours in the UAE.
+              <div className="highlight-tour mb-20">
+                <h4>Highlights of the Tour</h4>
+                <ul>
+                  <li><span className="activity-back-icon"><i className="bi bi-check" /></span>Dune bashing in the Dubai desert
+
+
+
+
+                  </li>
+                  <li><span className="activity-back-icon"><i className="bi bi-check" /></span> Sandboarding on the golden dunes
 
 
 
 
 
 
-    </li><br/>
-              </ul>
-           
-            </div>
-            <h4 className="para-highlight">Included and Excluded </h4>
-            <div className="includ-and-exclud-area mb-20">
-              <ul>
-                <li><i className="bi bi-check-lg" /> Pick-Up And Drop-Off From Your Accommodation
-                </li>
-                <li><i className="bi bi-check-lg" /> Clean And Air-Cooled Vehicle</li>
-                <li><i className="bi bi-check-lg" /> Fresh Mineral Water For All Participants</li>
-                <li><i className="bi bi-check-lg" /> Stop For Photos At Scenic Spots Throughout The Tour</li>
-                <li><i className="bi bi-check-lg" /> A Professional And Licensed Tour Guide Throughout The Tour</li>
-                <li><i className="bi bi-check-lg" /> Dune Bashing For All Participants
-                </li>
-                <li><i className="bi bi-check-lg" />Sandboarding For All Participants
+                  </li>
+                  <li><span className="activity-back-icon"><i className="bi bi-check" /></span> Camel riding at a traditional Bedouin camp
 
-                </li>
-                <li><i className="bi bi-check-lg" /> Dune Bashing For All Participants
-                </li>
-                <li><i className="bi bi-check-lg" /> Camp Activities (Camel Riding, Henna Painting, Belly Dancing, Tenoura/Fire Show, Shisha Smoking) For All Participants
 
-                </li>
-                <li><i className="bi bi-check-lg" /> Barbecue Dinner For All Participants
-                </li>
-                <li><i className="bi bi-check-lg" /> Tea, Coffee, Water & Soft Drinks For All Participants
 
-                </li>
-                
-                <li><i className="bi bi-x-lg" /> Quad Biking (Extra Cost Discussed On Enquiry)
 
-                </li>
-                <li><i className="bi bi-x-lg" /> Any Extra Expenses Or Services Not Mentioned (E.g Food, Beverages)
-                </li>
-              </ul>
-           
-            </div>
+                  </li>
+                  <li><span className="activity-back-icon"><i className="bi bi-check" /></span> Axe Throwing
 
-            <h4>Itinerary</h4>
-            <div className="accordion tour-plan" id="tourPlan">
-            <li><b className="bold-activity">Pick-Up From Hotel Or Accommodation:</b> Begin your journey with a convenient pick-up from your hotel or accommodation. Our comfortable, air-conditioned vehicle and friendly driver are ready to transport you to an exciting day of exploration.
-            </li>
 
-             
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingOne">
-                  <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <span style={{
-                      minWidth:"180px"
-                    }}> 1st Activity</span> Quad Biking (Extra Cost On Arrival):
-                  </button>
-                </h2>
-                <div id="collapseOne" className="accordion-collapse collapse show show-date-check"   aria-labelledby="headingOne" data-bs-parent="#tourPlan">
-                  <div className="accordion-body">
-                    <ul>
-                      <li>Experience the thrill of quad-biking on the desert dunes.
+
+
+
+                  </li>
+                  <li><span className="activity-back-icon"><i className="bi bi-check" /></span>Henna painting and shisha smoking
+
+
+
+
+
+                  </li>
+                  <li><span className="activity-back-icon"><i className="bi bi-check" /></span>Wall Climbing
+
+
+
+
+
+                  </li>
+                  <li><span className="activity-back-icon"><i className="bi bi-check" /></span> Live entertainment: belly dancing, tenoura, and fire show
 
 
 
 
 
 
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+
+                  </li>
+                  <li><span className="activity-back-icon"><i className="bi bi-check" /></span> Barbecue dinner with a variety of dishes
+
+
+
+
+
+
+
+                  </li>
+                  <li><span className="activity-back-icon"><i className="bi bi-check" /></span>Tea, coffee, water, and soft drinks included
+
+
+
+
+
+
+
+
+                  </li>
+                  <li><span className="activity-back-icon"><i className="bi bi-check" /></span>Scenic photo stops at sunset and during stargazing
+
+
+
+
+
+
+
+
+
+                  </li>
+                </ul>
               </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingTwo">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  <span style={{
-                    minWidth:"180px"
-                  }}> 2nd Activity</span> Dune Bashing:
-                  </button>
-                </h2>
-                <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#tourPlan">
-                  <div className="accordion-body">
-                    <ul>
-                    <li>Enjoy an adrenaline-pumping ride across the desert dunes in a 4x4 vehicle.
+              <h4 className="para-highlight">Good To Know </h4>
+              <div className="includ-and-exclud-area mb-20 good-to-know">
+                <ul>
+                  <li><b className="bold-activity">Booking Confirmation:</b> We will reconfirm the pick-up time a few hours before the tour starts to ensure punctuality and convenience.
+                  </li><br />
+                  <li><b className="bold-activity">Pet Policy:</b> Please note that pets are not allowed on this tour.
+                  </li><br />
+                  <li><b className="bold-activity">Children Policy:</b> Children below 12 years are considered children. They are under adult responsibility during the tour. A child seat is not provided.
+                  </li><br />
+                  <li><b className="bold-activity">Luggage Policy:</b> Due to space constraints in the vehicle, large luggage cannot be accommodated. We recommend bringing only small bags or backpacks to ensure your comfort and convenience throughout the tour.
+                  </li><br />
+                  <li><b className="bold-activity">Personal Belongings:</b> Avoid carrying expensive items. Your belongings are your responsibility. ATS is not liable for any lost items, but we will assist in locating them if lost.
+                  </li><br />
+                  <li><b className="bold-activity">Health Considerations:</b> Pregnant women and individuals with back or neck problems should evaluate their condition before participating in this tour.
+                  </li><br />
+                  <li><b className="bold-activity">Liability And Insurance:</b>  ATS is not responsible for any damage, loss, accidents, sickness, injury, or death that may occur during the tour. Comprehensive travel and health insurance are advised. All personal effects are solely your responsibility during the activity.
+
+
+
+
+                  </li><br />
+                  <li><b className="bold-activity">Participation Responsibility:</b>  Ensure you are mentally and physically prepared for the activities of the tour. You are responsible for assessing your capability to participate in these activities.
+
+
+
+
+
+                  </li><br />
+
+                  <li><b className="bold-activity">Wheelchair Accessibility:</b> This tour is partially wheelchair accessible. The transportation provided and some of the tour locations may not be equipped to accommodate wheelchair users comfortably. We apologize for any inconvenience this may cause and are available to discuss alternative arrangements or provide recommendations for more accessible tours in the UAE.
 
 
 
 
 
 
-                    </li>
+                  </li><br />
+                </ul>
 
-                    </ul>
-                  </div>
-                </div>
               </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingThree">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  <span style={{
-                    minWidth:"180px"
-                  }}> 3rd Activity</span> Sandboarding:
-                  </button>
-                </h2>
-                <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#tourPlan">
-                  <div className="accordion-body">
-                    <ul>
-                    <li>Glide down the sandy slopes on a sandboard, a fun activity for all ages.
+              <h4 className="para-highlight">Included and Excluded </h4>
+              <div className="includ-and-exclud-area mb-20">
+                <ul>
+                  <li><i className="bi bi-check-lg" /> Pick-Up And Drop-Off From Your Accommodation
+                  </li>
+                  <li><i className="bi bi-check-lg" /> Clean And Air-Cooled Vehicle</li>
+                  <li><i className="bi bi-check-lg" /> Fresh Mineral Water For All Participants</li>
+                  <li><i className="bi bi-check-lg" /> Stop For Photos At Scenic Spots Throughout The Tour</li>
+                  <li><i className="bi bi-check-lg" /> A Professional And Licensed Tour Guide Throughout The Tour</li>
+                  <li><i className="bi bi-check-lg" /> Dune Bashing For All Participants
+                  </li>
+                  <li><i className="bi bi-check-lg" />Sandboarding For All Participants
 
+                  </li>
+                  <li><i className="bi bi-check-lg" /> Dune Bashing For All Participants
+                  </li>
+                  <li><i className="bi bi-check-lg" /> Camp Activities (Camel Riding, Henna Painting, Belly Dancing, Tenoura/Fire Show, Shisha Smoking) For All Participants
 
+                  </li>
+                  <li><i className="bi bi-check-lg" /> Barbecue Dinner For All Participants
+                  </li>
+                  <li><i className="bi bi-check-lg" /> Tea, Coffee, Water & Soft Drinks For All Participants
 
+                  </li>
 
+                  <li><i className="bi bi-x-lg" /> Quad Biking (Extra Cost Discussed On Enquiry)
 
+                  </li>
+                  <li><i className="bi bi-x-lg" /> Any Extra Expenses Or Services Not Mentioned (E.g Food, Beverages)
+                  </li>
+                </ul>
 
-                    </li>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingThree">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  <span style={{
-                    minWidth:"180px"
-                  }}> 4th Activity</span> Sunset (Photo Activity): 
-                  </button>
-                </h2>
-                <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#tourPlan">
-                  <div className="accordion-body">
-                    <ul>
-                    <li>Capture stunning photos of the desert landscape as the sun sets, painting the sky in vibrant hues.
-
-
-
-
-
-
-
-                    </li>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingThree">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  <span style={{
-                    minWidth:"180px"
-                  }}> 5th Activity</span>Bedouin-Style Camp Activities:
-                  </button>
-                </h2>
-                <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#tourPlan">
-                  <div className="accordion-body">
-                    <ul>
-                    <li>Engage in traditional activities such as camel riding, henna painting, and shisha smoking.
-
-
-
-
-
-
-
-                    </li>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingThree">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  <span style={{
-                    minWidth:"180px"
-                  }}> 6th Activity</span> Barbecue Dinner:
-                  </button>
-                </h2>
-                <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#tourPlan">
-                  <div className="accordion-body">
-                    <ul>
-                    <li>Savor a delicious barbecue dinner with a variety of dishes, accompanied by tea, coffee, water, and soft drinks.
-
-
-
-
-
-                    </li>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingThree">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  <span style={{
-                    minWidth:"180px"
-                  }}> 7th Activity</span> Stargazing (Photo Activity):
-                  </button>
-                </h2>
-                <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#tourPlan">
-                  <div className="accordion-body">
-                    <ul>
-                    <li>End the night with a serene stargazing session, perfect for capturing memorable photos.
-
-
-
-
-                    </li>
-
-                    </ul>
-                  </div>
-                </div>
               </div>
 
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingFour">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  <span style={{
-                    minWidth:"180px"
-                  }}>Drop-Off</span> To Hotel Or Accommodation: 
-                  </button>
-                </h2>
-                <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#tourPlan">
-                  <div className="accordion-body">
-                    <ul>
-                    <li>Conclude your tour with a comfortable drop-off at your hotel or accommodation, bringing an end to a day filled with memorable sights and experiences.</li>
+              <h4>Itinerary</h4>
+              <div className="accordion tour-plan" id="tourPlan">
+                <li><b className="bold-activity">Pick-Up From Hotel Or Accommodation:</b> Begin your journey with a convenient pick-up from your hotel or accommodation. Our comfortable, air-conditioned vehicle and friendly driver are ready to transport you to an exciting day of exploration.
+                </li>
 
-                    </ul>
+                <div className="accordion" id="tourPlan">
+                  {/* 1st Activity */}
+                  <div className="accordion-item">
+                    <h2 className="accordion-header" id="headingOne">
+                      <button
+                        className="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        <span style={{ minWidth: "180px" }}>1st Activity</span> Quad Biking (Extra Cost On Arrival):
+                      </button>
+                    </h2>
+                    <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#tourPlan">
+                      <div className="accordion-body">
+                        <ul>
+                          <li>Experience the thrill of quad-biking on the desert dunes.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 2nd Activity */}
+                  <div className="accordion-item">
+                    <h2 className="accordion-header" id="headingTwo">
+                      <button
+                        className="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                      >
+                        <span style={{ minWidth: "180px" }}>2nd Activity</span> Dune Bashing:
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#tourPlan">
+                      <div className="accordion-body">
+                        <ul>
+                          <li>Enjoy an adrenaline-pumping ride across the desert dunes in a 4x4 vehicle.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 3rd Activity */}
+                  <div className="accordion-item">
+                    <h2 className="accordion-header" id="headingThree">
+                      <button
+                        className="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                      >
+                        <span style={{ minWidth: "180px" }}>3rd Activity</span> Sandboarding:
+                      </button>
+                    </h2>
+                    <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#tourPlan">
+                      <div className="accordion-body">
+                        <ul>
+                          <li>Glide down the sandy slopes on a sandboard, a fun activity for all ages.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 4th Activity */}
+                  <div className="accordion-item">
+                    <h2 className="accordion-header" id="headingFour">
+                      <button
+                        className="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour"
+                        aria-expanded="false"
+                        aria-controls="collapseFour"
+                      >
+                        <span style={{ minWidth: "180px" }}>4th Activity</span> Sunset (Photo Activity):
+                      </button>
+                    </h2>
+                    <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#tourPlan">
+                      <div className="accordion-body">
+                        <ul>
+                          <li>Capture stunning photos of the desert landscape as the sun sets, painting the sky in vibrant hues.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 5th Activity */}
+                  <div className="accordion-item">
+                    <h2 className="accordion-header" id="headingFive">
+                      <button
+                        className="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseFive"
+                        aria-expanded="false"
+                        aria-controls="collapseFive"
+                      >
+                        <span style={{ minWidth: "180px" }}>5th Activity</span> Bedouin-Style Camp Activities:
+                      </button>
+                    </h2>
+                    <div id="collapseFive" className="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#tourPlan">
+                      <div className="accordion-body">
+                        <ul>
+                          <li>Engage in traditional activities such as camel riding, henna painting, and shisha smoking.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 6th Activity */}
+                  <div className="accordion-item">
+                    <h2 className="accordion-header" id="headingSix">
+                      <button
+                        className="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseSix"
+                        aria-expanded="false"
+                        aria-controls="collapseSix"
+                      >
+                        <span style={{ minWidth: "180px" }}>6th Activity</span> Barbecue Dinner:
+                      </button>
+                    </h2>
+                    <div id="collapseSix" className="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#tourPlan">
+                      <div className="accordion-body">
+                        <ul>
+                          <li>Savor a delicious barbecue dinner with a variety of dishes, accompanied by tea, coffee, water, and soft drinks.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 7th Activity */}
+                  <div className="accordion-item">
+                    <h2 className="accordion-header" id="headingSeven">
+                      <button
+                        className="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseSeven"
+                        aria-expanded="false"
+                        aria-controls="collapseSeven"
+                      >
+                        <span style={{ minWidth: "180px" }}>7th Activity</span> Stargazing (Photo Activity):
+                      </button>
+                    </h2>
+                    <div id="collapseSeven" className="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#tourPlan">
+                      <div className="accordion-body">
+                        <ul>
+                          <li>End the night with a serene stargazing session, perfect for capturing memorable photos.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Drop-Off */}
+                  <div className="accordion-item">
+                    <h2 className="accordion-header" id="headingEight">
+                      <button
+                        className="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseEight"
+                        aria-expanded="false"
+                        aria-controls="collapseEight"
+                      >
+                        <span style={{ minWidth: "180px" }}>Drop-Off</span> To Hotel Or Accommodation:
+                      </button>
+                    </h2>
+                    <div id="collapseEight" className="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#tourPlan">
+                      <div className="accordion-body">
+                        <ul>
+                          <li>Conclude your tour with a comfortable drop-off at your hotel or accommodation, bringing an end to a day filled with memorable sights and experiences.</li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
+
               </div>
-            </div>
- 
-            <div className="faq-content-wrap mb-80">
+
+              <div className="faq-content-wrap mb-80">
                 <div className="faq-content-title mb-20">
                   <h4>Frequently Asked &amp; Question</h4>
                 </div>
@@ -548,9 +553,9 @@ const Page = () => {
                       </h2>
                       <div id="travelcollapseOne" className="accordion-collapse collapse show" aria-labelledby="travelheadingOne" data-bs-parent="#accordionTravel">
                         <div className="accordion-body">
-                        Our website offers a wide range of travel services to ensure a seamless experience for our customers. These include customized tour packages tailored to individuals, families, and groups, along with hotel bookings and flight reservations. We also provide travel insurance assistance, guided tours, local sightseeing arrangements, and visa assistance for international travel. To make your journey stress-free, we offer 24/7 customer support throughout your trip.
+                          Our website offers a wide range of travel services to ensure a seamless experience for our customers. These include customized tour packages tailored to individuals, families, and groups, along with hotel bookings and flight reservations. We also provide travel insurance assistance, guided tours, local sightseeing arrangements, and visa assistance for international travel. To make your journey stress-free, we offer 24/7 customer support throughout your trip.
 
-</div>
+                        </div>
                       </div>
                     </div>
                     <div className="accordion-item">
@@ -561,70 +566,70 @@ const Page = () => {
                       </h2>
                       <div id="travelcollapseTwo" className="accordion-collapse collapse" aria-labelledby="travelheadingTwo" data-bs-parent="#accordionTravel">
                         <div className="accordion-body">
-                        Yes, you can modify or cancel your booking even after confirmation. However, it is important to note that changes or cancellations are subject to the terms and conditions set by the respective service providers, such as airlines and hotels. We recommend reviewing our detailed cancellation policy
+                          Yes, you can modify or cancel your booking even after confirmation. However, it is important to note that changes or cancellations are subject to the terms and conditions set by the respective service providers, such as airlines and hotels. We recommend reviewing our detailed cancellation policy
                         </div>
                       </div>
                     </div>
-                 
+
                   </div>
                 </div>
               </div>
-           <div className="review-section">
-            <p className="first-ppreview">There are no reviews yet.</p>
-            <h3>Be the first to review “Sunset Dubai Desert Safari with BBQ & Entertainment
+              <div className="review-section">
+                <p className="first-ppreview">There are no reviews yet.</p>
+                <h3>Be the first to review “Sunset Dubai Desert Safari with BBQ & Entertainment
 
-            ”</h3>
-            <p>Your email address will not be published.</p>
-            <div className="rating-stars-on-page">
-              <div>
-                <p>Overall</p>
-                <StarRating totalStars={5} onRatingChange={()=>{}} />
+                  ”</h3>
+                <p>Your email address will not be published.</p>
+                <div className="rating-stars-on-page">
+                  <div>
+                    <p>Overall</p>
+                    <StarRating totalStars={5} onRatingChange={() => { }} />
+                  </div>
+                  <div>
+                    <p>Transport</p>
+                    <StarRating totalStars={5} onRatingChange={() => { }} />
+                  </div>
+                  <div>
+                    <p>Food</p>
+                    <StarRating totalStars={5} onRatingChange={() => { }} />
+                  </div>
+                  <div>
+                    <p>Destination</p>
+                    <StarRating totalStars={5} onRatingChange={() => { }} />
+                  </div>
+                  <div>
+                    <p>Hospitality</p>
+                    <StarRating totalStars={5} onRatingChange={() => { }} />
+
+                  </div>
+                </div>
               </div>
-              <div>
-                <p>Transport</p>
-                <StarRating totalStars={5} onRatingChange={()=>{}} />
-              </div>
-              <div>
-                <p>Food</p>
-                <StarRating totalStars={5} onRatingChange={()=>{}} />
-              </div>
-              <div>
-                <p>Destination</p>
-                <StarRating totalStars={5} onRatingChange={()=>{}} />
-              </div>
-              <div>
-                <p>Hospitality</p>
-                <StarRating totalStars={5} onRatingChange={()=>{}} />
-              
+              <div className="review-form"
+
+
+              >
+                <input placeholder="Name" />
+                <input placeholder="Email" />
+                <input placeholder="Review Title" />
+                <textarea placeholder="Describe your review"></textarea>
+                <div>
+                  <p>recommendation: </p>
+                  <div className="recommendation">
+                    <img src="/assets/img/activities/icons/happy.svg" />
+                    <img src="/assets/img/activities/icons/happy-2.svg" />
+                    <img src="/assets/img/activities/icons/happy-3.svg" />
+                  </div>
+                </div>
+                <button className="primary-btn1 two book-now-activity submit-review-buttom">SUBMIT REVIEW</button>
+
               </div>
             </div>
-           </div>
-           <div className="review-form"
-           
-           
-           >
-            <input placeholder="Name"/>
-            <input placeholder="Email"/>
-            <input placeholder="Review Title"/>
-            <textarea placeholder="Describe your review"></textarea>
-            <div>
-              <p>recommendation: </p>
-              <div className="recommendation">
-                <img src="/assets/img/activities/icons/happy.svg" />
-                <img src="/assets/img/activities/icons/happy-2.svg" />
-                <img src="/assets/img/activities/icons/happy-3.svg" />
-              </div>
-            </div>
-<button className="primary-btn1 two book-now-activity submit-review-buttom">SUBMIT REVIEW</button>
+            <div className="col-xl-4">
+              <div className="banner2-card  mb-30">
+                <img src="/assets/img/activities/tele-cal.jpg" alt="" />
 
-           </div>
-        </div>
-        <div className="col-xl-4">
-        <div className="banner2-card  mb-30">
-              <img src="/assets/img/activities/tele-cal.jpg" alt="" />
-             
-        </div>
-        <div className="booking-form-wrap">
+              </div>
+              <div className="booking-form-wrap">
                 <h4>Book Your Tour</h4>
                 <p>Reserve your ideal Room early for a hassle-free
                   trip secure comfort and convenience!</p>
@@ -715,73 +720,78 @@ const Page = () => {
                   <div className="tab-pane fade active show" id="v-pills-contact" role="tabpanel" aria-labelledby="v-pills-contact-tab">
                     <div className="sidebar-booking-form">
                       <form onSubmit={handleSubmit}>
-  <div className="form-inner mb-20">
-        <label>
-          Full Name <span>*</span>
-        </label>
-        <input
-          type="text"
-          name="fullName"
-          placeholder="Enter your full name"
-          value={formData.fullName}
-          onChange={handleChange}
-        />
-        {errors.fullName && <small style={{ color: "red", marginLeft:"0.7rem", marginTop:"0.4rem"}}>{errors.fullName}</small>}
-      </div>
-      <div className="form-inner mb-20">
-        <label>
-          Email Address <span>*</span>
-        </label>
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email address"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        {errors.email && <small style={{ color: "red", marginLeft:"0.7rem", marginTop:"0.4rem" }}>{errors.email}</small>}
-      </div>
-      <div className="form-inner mb-20">
-        <label>
-          Phone Number <span>*</span>
-        </label>
-        <div style={{ display: "flex", gap: "10px" }}>
-          <select
-            name="countryCode"
-            value={formData.countryCode}
-            onChange={handleChange}
-            style={{ width: "25%" }}
-          >
-            {countryCodes.map((country) => (
-              <option key={country.code} value={country.code}>
-                {country.label}
-              </option>
-            ))}
-          </select>
-          <input
-            type="text"
-            name="phone"
-            placeholder="Enter your phone number"
-            value={formData.phone}
-            onChange={handleChange}
-            style={{ flex: 1 }}
-          />
-        </div>
-        {errors.phone && <small style={{ color: "red", marginLeft:"0.7rem", marginTop:"0.4rem" }}>{errors.phone}</small>}
-      </div>
-      <div className="form-inner mb-30">
-        <label>
-          Write Your Message <span>*</span>
-        </label>
-        <textarea
-          name="message"
-          placeholder="Write your query"
-          value={formData.message}
-          onChange={handleChange}
-        />
-        {errors.message && <small style={{ color: "red", marginLeft:"0.7rem", marginTop:"0.4rem" }}>{errors.message}</small>}
-      </div>
-      <div className="form-inner">
+                        <div className="form-inner mb-20">
+                          <label>
+                            Full Name <span>*</span>
+                          </label>
+                          <input
+                            type="text"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            value={formData.fullName}
+                            onChange={handleChange}
+                          />
+                          {errors.fullName && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.fullName}</small>}
+                        </div>
+                        <div className="form-inner mb-20">
+                          <label>
+                            Email Address
+                          </label>
+                          <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            value={formData.email}
+                            onChange={handleChange}
+                          />
+                          {errors.email && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.email}</small>}
+                        </div>
+                        <div className="form-inner mb-20">
+                          <label>
+                            Phone Number <span>*</span>
+                          </label>
+                          <div style={{ display: "flex", gap: "10px" }}>
+                            <ReactFlagsSelect
+                              className="react-select-select-phone"
+                              selected={selected}
+                              showSelectedLabel={false}
+                              optionsSize={17}
+                              customLabels={customLabels}
+                              countries={Object.keys(customLabels)}
+                              placeholder="+"
+                              selectedSize={24}
+                              onSelect={(code) => {
+                                setFormData({ ...formData, countryCode: customLabels[code].secondary })
+                                setSelected(code)
+                              }
+                              }
+
+                            />
+
+                            <input
+                              type="text"
+                              name="phone"
+                              placeholder="Enter your phone number"
+                              value={formData.phone}
+                              onChange={handleChange}
+                              style={{ flex: 1 }}
+                            />
+                          </div>
+                          {errors.phone && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.phone}</small>}
+                        </div>
+                        <div className="form-inner mb-30">
+                          <label>
+                            Write Your Message <span>*</span>
+                          </label>
+                          <textarea
+                            name="message"
+                            placeholder="Write your query"
+                            value={formData.message}
+                            onChange={handleChange}
+                          />
+                          {errors.message && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.message}</small>}
+                        </div>
+                        <div className="form-inner">
                           <button type="submit" className="primary-btn1 two book-now-activity">Submit Now</button>
                         </div>                      </form>
                     </div>
@@ -789,26 +799,27 @@ const Page = () => {
 
                 </div>
               </div>
- 
-              
-     
-      </div>
-      </div>
-      </div>
-      <React.Fragment>
-        <ModalVideo
-          channel="youtube"
-          onClick={() => setOpenModalVideo(true)}
-          isOpen={isOpenModalVideo}
-          animationSpeed="350"
-          videoId="r4KpWiK08vM"
-          ratio="16:9"
-          onClose={() => setOpenModalVideo(false)}
-        />
-      </React.Fragment>
-      <ThankYouModal showModal={showModal} setShowModal={setShowModal}/>
 
-      {/* <Lightbox
+
+
+
+            </div>
+          </div>
+        </div>
+        <React.Fragment>
+          <ModalVideo
+            channel="youtube"
+            onClick={() => setOpenModalVideo(true)}
+            isOpen={isOpenModalVideo}
+            animationSpeed="350"
+            videoId="r4KpWiK08vM"
+            ratio="16:9"
+            onClose={() => setOpenModalVideo(false)}
+          />
+        </React.Fragment>
+        <ThankYouModal showModal={showModal} setShowModal={setShowModal} />
+
+        {/* <Lightbox
         className="img-fluid"
         open={isOpenimg.openingState}
         plugins={[Fullscreen]}
@@ -819,11 +830,11 @@ const Page = () => {
           return { src: elem.imageBig };
         })}
       /> */}
-     </div>
-     <hr/>
+      </div>
+      <hr />
 
 
-    <Footer/>
+      <Footer />
     </>
   )
 }

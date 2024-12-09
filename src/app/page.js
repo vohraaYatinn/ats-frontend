@@ -36,6 +36,7 @@ import Header6 from "@/components/header/Header6";
 import HomeBannerSlide from "@/components/destinationSlider/HomeBannerSlide";
 import Home3Testimonial from "@/components/testimonial/Home3Testimonial";
 import ExploreCities from "@/components/destinationSlider/ExploreCitites";
+
 export const metadata = {
   title: "ATS - tour & travel",
   description:

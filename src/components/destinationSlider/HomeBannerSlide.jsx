@@ -100,6 +100,7 @@ const Home2Blog = () => {
     },
 
   ]
+  
 
   const [selectedOne, setSelectOne] = useState(1)
   return (
