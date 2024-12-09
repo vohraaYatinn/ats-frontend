@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import Image from 'next/image';
 import image1 from '../../../public/assets/img/home1/image/image-1.jpg';
@@ -14,12 +14,95 @@ import image9 from '../../../public/assets/img/home1/image/image-9.jpg';
 import image10 from '../../../public/assets/img/home1/image/image-10.jpg';
 import "./change-bar-section.css"
 import Link from 'next/link';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import Slider from "react-slick";
+import {
+  Box,
+  Typography,
+  
+  useMediaQuery,
+  Modal,
+
+} from "@mui/material";
 
 const Home2Blog = () => {
+
+
   const handleRedirect = (link) => {
     if (link) {
       window.location.href = link; // Navigate to the link
     }
+  };
+  const [selectedOne, setSelectOne] = useState(1)
+  const sliderRef = useRef(null);
+
+  const sliderSettings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    autoplay: true,
+    pauseOnHover: false, // Prevents slider from pausing on hover
+    pauseOnFocus: false, // Prevents slider from pausing on focus
+    pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered
+    nextArrow: (
+      <ArrowForwardIosIcon
+        sx={{
+          fontSize: 20,
+          color: '#006370',
+          width: '35px',
+          height: '35px',
+          padding: '10px',
+          borderRadius: '50%',
+          backgroundColor: 'white',
+          marginRight: '-10px',
+          cursor: 'pointer', // Ensures pointer appears on hover
+          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
+        }}
+      />
+    ),
+    prevArrow: (
+      <ArrowBackIosNewIcon
+        sx={{
+          fontSize: 20,
+          color: '#006370',
+          width: '35px',
+          height: '35px',
+          padding: '10px',
+          borderRadius: '50%',
+          backgroundColor: 'white',
+          marginLeft: '-10px',
+        
+          cursor: 'pointer', // Ensures pointer appears on hover
+          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
+        }}
+      />
+    ),
+    responsive: [
+      {
+        breakpoint: 1350,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 850,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+  
+  
+    ],
+    afterChange: (current) => {
+      console.log(current)
+      setSelectOne(current); // Update the current slide index in state
+    },
   };
   const data1=[
     {
@@ -100,164 +183,69 @@ const Home2Blog = () => {
     },
 
   ]
-  
+  const mergedData = [...data1, ...data2, ...data3, ...data4];
 
-  const [selectedOne, setSelectOne] = useState(1)
+  const goToSlide = (slideIndex) => {
+    sliderRef.current.slickGoTo(slideIndex); // Navigate to the desired slide
+  };
+
   return (
     <div className="Home2Blog">
       <div className="Home2Blog-heading heading-for-all">
         <h2>Discover Our Hottest Packages</h2>
         <p className='mb-4'>Select a service that suits you best</p>
       </div>
-      <div className="Home2Blog-boxes">
-        {selectedOne == 1 &&
-        data1.map((item, index) => (
-          <div className="Home2Blog-box" key={index} onClick={() => handleRedirect(item.link)} >
-            <div className="image-wrapper">
-              <Image
-                src={item.image}
-                alt="Luxury Staycation Tour"
-                layout="responsive"
-                objectFit="cover"
-                className="Home2Blog-image"
-              
-              />
-              <div className="overlay-of-image">
-                <div className='content-check'>
-                <div className="overlay-content">
-                  <h3>{item.title}</h3>
-                  <h1>{item.duration}</h1>
-                </div>
-                <a 
-                href={item.link}
-                style={{
-                   alignSelf: "self-end"
-                }}
-                className="primary-btn1 two d-xl-flex d-none home-button"><span style={{
-                  fontWeight:500,
-                 
-                }}>Book Now</span></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))
-      }
-        {selectedOne == 2 &&
-        data2.map((item, index) => (
-          <div className="Home2Blog-box" key={index+4} onClick={() => handleRedirect(item.link)}>
-            <div className="image-wrapper">
-              <Image
-                src={item.image}
-                alt="Luxury Staycation Tour"
-                layout="responsive"
-                objectFit="cover"
-                className="Home2Blog-image"
-              
-              />
-              <div className="overlay-of-image">
-                <div className='content-check'>
-                <div className="overlay-content">
-                  <h3>{item.title}</h3>
-                  <h1>{item.duration}</h1>
-                </div>
-                <a 
-                href={item.link}
-                style={{
-                   alignSelf: "self-end"
-                }}
-                className="primary-btn1 two d-xl-flex d-none home-button"><span style={{
-                  fontWeight:500,
-                 
-                }}>Book Now</span></a>
+             <Slider ref={sliderRef} {...sliderSettings}>
+        {
+           mergedData.map((item, index) => 
+            <div className="Home2Blog-box" key={index} onClick={() => handleRedirect(item.link)} >
+              <div className="image-wrapper">
+                <Image
+                  src={item.image}
+                  alt="Luxury Staycation Tour"
+                  layout="responsive"
+                  objectFit="cover"
+                  className="Home2Blog-image"
+                
+                />
+                <div className="overlay-of-image">
+                  <div className='content-check'>
+                  <div className="overlay-content">
+                    <h3>{item.title}</h3>
+                    <h1>{item.duration}</h1>
+                  </div>
+                  <a 
+                  href={item.link}
+                  style={{
+                     alignSelf: "self-end"
+                  }}
+                  className="primary-btn1 two d-xl-flex d-none home-button"><span style={{
+                    fontWeight:500,
+                   
+                  }}>Book Now</span></a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))
-      }
-        {selectedOne == 3 &&
-        data3.map((item, index) => (
-          <div className="Home2Blog-box" key={index+10} onClick={() => handleRedirect(item.link)}>
-            <div className="image-wrapper">
-              <Image
-                src={item.image}
-                alt="Luxury Staycation Tour"
-                layout="responsive"
-                objectFit="cover"
-                className="Home2Blog-image"
-              
-              />
-              <div className="overlay-of-image">
-                <div className='content-check'>
-                <div className="overlay-content">
-                  <h3>{item.title}</h3>
-                  <h1>{item.duration}</h1>
-                </div>
-                <a 
-                href={item.link}
-                style={{
-                   alignSelf: "self-end"
-                }}
-                className="primary-btn1 two d-xl-flex d-none home-button"><span style={{
-                  fontWeight:500,
-                 
-                }}>Book Now</span></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))
-      }
-        {selectedOne == 4 &&
-        data4.map((item, index) => (
-          <div className="Home2Blog-box" key={index+14} onClick={() => handleRedirect(item.link)}>
-            <div className="image-wrapper">
-              <Image
-                src={item.image}
-                alt="Luxury Staycation Tour"
-                layout="responsive"
-                objectFit="cover"
-                className="Home2Blog-image"
-              
-              />
-              <div className="overlay-of-image">
-                <div className='content-check'>
-                <div className="overlay-content">
-                  <h3>{item.title}</h3>
-                  <h1>{item.duration}</h1>
-                </div>
-                <a 
-                href={item.link}
-                style={{
-                   alignSelf: "self-end"
-                }}
-                className="primary-btn1 two d-xl-flex d-none home-button"><span style={{
-                  fontWeight:500,
-                 
-                }}>Book Now</span></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))
-      }
+           )
+          }
+        
+      
 
-      </div>
+        </Slider>
+
       <div className='aligning-in-center'>
       <div className='change-section-bar'>
-<a className={`${selectedOne == 1 && "check-dar-active"}`} onClick={()=>{
-  setSelectOne(1)
-}}>{" "}</a>
-<a className={`${selectedOne == 2 && "check-dar-active"}`} onClick={()=>{
-  setSelectOne(2)
-}}>{" "}</a>
-<a className={`${selectedOne == 3 && "check-dar-active"}`} onClick={()=>{
-  setSelectOne(3)
-}}>{" "}</a>
-<a className={`${selectedOne == 4 && "check-dar-active"}`} onClick={()=>{
-  setSelectOne(4)
-}}>{" "}</a>
+<a className={`${selectedOne <= 3 && selectedOne >= 0 && "check-dar-active"}`} onClick={()=>{
+ goToSlide(0)
+  setSelectOne(0)
+}} >{" "}</a>
+<a className={`${selectedOne <= 6 && selectedOne >= 4 && "check-dar-active"}`} onClick={()=>{
+ goToSlide(3)
+ setSelectOne(4)}}>{" "}</a>
+<a className={`${selectedOne <= 9 && selectedOne >= 7 && "check-dar-active"}`} onClick={()=>{
+ goToSlide(6)
+ setSelectOne(9)}}>{" "}</a>
       </div>
       </div>
     </div>

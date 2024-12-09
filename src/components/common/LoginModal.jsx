@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import axios from 'axios';
+import ReactFlagsSelect from "react-flags-select";
+import { customLabels } from "@/hooks/CommonFunctions";
 
 const LoginModal = () => {
   const currentDate = new Date();
   const apiKeyEmail = process.env.NEXT_PUBLIC_EMAIL_API_KEY;
+  const [selected, setSelected] = useState("");
 
   const formattedDate = currentDate.toLocaleString(); 
   const [leadFormDetails, setLeadFormDetails] = useState({
@@ -12,6 +15,7 @@ const LoginModal = () => {
     phone: "",
     service: "",
     message: "",
+    countryCode:""
   }); 
   
   const [errors, setErrors] = useState({});
@@ -29,15 +33,14 @@ const LoginModal = () => {
   const validateForm = () => {
     const newErrors = {};
     if (!leadFormDetails?.name.trim()) newErrors.name = "Name is required";
-    if (!leadFormDetails?.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(leadFormDetails.email)) {
+    if (leadFormDetails?.email.trim() && !/\S+@\S+\.\S+/.test(leadFormDetails.email)) {
       newErrors.email = "Invalid email format";
     }
     if (!leadFormDetails?.phone.trim()) {
       newErrors.phone = "Phone number is required";
-    } else if (!/^\+\d{1,3}\d{7,15}$/.test(leadFormDetails.phone)) {
-      newErrors.phone = "Invalid phone number (with country code)";
+    }
+    else if (!leadFormDetails.countryCode) {
+      newErrors.phone = "Country code is required.";
     }
     if (!leadFormDetails?.service) newErrors.service = "Service selection is required";
 
@@ -60,7 +63,7 @@ const LoginModal = () => {
   
     // Prepare email data
     const emailData = {
-      to: [{ email: "holidays@atstourstravels.com" }], // Replace with the recipient's email address
+      to: [{ email: "connectwithyatin@gmail.com" }], // Replace with the recipient's email address
       subject : `ATS new Leads - ${formattedDate}`,
       textContent: "This is the plain text content of your email.",
       htmlContent: `
@@ -69,7 +72,7 @@ const LoginModal = () => {
           </div>
           <p style="margin: 8px 0; font-size:20px ; "><strong>Name:</strong> ${leadFormDetails?.name}</p>
           <p style="margin: 8px 0;  font-size:20px ; "><strong>Email:</strong> ${leadFormDetails?.email}</p>
-          <p style="margin: 8px 0;  font-size:20px ; "><strong>Phone:</strong> ${leadFormDetails?.phone}</p>
+          <p style="margin: 8px 0;  font-size:20px ; "><strong>Phone:</strong> ${leadFormDetails?.countryCode + leadFormDetails?.phone}</p>
           <p style="margin: 8px 0;  font-size:20px ; "><strong>Service:</strong> ${leadFormDetails?.service}</p>
           <p style="margin: 8px 0;  font-size:20px ; "><strong>Message:</strong> ${leadFormDetails?.message}</p>
       `,
@@ -129,14 +132,34 @@ const LoginModal = () => {
           <input
             type="text"
             name="email"
-            placeholder="Email *"
+            placeholder="Email"
             value={leadFormDetails?.email}
             onChange={handleChange}
           />
           {errors?.email && <span className="error-text">{errors?.email}</span>}
         </div>
 
-        <div className="form-inner mb-3">
+        <div className="form-inner mb-3"
+        
+       >
+     <div  style={{ display: "flex", gap: "10px" }}>
+        <ReactFlagsSelect
+                              className="react-select-select-phone"
+                              selected={selected}
+                              showSelectedLabel={false}
+                              optionsSize={13}
+                              customLabels={customLabels}
+                              countries={Object.keys(customLabels)}
+                              placeholder="+"
+                              selectedSize={14}
+                              onSelect={(code) => {
+                                console.log(code)
+                                setLeadFormDetails({ ...leadFormDetails, countryCode: customLabels[code].secondary })
+                                setSelected(code)
+                              }
+                              }
+
+                            />
           <input
             type="text"
             name="phone"
@@ -144,6 +167,8 @@ const LoginModal = () => {
             value={leadFormDetails?.phone}
             onChange={handleChange}
           />
+        </div>
+
           {errors?.phone && <span className="error-text">{errors?.phone}</span>}
         </div>
 

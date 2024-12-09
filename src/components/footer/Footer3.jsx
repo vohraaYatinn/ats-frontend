@@ -12,7 +12,9 @@ const Footer3 = () => {
         <p>Save up to 50% on tours and trips. Get instant access to lower prices.</p>
         <form action="">
           <input type="email" placeholder="abcd@gmail.com" />
-          <button type="sub-home-button">Subscribe</button>
+          <button style={{
+            borderRadius:"14px"
+          }}>Subscribe</button>
         </form>
       </div>
       {/* Footer links sections */}

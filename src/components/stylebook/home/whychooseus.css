@@ -37,7 +37,7 @@
   
   .footer-comment-box {
     height: 276px;
-    width: 267px;
+    width: 93% !important;
     flex: 0 0 auto; /* Ensure each box doesn't shrink and is horizontally aligned */
     border: 0.7px solid #000000;
     border-radius: 45px;
@@ -66,13 +66,13 @@
   }
   
   .footer-comment-box-comment {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: #444;
     margin-bottom: 10px;
   }
   
   .footer-comment-box-date {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color:orange;
   
   }

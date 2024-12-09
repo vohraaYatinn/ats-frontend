@@ -1,6 +1,6 @@
 "use client"; // Add this if you're using Next.js Client Component
 
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import image1 from '../../../public/image/service1.png';
 import image2 from '../../../public/image/service2.png';
@@ -53,7 +53,7 @@ const Home2about = () => {
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     pauseOnHover: false, // Prevents slider from pausing on hover
     pauseOnFocus: false, // Prevents slider from pausing on focus
     pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered
@@ -111,17 +111,73 @@ const Home2about = () => {
   
     ],
   };
-  
-  
+  const sliderRef = useRef(null);
+  const [selectedOne, setSelectOne] = useState(1)
+
+  const goToSlide = (slideIndex) => {
+    sliderRef.current.slickGoTo(slideIndex); // Navigate to the desired slide
+  };
+  const goToNextSlide = () => {
+    sliderRef.current.slickPrev(); // Navigate to the previous slide
+
+  };
+
+  const goToPreviousSlide = () => {
+    sliderRef.current.slickNext(); // Navigate to the next slide
+
+  };
+
+
+
 
   return (
     <div>
       <div className="height-above">
-      <div className="heading-for-all">
+      <div className="heading-for-all heading-for-all-with-arrow">
+        <div>
           <h2>With our Top Experience</h2>
           <span>Select the offer that suits you best</span>
+          </div>
+          <div>
+            <button onClick={()=>{
+goToNextSlide()
+}}>    
+            <ArrowBackIosNewIcon
+        sx={{
+          fontSize: 20,
+          color: '#006370',
+          width: '35px',
+          height: '35px',
+          padding: '10px',
+          borderRadius: '50%',
+          backgroundColor: 'white',
+          marginLeft: '-10px',
+        
+          cursor: 'pointer', // Ensures pointer appears on hover
+          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
+        }}
+      />
+      </button>
+            <button onClick={()=>{
+goToPreviousSlide()
+}}>     
+ <ArrowForwardIosIcon
+        sx={{
+          fontSize: 20,
+          color: '#006370',
+          width: '35px',
+          height: '35px',
+          padding: '10px',
+          borderRadius: '50%',
+          backgroundColor: 'white',
+          marginRight: '-10px',
+          cursor: 'pointer', // Ensures pointer appears on hover
+          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
+        }}
+      /></button>
+          </div>
         </div>
-        <Slider {...sliderSettings}>
+        <Slider {...sliderSettings} ref={sliderRef}>
           {details.map((item, index) => (
 
 <div

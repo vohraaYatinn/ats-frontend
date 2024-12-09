@@ -30,20 +30,20 @@
 }
 .medium-head{
     font-weight: 500 !important;
-    font-size: 1.2rem;
+    font-size: 16px;
     font-weight: 500;
     
 
 }
 .upper-head{
-font-size: 0.88rem;
+font-size: 14px;
 opacity: 60%;
 opacity: 0.5;
 font-family: "Netflix Sans" !important;
 
 }
 .lower-head{
-    font-size: 0.8rem;
+    font-size: 14px;
     opacity: 60%;
     font-family: "Netflix Sans" !important;
 

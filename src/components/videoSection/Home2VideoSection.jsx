@@ -9,13 +9,79 @@ import image2 from "../../../public/image/event-2.png";
 import image3 from "../../../public/image/event-3.png";
 import image4 from "../../../public/image/event-4.png";
 import { Swiper, SwiperSlide } from "swiper/react";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import Slider from "react-slick";
 
 const Home2VideoSection = () => {
+  const sliderSettings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: false,
+    pauseOnHover: false, // Prevents slider from pausing on hover
+    pauseOnFocus: false, // Prevents slider from pausing on focus
+    pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered
+    nextArrow: (
+      <ArrowForwardIosIcon
+        sx={{
+          fontSize: 20,
+          color: '#006370',
+          width: '35px',
+          height: '35px',
+          padding: '10px',
+          borderRadius: '50%',
+          backgroundColor: 'white',
+          marginRight: '-10px',
+          cursor: 'pointer', // Ensures pointer appears on hover
+          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
+        }}
+      />
+    ),
+    prevArrow: (
+      <ArrowBackIosNewIcon
+        sx={{
+          fontSize: 20,
+          color: '#006370',
+          width: '35px',
+          height: '35px',
+          padding: '10px',
+          borderRadius: '50%',
+          backgroundColor: 'white',
+          marginLeft: '-10px',
+        
+          cursor: 'pointer', // Ensures pointer appears on hover
+          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
+        }}
+      />
+    ),
+    responsive: [
+      {
+        breakpoint: 1350,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 850,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+  
+  
+    ],
+  };
   const settings = useMemo(() => {
     return {
       slidesPerView: "auto",
       speed: 1500,
-      spaceBetween: 10,
+      spaceBetween: 0,
       loop: true,
       autoplay: {
         delay: 2500, 
@@ -45,19 +111,19 @@ const Home2VideoSection = () => {
         },
         992: {
           slidesPerView: 3,
-          spaceBetween: 10,
+          spaceBetween: 0,
         },
         1024: {
           slidesPerView: 3,
-          spaceBetween: 10,
+          spaceBetween: 0,
         },
         1200: {
           slidesPerView: 3,
-          spaceBetween: 10,
+          spaceBetween: 0,
         },
         1400: {
           slidesPerView: 3,
-          spaceBetween: 10,
+          spaceBetween: 0,
 
 
         },
@@ -104,53 +170,47 @@ const Home2VideoSection = () => {
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </p>
       </div>
-      <Swiper
-      style={{
-        paddingBottom:"2rem"
-      }}
-                      {...settings}
-                      className="swiper testimonial-card-slider"
-                    >
-                              {details.map((item, index) => (
-                        <SwiperSlide >
+      <Slider {...sliderSettings}>
+        {details.map((item, index) => (
           <div key={index} className="events-box" data-bs-toggle="modal"
-              data-bs-target="#user-login">
-            <div
-              className="event-bg-box-img"
-            >
-                <Image src={item.img} alt="Date Logo" />
-            </div>
-            <div className="overlay-in-center">
-              <div className="date-info">
-                <Image src={imagelogodate} alt="Date Logo" />
-                 <span >{item.date}</span>
-              </div>
-              <div className="stars flex">
-                <Image src={starts} alt="Star Rating" />
-                <Image src={starts} alt="Star Rating" />
-                <Image src={starts} alt="Star Rating" />
-                <Image src={starts} alt="Star Rating" />
-                <Image src={starts} alt="Star Rating" />
-              </div>
-            </div>
-            <div className="event-det-box">
-              <h3>{item.title}</h3>
-              <h4>
-                <Image src={location} alt="Location" /> <span>{item.location}</span>
-              </h4>
-              <hr />
-              <div className="price-info">
-                <span>From</span>
-                <h4>{item.price}</h4>
-              </div>
-            </div>
+          data-bs-target="#user-login">
+        <div
+          className="event-bg-box-img"
+        >
+            <Image src={item.img} alt="Date Logo" />
+        </div>
+        <div className="overlay-in-center">
+          <div className="date-info">
+            <Image src={imagelogodate} alt="Date Logo" />
+             <span >{item.date}</span>
           </div>
-          </SwiperSlide>
+          <div className="stars flex">
+            <Image src={starts} alt="Star Rating" />
+            <Image src={starts} alt="Star Rating" />
+            <Image src={starts} alt="Star Rating" />
+            <Image src={starts} alt="Star Rating" />
+            <Image src={starts} alt="Star Rating" />
+          </div>
+        </div>
+        <div className="event-det-box">
+          <h3>{item.title}</h3>
+          <h4>
+            <Image src={location} alt="Location" /> <span>{item.location}</span>
+          </h4>
+          <hr />
+          <div className="price-info">
+            <span>From</span>
+            <h4>{item.price}</h4>
+          </div>
+        </div>
+      </div>
+          ))}
+      
+
+        </Slider>
+   
 
 
-        ))}
-
-        </Swiper>
       </div>
   );
 };

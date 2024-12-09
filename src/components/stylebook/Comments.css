@@ -67,14 +67,17 @@
 }
 
 .footer-comment-box-comment {
-  font-size: 0.95rem;
-  color: #444;
+  font-size: 0.9rem;
+  color: #000000;
   margin-bottom: 10px;
+  font-weight: 500 !important;
 }
 
 .footer-comment-box-date {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color:orange;
+  position: absolute;
+  bottom: 1rem;
 
 }
  /* erroor end  */

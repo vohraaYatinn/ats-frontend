@@ -4,7 +4,7 @@
   padding-right: 115px;
   background-color: #FAFAFA;
     text-align: center;
-    padding-bottom: 1.5rem;
+    padding-bottom: 4.5rem;
   }
   
   .Home2Blog-heading h2 {
@@ -29,7 +29,7 @@
   .Home2Blog-box {
     position: relative;
     height: 267px;
-    width: 402px; /* Adjust width as needed */
+    width: 96% !important; /* Adjust width as needed */
     overflow: hidden;
     border-radius: 40px;
 

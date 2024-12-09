@@ -16,7 +16,7 @@
     overflow: hidden; /* Ensure the image is clipped to the box */
     /* border-radius: 60px; */
     height: 380px;
-    width: 290px;
+    width: 95% !important;
     border-radius: 56px;
     
   }

@@ -74,15 +74,19 @@ const Page = () => {
     if (!formData.fullName.trim()) {
       newErrors.fullName = "Full Name is required.";
     }
- 
+
     if (!formData.phone.trim() || !/^\d{7,15}$/.test(formData.phone)) {
       newErrors.phone = "Valid phone number (7-15 digits) is required.";
+    }
+    else if (!formData.countryCode) {
+      newErrors.phone = "Country code is required.";
     }
     if (!formData.message.trim()) {
       newErrors.message = "Message cannot be empty.";
     }
     return newErrors;
   };
+
 
   // Handle form submission
   const handleSubmit = (e) => {

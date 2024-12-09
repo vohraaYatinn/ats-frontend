@@ -1,6 +1,6 @@
 "use client"; // Add this if you're using Next.js Client Component
 
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import image1 from '../../../public/image/count-1.png';
 import image2 from '../../../public/image/count-2.png';
@@ -41,7 +41,7 @@ const Home2Destinationslide = () => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     pauseOnHover: false, // Prevents slider from pausing on hover
     pauseOnFocus: false, // Prevents slider from pausing on focus
     pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered
@@ -100,22 +100,77 @@ const Home2Destinationslide = () => {
     ],
   };
   
-  
+  const sliderRef = useRef(null);
+  const [selectedOne, setSelectOne] = useState(1)
+
+  const goToSlide = (slideIndex) => {
+    sliderRef.current.slickGoTo(slideIndex); // Navigate to the desired slide
+  };
+  const goToNextSlide = () => {
+    sliderRef.current.slickPrev(); // Navigate to the previous slide
+
+  };
+
+  const goToPreviousSlide = () => {
+    sliderRef.current.slickNext(); // Navigate to the next slide
+
+  };
+
+
 
   return (
     <div>
       <div className="country-top-destination countries-conatiner">
         <img className="leaf-img" src={"assets/img/leaf.svg"}/>
    
-    
-        <div className=" heading-for-all">
+
+        <div className="heading-for-all heading-for-all-with-arrow">
+        <div>
           <h2>Explore Other Countries</h2>
-          <span style={{
-            opacity: "40%"
-          }}>Uncover secret wonders and celebrated attractions in top travel spots worldwide - your next escapade awaits!</span>
+          <span>Uncover secret wonders and celebrated attractions in top travel spots worldwide - your next escapade awaits!</span>
+          </div>
+          <div>
+            <button onClick={()=>{
+goToNextSlide()
+}}>    
+            <ArrowBackIosNewIcon
+        sx={{
+          fontSize: 20,
+          color: '#006370',
+          width: '35px',
+          height: '35px',
+          padding: '10px',
+          borderRadius: '50%',
+          backgroundColor: 'white',
+          marginLeft: '-10px',
+        
+          cursor: 'pointer', // Ensures pointer appears on hover
+          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
+        }}
+      />
+      </button>
+            <button onClick={()=>{
+goToPreviousSlide()
+}}>     
+ <ArrowForwardIosIcon
+        sx={{
+          fontSize: 20,
+          color: '#006370',
+          width: '35px',
+          height: '35px',
+          padding: '10px',
+          borderRadius: '50%',
+          backgroundColor: 'white',
+          marginRight: '-10px',
+          cursor: 'pointer', // Ensures pointer appears on hover
+          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
+        }}
+      /></button>
+          </div>
         </div>
+
         {/* <div className="tour-boxes tour-boxes-countries "> */}
-        <Slider {...sliderSettings}>
+        <Slider {...sliderSettings} ref={sliderRef}>
         {details.map((item, index) => (
             <div
               key={index}

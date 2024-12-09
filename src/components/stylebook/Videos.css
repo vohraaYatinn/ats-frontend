@@ -33,11 +33,12 @@
   background: #fff;
   border-radius: 45px;
   overflow: hidden;
-  width:400px;
+  width:96% !important;
   height: 354px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0rem 1rem;
 }
 
 .event-bg-box-img {
@@ -61,8 +62,9 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 85%;
   margin: auto;
-  height: 10rem;
+  height: 2.4rem;
   padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .date-info {
