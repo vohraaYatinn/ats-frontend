@@ -438,25 +438,14 @@ height: 100%;
     margin-bottom: 0rem !important;
   }
   
-  .boxes1-det h2 {
-    font-size: 32px;
-    font-weight: 700;
-    color: #333;
-  }
-  
+
   .boxes1-det span {
     font-size: 18px;
     color: #555;
     margin-top: 15px;
   }
   
-  .home2-boxes {
-    display: flex;
-    gap: 20px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-  }
-  
+
 
   
   .home2-box:hover {
@@ -498,10 +487,7 @@ height: 100%;
       text-align: center;
     }
   
-    .home2-boxes {
-      flex-direction: column;
-      gap: 30px;
-    }
+
     .home2active-boxes {
       padding: 1rem 0rem !important;
     }
@@ -594,12 +580,10 @@ height: 300px;
   
   .footer-box3 h6 {
     font-size: 14px;
-    margin-bottom: 10px;
   }
   
   .footer-box3 img {
     width: 150px;
-    margin-top: 10px;
   }
   
   /* Media queries for responsiveness */
@@ -762,7 +746,7 @@ padding: 10px 30px;
     background: #fff;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 
-    padding: 2rem;
+    padding: 28px;
     border: 1px solid black;
     border-radius: 40px;
     margin: 20px 10px;
@@ -786,7 +770,7 @@ padding: 10px 30px;
     width:5rem !important;
   }
   .footer-comment-box-header h3{
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .footer-comment-box-stars {
@@ -969,9 +953,7 @@ box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
   font-size: 13px;
   padding: 15px 20px;
 }
-.react-select-select-phone ul{
-  min-width: 10rem;
-}
+
 #arrow-check-padd{
   padding-right: 179px;
 }

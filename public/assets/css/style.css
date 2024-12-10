@@ -22348,7 +22348,7 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   padding-left: 26px;
 }
 .breadcrumb-section .banner-content .breadcrumb-list li a {
-  color: #F1871C;
+  color: white;
 
 }
 .breadcrumb-section .banner-content .breadcrumb-list li::before {
@@ -26145,9 +26145,13 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   height: 100%;
   border-radius: 10px;
 }
-@media (max-width: 767px) {
+@media (max-width: 550px) {
   .package-details-area .package-img-group .gallery-img-wrap img {
+    width: 96% !important;
     height: auto;
+  }
+  .package-details-area{
+    padding-top: 1.3rem !important;
   }
 }
 .package-details-area .package-img-group .gallery-img-wrap a {
@@ -26474,8 +26478,11 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 }
 @media (max-width: 576px) {
   .package-details-area .tour-plan .accordion-item .accordion-header .accordion-button {
-    font-size: 18px;
+    font-size: 13px;
     gap: 18px;
+  }
+  .package-details-area .tour-plan .accordion-item .accordion-header .accordion-button span {
+    font-size: 12px;
   }
 }
 .package-details-area .tour-plan .accordion-item .accordion-header .accordion-button:focus {
@@ -29284,4 +29291,24 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   display: block; /* Ensures the error text appears on a new line */
   font-weight: 500; /* Medium font weight for visibility */
   margin-left: 0.4rem;
+}
+
+
+
+@media (max-width: 550px) {
+  .package-page-img-crousel{
+      display: block;
+  }
+  .package-page-img-crousel-on-large{
+      display: none;
+  }
+  .rating-stars-on-page div {
+    width: 58% !important;
+  }
+  .review-form {
+    width: 100% !important;
+  }
+  .review-form button{
+    align-self: center;
+  }
 }

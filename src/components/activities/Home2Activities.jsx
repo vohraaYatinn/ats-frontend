@@ -44,7 +44,7 @@ const Home2Activities = () => {
   justifyContent:"center",
   flexDirection:"column"
 }}>              <h4 className='center-alg margin-text-check'>Best Price</h4>
-<p className='center-alg margin-text-check'>We guarantee you the best price. Found a lower price? We will match it.</p></div>
+<p className='center-alg margin-text-check'>We guarantee you the best price. Found a lower price elsewhere? We will match it.</p></div>
             </div>
             <div className="home2-box">
               

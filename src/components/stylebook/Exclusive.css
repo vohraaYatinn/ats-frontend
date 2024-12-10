@@ -115,7 +115,8 @@ flex: 0 0 60%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 16px
+    border-radius: 16px;
+    margin-top: 1rem;
 
   }
   .home-button{

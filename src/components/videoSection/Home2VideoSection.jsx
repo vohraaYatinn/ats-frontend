@@ -23,41 +23,10 @@ const Home2VideoSection = () => {
     pauseOnHover: false, // Prevents slider from pausing on hover
     pauseOnFocus: false, // Prevents slider from pausing on focus
     pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered
-    arrows: false,
+    arrows: true,
+    centerMode: true, // Enables centered mode
+    centerPadding: "100px", // Adds padding to show half cards on sides
 
-    nextArrow: (
-      <ArrowForwardIosIcon
-        sx={{
-          fontSize: 20,
-          color: '#006370',
-          width: '35px',
-          height: '35px',
-          padding: '10px',
-          borderRadius: '50%',
-          backgroundColor: 'white',
-          marginRight: '-10px',
-          cursor: 'pointer', // Ensures pointer appears on hover
-          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
-        }}
-      />
-    ),
-    prevArrow: (
-      <ArrowBackIosNewIcon
-        sx={{
-          fontSize: 20,
-          color: '#006370',
-          width: '35px',
-          height: '35px',
-          padding: '10px',
-          borderRadius: '50%',
-          backgroundColor: 'white',
-          marginLeft: '-10px',
-        
-          cursor: 'pointer', // Ensures pointer appears on hover
-          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
-        }}
-      />
-    ),
     responsive: [
       {
         breakpoint: 1350,
@@ -65,6 +34,7 @@ const Home2VideoSection = () => {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
+          centerPadding: "40px",
         },
       },
       {
@@ -73,6 +43,7 @@ const Home2VideoSection = () => {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
+          centerPadding: "20px",
         },
       },
       {
@@ -81,10 +52,9 @@ const Home2VideoSection = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
+          centerPadding: "80px",
         },
       },
-  
-  
     ],
   };
   const settings = useMemo(() => {

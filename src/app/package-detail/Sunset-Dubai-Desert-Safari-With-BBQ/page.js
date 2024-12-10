@@ -18,13 +18,75 @@ import StarRating from "@/components/common/StarRating";
 import { countryCodes, customLabels, sendEmail } from "@/hooks/CommonFunctions";
 import ThankYouModal from "@/components/common/ThankYouModal";
 import ReactFlagsSelect from "react-flags-select";
+import Slider from "react-slick";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 const Page = () => {
   const [isOpenModalVideo, setOpenModalVideo] = useState(false);
   const [showModal, setShowModal] = useState(false)
   const [selected, setSelected] = useState("");
 
+  const sliderSettings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    pauseOnHover: false, // Prevents slider from pausing on hover
+    pauseOnFocus: false, // Prevents slider from pausing on focus
+    pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered
+    centerMode: true, // Enable center mode
+    centerPadding: "0px", 
+    arrows: false,
+    nextArrow: (
+      <ArrowForwardIosIcon
+        sx={{
+          fontSize: 20,
+          color: '#006370',
+          width: '35px',
+          height: '35px',
+          padding: '10px',
+          borderRadius: '50%',
+          backgroundColor: 'white',
+          marginRight: '-10px',
+          cursor: 'pointer', // Ensures pointer appears on hover
+          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
+        }}
+      />
+    ),
+    prevArrow: (
+      <ArrowBackIosNewIcon
+        sx={{
+          fontSize: 20,
+          color: '#006370',
+          width: '35px',
+          height: '35px',
+          padding: '10px',
+          borderRadius: '50%',
+          backgroundColor: 'white',
+          marginLeft: '-10px',
+        
+          cursor: 'pointer', // Ensures pointer appears on hover
+          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
+        }}
+      />
+    ),
+    responsive: [
 
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "0px", 
+
+        }}
+  
+  
+    ],
+  };
   const [isOpenimg, setOpenimg] = useState({
     openingState: false,
     openingIndex: 0,
@@ -114,11 +176,32 @@ const Page = () => {
       <div className="package-details-area mb-120">
         <div className="container">
           <div className="row">
-            <div className="co-lg-12">
+          <div className="co-lg-12">
               <div className="package-img-group" style={{
                 marginBottom: "35px"
               }}>
-                <div className="row align-items-center g-3">
+                                     <Slider {...sliderSettings}  className="package-page-img-crousel">
+        
+                                     <div className="col-12">
+                        <div className="gallery-img-wrap">
+                          <img src="/assets/img/activities/inner-banner-1.png" alt="" />
+                        </div>
+                      </div>
+                                     <div className="col-12">
+                        <div className="gallery-img-wrap">
+                          <img src="/assets/img/activities/inner-banner-2.png" alt="" />
+                        </div>
+                      </div>
+                                     <div className="col-12">
+                        <div className="gallery-img-wrap">
+                          <img src="/assets/img/activities/inner-banner-3.png" alt="" />
+                        </div>
+                      </div>
+
+
+
+</Slider>
+                <div className="row align-items-center g-3 package-page-img-crousel-on-large">
                   <div className="col-lg-9" style={{
                     marginTop: "0rem",
                     padding: "0rem"

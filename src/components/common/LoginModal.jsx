@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import axios from 'axios';
 import ReactFlagsSelect from "react-flags-select";
 import { customLabels } from "@/hooks/CommonFunctions";
+import "./login.css"
 
 const LoginModal = () => {
   const currentDate = new Date();
   const apiKeyEmail = process.env.NEXT_PUBLIC_EMAIL_API_KEY;
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState("AE");
 
   const formattedDate = currentDate.toLocaleString(); 
   const [leadFormDetails, setLeadFormDetails] = useState({
@@ -148,6 +149,7 @@ const LoginModal = () => {
                               selected={selected}
                               showSelectedLabel={false}
                               optionsSize={13}
+                              
                               customLabels={customLabels}
                               countries={Object.keys(customLabels)}
                               placeholder="+"

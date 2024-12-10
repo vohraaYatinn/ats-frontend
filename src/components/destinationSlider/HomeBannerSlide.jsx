@@ -43,7 +43,7 @@ const Home2Blog = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
-    autoplay: toChange,
+    autoplay: false,
     pauseOnHover: false, // Prevents slider from pausing on hover
     pauseOnFocus: false, // Prevents slider from pausing on focus
     pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered

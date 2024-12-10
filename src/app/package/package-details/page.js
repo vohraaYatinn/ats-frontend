@@ -53,96 +53,59 @@ const Page = () => {
       <div className="package-details-area pt-120 mb-120 position-relative">
         <div className="container">
           <div className="row">
-            <div className="co-lg-12">
-              <div className="package-img-group mb-50">
-                <div className="row align-items-center g-3">
-                  <div className="col-lg-6">
-                    <div className="gallery-img-wrap">
-                      <img src="/assets/img/innerpage/package-01.jpg" alt="" />
-                      <a>
-                        <i
-                          className="bi bi-eye"
-                          onClick={() =>
-                            setOpenimg({ openingState: true, openingIndex: 0 })
-                          }
-                        />
-                      </a>
+          <div className="co-lg-12">
+              <div className="package-img-group" style={{
+                marginBottom: "35px"
+              }}>
+                                     <Slider {...sliderSettings}  className="package-page-img-crousel">
+        
+                                     <div className="col-12">
+                        <div className="gallery-img-wrap">
+                          <img src="/assets/img/activities/inner-banner-1.png" alt="" />
+                        </div>
+                      </div>
+                                     <div className="col-12">
+                        <div className="gallery-img-wrap">
+                          <img src="/assets/img/activities/inner-banner-2.png" alt="" />
+                        </div>
+                      </div>
+                                     <div className="col-12">
+                        <div className="gallery-img-wrap">
+                          <img src="/assets/img/activities/inner-banner-3.png" alt="" />
+                        </div>
+                      </div>
+
+
+
+</Slider>
+                <div className="row align-items-center g-3 package-page-img-crousel-on-large">
+                  <div className="col-lg-9" style={{
+                    marginTop: "0rem",
+                    padding: "0rem"
+
+                  }}>
+                    <div className="gallery-img-wrap first-wrap-image flip-image-check" style={{
+                      marginTop: "0rem",
+                      padding: "0rem"
+                    }}>
+                      <img src="/assets/img/activities/inner-banner-1.png" alt="" />
                     </div>
                   </div>
-                  <div className="col-lg-6 h-100">
-                    <div className="row g-3 h-100">
-                      <div className="col-6">
+                  <div className="col-lg-3 h-100" style={{
+                    marginTop: "0rem"
+                  }}>
+                    <div className="row g-3 h-100 ">
+                      <div className="col-12">
                         <div className="gallery-img-wrap">
-                          <img
-                            src="/assets/img/innerpage/package-02.jpg"
-                            alt=""
-                          />
-                          <a>
-                            <i
-                              className="bi bi-eye"
-                              onClick={() =>
-                                setOpenimg({
-                                  openingState: true,
-                                  openingIndex: 1,
-                                })
-                              }
-                            />
-                          </a>
+                          <img src="/assets/img/activities/inner-banner-2.png" alt="" />
                         </div>
                       </div>
-                      <div className="col-6">
+                      <div className="col-12">
                         <div className="gallery-img-wrap">
-                          <img
-                            src="/assets/img/innerpage/package-03.jpg"
-                            alt=""
-                          />
-                          <a>
-                            <i
-                              className="bi bi-eye"
-                              onClick={() =>
-                                setOpenimg({
-                                  openingState: true,
-                                  openingIndex: 2,
-                                })
-                              }
-                            />
-                          </a>
+                          <img src="/assets/img/activities/inner-banner-3.png" alt="" />
                         </div>
                       </div>
-                      <div className="col-6">
-                        <div className="gallery-img-wrap active">
-                          <img
-                            src="/assets/img/innerpage/package-04.jpg"
-                            alt=""
-                          />
-                          <button
-                            className="StartSlideShowFirstImage "
-                            onClick={() =>
-                              setOpenimg({
-                                openingState: true,
-                                openingIndex: 3,
-                              })
-                            }
-                          >
-                            <i className="bi bi-plus-lg" /> View More Images
-                          </button>
-                        </div>
-                      </div>
-                      <div className="col-6">
-                        <div className="gallery-img-wrap active">
-                          <img
-                            src="/assets/img/innerpage/package-05.jpg"
-                            alt=""
-                          />
-                          <a
-                            data-fancybox="gallery-01"
-                            style={{ cursor: "pointer" }}
-                            onClick={() => setOpen(true)}
-                          >
-                            <i className="bi bi-play-circle" /> Watch Video
-                          </a>
-                        </div>
-                      </div>
+
                     </div>
                   </div>
                 </div>

@@ -34,6 +34,14 @@
     min-width: 13rem;
     font-size: 70%;
 }
+.react-select-select-phone ul{
+    min-width: 12rem;
+    font-size: 1.6rem !important;
+  }
+.react-select-select-phone ul{
+    min-width: 12rem;
+    font-size: 1.6rem !important;
+  }
 .package-details-area {
     padding: 0rem 105px;
 }
@@ -206,4 +214,15 @@ margin-top: 1rem;
     width: 100% !important;
     text-align: center;
     overflow: hidden;
+  }
+  .package-page-img-crousel{
+    display: none;
+  }
+  @media (max-width: 550px) {
+    .package-page-img-crousel{
+        display: block;
+    }
+    .package-page-img-crousel-on-large{
+        display: none;
+    }
   }

@@ -108,7 +108,7 @@ height: 300px;
   }
   .footer-box3-box {
     margin: -1rem;
-    padding: 0rem 197px;
+    padding: 0rem 214px;
 width: 100%;
     display: flex;
     justify-content: space-between;
@@ -118,12 +118,10 @@ width: 100%;
   
   .footer-box3 h6 {
     font-size: 14px;
-    margin-bottom: 10px;
   }
   
   .footer-box3 img {
     width: 150px;
-    margin-top: 10px;
   }
   
   @media (max-width: 1214px) {
@@ -354,12 +352,10 @@ height: 300px;
   
   .footer-box3 h6 {
     font-size: 14px;
-    margin-bottom: 10px;
   }
   
   .footer-box3 img {
     width: 150px;
-    margin-top: 10px;
   }
   
   /* Media queries for responsiveness */
@@ -540,7 +536,8 @@ padding: 10px 30px;
   
   .footer-comment-box-comment {
     font-size: 0.9rem;
-    color: #444;
+    color: #000000;
+
     margin-bottom: 10px;
   }
   
