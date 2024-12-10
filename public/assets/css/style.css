@@ -29297,7 +29297,9 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 .package-page-img-crousel{
   display: none;
 }
+
 @media (max-width: 550px) {
+ 
   .package-page-img-crousel{
       display: block;
   }
@@ -29313,6 +29315,10 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   .review-form button{
     align-self: center;
   }
+  .phone-react-thing button {
+    padding: 4px 5px;
+  }
+
 }
 .phone-react-thing ul{
     min-width: 12rem;
@@ -29333,4 +29339,12 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   font-family: var(--font-rubik);
   font-size: 13px;
   padding: 15px 20px;
+}
+
+@media (max-width: 550px) {
+ 
+  .phone-react-thing button {
+    padding: 4px 5px;
+  }
+
 }

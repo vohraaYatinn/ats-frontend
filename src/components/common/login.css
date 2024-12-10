@@ -16,3 +16,9 @@
     font-size: 13px;
     padding: 15px 20px;
   }
+  @media (max-width: 550px) {
+    .react-select-select-phone button {
+        padding:15px 6px;
+      }
+      
+  }
