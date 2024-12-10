@@ -57,5 +57,8 @@
 
   .slick-list {
     margin: 0 -10px; /* Negate the padding to prevent overflow */
+  }
+  .exclusive-offer-slick .slick-list {
     padding: 0rem !important;
+
   }

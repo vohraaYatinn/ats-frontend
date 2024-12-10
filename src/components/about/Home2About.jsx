@@ -350,7 +350,7 @@ goToPreviousSlide()
       /></button>
           </div>
         </div>
-        <Slider {...sliderSettings} ref={sliderRef}>
+        <Slider {...sliderSettings} ref={sliderRef} className="exclusive-offer-slick">
           {details.map((item, index) => (
 
 <div

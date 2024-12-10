@@ -459,7 +459,7 @@ const Home2Destinationslide = () => {
   </div>
   <div className="testimonial-card-slider-area">
     
-                     <Slider {...sliderSettings} >
+                     <Slider {...sliderSettings} className="exclusive-offer-slick">
         
                      {details.map((detail, index) => (
                 
