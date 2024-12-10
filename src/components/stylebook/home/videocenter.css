@@ -3,3 +3,11 @@
     background: linear-gradient(to bottom, #F9F4EF 80%, transparent 50%);
 
   }
+  .padding-for-para{
+  padding:0rem 6rem
+  }
+
+  @media (max-width: 550px) {
+    .padding-for-para{
+      padding:0rem 1rem
+      }  }
