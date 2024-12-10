@@ -247,6 +247,19 @@ const Home2about = () => {
           slidesToScroll: 1,
           infinite: true,
           centerMode: true,
+          centerPadding: "30px", 
+
+        },
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          centerMode: true,
+          centerPadding: "-10px", 
+
 
         },
       },

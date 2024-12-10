@@ -254,6 +254,8 @@ const ExploreCities = () => {
           slidesToScroll: 1,
           infinite: true,
           centerMode: true,
+          centerPadding: "30px", 
+
 
         },
       },

@@ -34,6 +34,9 @@
     .heading-for-all {
         flex-direction: column;
     }
+    .Home2Blog-heading span {
+        width: 100%;
+    }
     
 }
 
@@ -51,12 +54,7 @@
   
 }
 
-.slick-slide {
-    padding: 0 100px; /* Add spacing */
-  }
-  .slick-slide {
-    padding: 0 10px; /* Uniform spacing */
-  }
+
   .slick-list {
     margin: 0 -10px; /* Negate the padding to prevent overflow */
   }

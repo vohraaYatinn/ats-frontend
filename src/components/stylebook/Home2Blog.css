@@ -13,12 +13,13 @@
     font-weight: 700;
   }
   
-  .Home2Blog-heading p {
+  .Home2Blog-heading span {
     display: block;
     margin-bottom: 20px;
     font-size: 19.3px;
     font-family: 'Manrope';
     text-align: center;
+    width: 70%;
   }
   
   .Home2Blog-boxes {

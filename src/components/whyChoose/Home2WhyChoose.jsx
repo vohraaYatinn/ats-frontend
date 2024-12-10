@@ -75,9 +75,9 @@ const Home2WhyChoose = () => {
   
   return (
     <div className="banner-testimonials-check row" >
-      <div className="banner-testimonials-check-box1 col-4">
+      <div className="heading-for-all banner-testimonials-check-box1 col-4">
         <h2>What our <br/>Travelers are Saying</h2>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <span>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
       </div>
       <div className="footer-comments-boxes col-8">
         <Slider {...sliderSettings}>

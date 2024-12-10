@@ -102,6 +102,18 @@ width: 100%;
       height: 200px;
 
     }
+    .tour-box {
+      width: 327px !important;
+    }
+    .country-box-img{
+      width: 100% !important;
+    }}
+  @media (max-width: 380px) {
+
+    .tour-box {
+      width: 280px !important;
+    }
+
 .heading-for-all-with-arrow{
   padding: 0rem 1rem;
 }

@@ -19,7 +19,7 @@ const Home2VideoSection = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     pauseOnHover: false, // Prevents slider from pausing on hover
     pauseOnFocus: false, // Prevents slider from pausing on focus
     pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered
@@ -174,9 +174,9 @@ const Home2VideoSection = () => {
     <div className="video-section-part video-container">
       <div className=" heading-for-all center-heading-line text-center Home2Blog-heading popular-heading-main">
         <h2>Discover Most Popular Events in UAE</h2>
-        <p>
+        <span>
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        </p>
+        </span>
       </div>
       <Slider {...sliderSettings}>
         {details.map((item, index) => (

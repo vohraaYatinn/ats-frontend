@@ -278,6 +278,17 @@ body{
       flex: -1 0 210px;
   }
 }
+@media (max-width: 380px) {
+  .tour-box-img {
+      height: 270px;
+      width: 290px;
+  }
+  .tour-box {
+    width: 290px !important;
+
+  }
+
+}
 
 
 

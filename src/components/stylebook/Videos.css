@@ -16,10 +16,7 @@
   margin-bottom: 10px;
 }
 
-.center-heading-line p {
-  font-size: 1rem;
-  color: #555;
-}
+
 
 .scrollable-boxes {
   display: flex;
@@ -112,9 +109,7 @@
     font-size: 1.5rem;
   }
 
-  .center-heading-line p {
-    font-size: 0.9rem;
-  }
+ 
 
   .events-box {
     width: 95%;
