@@ -160,7 +160,9 @@ price: "AED 400.00",
     <div className="video-section-part video-container">
       <div className=" heading-for-all center-heading-line text-center Home2Blog-heading popular-heading-main">
         <h2>Discover Most Popular Events in UAE</h2>
-        <span>
+        <span style={{
+          padding:"0rem 6rem"
+        }}>
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </span>
       </div>

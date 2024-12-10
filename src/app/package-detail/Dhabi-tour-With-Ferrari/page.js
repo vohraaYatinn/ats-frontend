@@ -477,7 +477,9 @@ const Page = () => {
            </div>
         </div>
         <div className="col-xl-4">
-        <div className="banner2-card  mb-30">
+        <div className="banner2-card  mb-30" onClick={()=>{
+          window.location.href = "tel:+971529745592"
+        }}>
               <img src="/assets/img/activities/tele-cal.jpg" alt="" />
              
         </div>
