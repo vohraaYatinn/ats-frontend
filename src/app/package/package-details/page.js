@@ -56,7 +56,7 @@ const Page = () => {
           <div className="co-lg-12">
               <div className="package-img-group" style={{
                 marginBottom: "35px"
-              }}>
+              }}> 
                                      {/* <Slider {...sliderSettings}  className="package-page-img-crousel">
         
                                      <div className="col-12">
