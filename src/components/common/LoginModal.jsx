@@ -63,7 +63,7 @@ const LoginModal = () => {
   
     // Prepare email data
     const emailData = {
-      to: [{ email: "connectwithyatin@gmail.com" }], // Replace with the recipient's email address
+      to: [{ email: "ankitasingh182000@gmail.com" }], // Replace with the recipient's email address
       subject : `ATS new Leads - ${formattedDate}`,
       textContent: "This is the plain text content of your email.",
       htmlContent: `
