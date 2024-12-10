@@ -59,6 +59,7 @@ const Home2about = () => {
     pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered
     centerMode: true, // Enable center mode
     centerPadding: "10px", 
+    arrows: false,
 
     responsive: [
       {

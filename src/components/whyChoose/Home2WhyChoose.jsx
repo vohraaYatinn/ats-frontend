@@ -40,6 +40,8 @@ const Home2WhyChoose = () => {
     pauseOnHover: false, // Prevents slider from pausing on hover
     pauseOnFocus: false, // Prevents slider from pausing on focus
     pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered
+    arrows: false,
+
     responsive: [
       {
         breakpoint: 1350,

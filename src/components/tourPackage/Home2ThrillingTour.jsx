@@ -155,6 +155,7 @@ const Home2Destinationslide = () => {
     pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered
     centerMode: true, // Enable center mode
     centerPadding: "40px", 
+    arrows: false,
 
     responsive: [
       {
