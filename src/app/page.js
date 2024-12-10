@@ -58,23 +58,23 @@ const page = () => {
         flexDirection:"column",
       }}> */}
 <Home2ThrillingTour />
-      <Home2About />
- <Home2Destinationslide />
-       <HomeBannerSlide />
-       <Home2Activities /> 
+     <Home2About />
+  <Home2Destinationslide />
+      <HomeBannerSlide />
+     <Home2Activities /> 
        {/* <div style={{
         alignSelf:"normal",
         justifySelf:"normal"
        }}> */}
-   <ExploreCities /> 
+  <ExploreCities />  
      {/* </div> */}
-        <Home2VideoSection/>
-      <Home2WhyChoose /> 
+      <Home2VideoSection/>
+       <Home2WhyChoose /> 
 
         {/* </div> */}
           <hr/>
 
-        <Footer/> 
+    <Footer/> 
     </>
   );
 };

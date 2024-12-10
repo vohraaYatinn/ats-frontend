@@ -36,13 +36,14 @@ const Home2Blog = () => {
   };
   const [selectedOne, setSelectOne] = useState(1)
   const sliderRef = useRef(null);
+  const [toChange, setToChange] = useState(true)
 
   const sliderSettings = {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
-    autoplay: true,
+    autoplay: toChange,
     pauseOnHover: false, // Prevents slider from pausing on hover
     pauseOnFocus: false, // Prevents slider from pausing on focus
     pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered
@@ -96,12 +97,23 @@ const Home2Blog = () => {
           infinite: true,
         },
       },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
   
   
     ],
     afterChange: (current) => {
-      console.log(current)
-      setSelectOne(current); // Update the current slide index in state
+      if(toChange){
+
+        console.log(current)
+        setSelectOne(current); // Update the current slide index in state
+      }
     },
   };
   const data1=[
@@ -237,13 +249,18 @@ const Home2Blog = () => {
       <div className='aligning-in-center'>
       <div className='change-section-bar'>
 <a className={`${selectedOne <= 3 && selectedOne >= 0 && "check-dar-active"}`} onClick={()=>{
+  setToChange(false)
  goToSlide(0)
   setSelectOne(0)
 }} >{" "}</a>
 <a className={`${selectedOne <= 6 && selectedOne >= 4 && "check-dar-active"}`} onClick={()=>{
+    setToChange(false)
+
  goToSlide(3)
  setSelectOne(4)}}>{" "}</a>
 <a className={`${selectedOne <= 9 && selectedOne >= 7 && "check-dar-active"}`} onClick={()=>{
+    setToChange(false)
+
  goToSlide(6)
  setSelectOne(9)}}>{" "}</a>
       </div>

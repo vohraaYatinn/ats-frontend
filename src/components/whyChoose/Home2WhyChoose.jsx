@@ -40,39 +40,6 @@ const Home2WhyChoose = () => {
     pauseOnHover: false, // Prevents slider from pausing on hover
     pauseOnFocus: false, // Prevents slider from pausing on focus
     pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered
-    nextArrow: (
-      <ArrowForwardIosIcon
-        sx={{
-          fontSize: 20,
-          color: '#006370',
-          width: '35px',
-          height: '35px',
-          padding: '10px',
-          borderRadius: '50%',
-          backgroundColor: 'white',
-          marginRight: '-10px',
-          cursor: 'pointer', // Ensures pointer appears on hover
-          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
-        }}
-      />
-    ),
-    prevArrow: (
-      <ArrowBackIosNewIcon
-        sx={{
-          fontSize: 20,
-          color: '#006370',
-          width: '35px',
-          height: '35px',
-          padding: '10px',
-          borderRadius: '50%',
-          backgroundColor: 'white',
-          marginLeft: '-10px',
-        
-          cursor: 'pointer', // Ensures pointer appears on hover
-          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
-        }}
-      />
-    ),
     responsive: [
       {
         breakpoint: 1350,
@@ -88,6 +55,17 @@ const Home2WhyChoose = () => {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          centerMode: true, // Enables centering
+          centerPadding: '0', // Removes side padding
+          className: 'center-slide', // Add custom class for styling
         },
       },
   

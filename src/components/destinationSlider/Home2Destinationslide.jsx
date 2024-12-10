@@ -45,54 +45,199 @@ const Home2Destinationslide = () => {
     pauseOnHover: false, // Prevents slider from pausing on hover
     pauseOnFocus: false, // Prevents slider from pausing on focus
     pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered
-    nextArrow: (
-      <ArrowForwardIosIcon
-        sx={{
-          fontSize: 20,
-          color: '#006370',
-          width: '35px',
-          height: '35px',
-          padding: '10px',
-          borderRadius: '50%',
-          backgroundColor: 'white',
-          marginRight: '-10px',
-          cursor: 'pointer', // Ensures pointer appears on hover
-          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
-        }}
-      />
-    ),
-    prevArrow: (
-      <ArrowBackIosNewIcon
-        sx={{
-          fontSize: 20,
-          color: '#006370',
-          width: '35px',
-          height: '35px',
-          padding: '10px',
-          borderRadius: '50%',
-          backgroundColor: 'white',
-          marginLeft: '-10px',
-        
-          cursor: 'pointer', // Ensures pointer appears on hover
-          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
-        }}
-      />
-    ),
+    centerPadding: "10px", 
+
     responsive: [
       {
+        breakpoint: 1980,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-10px", 
+
+        },
+      },
+      {
+        breakpoint: 1720,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-100px", 
+
+        },
+      },
+      {
+        breakpoint: 1700,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "100px", 
+
+        },
+      },
+      {
+        breakpoint: 1600,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "50px", 
+
+        },
+      },
+      {
+        breakpoint: 1530,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "0px", 
+
+        },
+      },
+      {
+        breakpoint: 1450,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-10px", 
+
+        },
+      },
+      {
         breakpoint: 1350,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-50px", 
+
+        },
+      },
+      {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-80px", 
+
+        },
+      },
+      {
+        breakpoint: 1270,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-100px", 
+
+        },
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "0px", 
+
+        },
+      },
+
+      {
+        breakpoint: 1104,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-30px", 
+
+        },
+      },
+      {
+        breakpoint: 1040,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-70px", 
+
+        },
+      },
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-90px", 
+
+        },
+      },
+      {
+        breakpoint: 900,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
+          centerPadding: "-50px", 
+
         },
       },
       {
-        breakpoint: 850,
+        breakpoint: 798,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-20px", 
+
+        },
+      },
+      {
+        breakpoint: 650,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
+          centerPadding: "60px", 
+
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "50px", 
+
+        },
+      },
+  
+      {
+        breakpoint: 556,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "30px", 
+
+        },
+      },
+      {
+        breakpoint: 515,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          centerMode: true,
+
         },
       },
   

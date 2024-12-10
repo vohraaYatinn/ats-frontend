@@ -73,6 +73,14 @@ const Home2VideoSection = () => {
           infinite: true,
         },
       },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
   
   
     ],

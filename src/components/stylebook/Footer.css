@@ -156,13 +156,28 @@ width: 100%;
   }
   @media (max-width: 757px) {
 
-.footer-box3-box {
-  padding: 0rem 0px;
-
-}
+    .footer-box3-box {
+      align-items: center;
+      padding: 0rem 0px;
+      justify-content: center;
+      width: 100vw;
+  }
     .footer-box2-boxes {
       padding: 0rem 0px;
     }
+    .footer-box2-boxes img{
+      margin-top: 0rem !important;
+    }
+    .footer-box3-box {
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      padding: 0rem 0px;
+      justify-content: center;
+      flex-direction: column;
+  
+}
+    
 
   }
 
@@ -651,6 +666,9 @@ padding: 10px 30px;
 @media (max-width: 600px) {
   .checkmail{
    padding-top: 15rem;
+   }
+   .footer-box3-box h6{
+    margin: 0rem !important;
    }
 }
 

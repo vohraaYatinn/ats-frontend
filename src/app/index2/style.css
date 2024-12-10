@@ -249,10 +249,37 @@ body{
     overflow: hidden; /* Ensure the image is clipped to the box */
     /* border-radius: 60px; */
     height: 380px;
-    width: 95% !important;
+    width: 257px;
+    /* width: 95%; */
     border-radius: 56px;
-    
   }
+
+  @media (max-width: 778px) {
+    .tour-box-img {
+        height: 338px;
+        width: 232px;
+    }
+    .tour-boxes {
+        gap: 0rem !important;
+    }
+}
+
+@media (max-width: 1169px) {
+  .margintop {
+    padding-left: 50px ;
+  }
+}
+@media (max-width: 450px) {
+  .tour-box-img {
+      height: 280px;
+      width: 327px;
+  }
+  .tour-box {
+      flex: -1 0 210px;
+  }
+}
+
+
 
 
   .tour-box-img img {
@@ -316,6 +343,10 @@ height: 100%;
 
 
   }
+  .country-check-box{
+    width: 290px
+}
+
   @media (max-width: 965px) {
     .tour-boxes-countries div:nth-child(1){
       margin-left: 6rem;
@@ -440,6 +471,9 @@ height: 100%;
     .home2-boxes {
       flex-direction: column;
       gap: 30px;
+    }
+    .home2active-boxes {
+      padding: 1rem 0rem !important;
     }
   }
   
