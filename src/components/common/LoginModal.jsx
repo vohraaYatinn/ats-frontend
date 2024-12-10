@@ -109,8 +109,6 @@ const LoginModal = () => {
       >
         <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
-          
-
   {formPartToShow == 1 ? <div className="modal-body">
                 <div className="login-registration-form">
                   <div className="form-title">

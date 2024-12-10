@@ -34,13 +34,17 @@
     min-width: 13rem;
     font-size: 70%;
 }
-.react-select-select-phone ul{
+.phone-react-thing ul{
     min-width: 12rem;
-    font-size: 1.6rem !important;
+    font-size: 1.6rem !important
   }
 .react-select-select-phone ul{
     min-width: 12rem;
-    font-size: 1.6rem !important;
+    font-size: 1rem !important
+  }
+.react-select-select-phone ul{
+    min-width: 12rem;
+    font-size: 1rem !important
   }
 .package-details-area {
     padding: 0rem 105px;

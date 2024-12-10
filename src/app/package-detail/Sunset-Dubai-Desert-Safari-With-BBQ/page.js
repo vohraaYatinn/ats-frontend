@@ -837,7 +837,7 @@ const Page = () => {
                           </label>
                           <div style={{ display: "flex", gap: "10px" }}>
                             <ReactFlagsSelect
-                              className="react-select-select-phone"
+                              className="phone-react-thing"
                               selected={selected}
                               showSelectedLabel={false}
                               optionsSize={17}
