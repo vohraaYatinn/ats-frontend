@@ -53,7 +53,7 @@
     text-align: center;
    
  
-    padding: 20px;
+    padding: 12px;
     border-radius: 10px;
   display: flex;
   /* align-items: center; */
@@ -83,6 +83,8 @@
     font-size: 13px;
     color: #666;
     font-family: 'Manrope';
+    text-align: left;
+
 
   }
   
@@ -136,4 +138,8 @@
 
 .margin-text-check{
   margin: 0rem !important;
+}
+
+.center-alg .margin-text-check{
+text-align: start !important;
 }

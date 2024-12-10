@@ -25,7 +25,12 @@ const Home2Activities = () => {
               style={{
                 mixBlendMode: "multiply"
               }}/>
-<div>             
+<div style={{
+  display:"flex",
+  alignItems:"start",
+  justifyContent:"center",
+  flexDirection:"column"
+}}>             
    <h4 className='center-alg margin-text-check'>Best Tours</h4>
 <p className='center-alg margin-text-check' >A strict screening process ensures that we only offer the best tours and trip packages.</p></div>
             </div>
@@ -33,7 +38,12 @@ const Home2Activities = () => {
               <Image src={imagelogo2} alt="Best Price" className="img-fluid" width={80} height={80}  style={{
                 mixBlendMode: "multiply"
               }}/>
-<div>              <h4 className='center-alg margin-text-check'>Best Price</h4>
+<div style={{
+  display:"flex",
+  alignItems:"start",
+  justifyContent:"center",
+  flexDirection:"column"
+}}>              <h4 className='center-alg margin-text-check'>Best Price</h4>
 <p className='center-alg margin-text-check'>We guarantee you the best price. Found a lower price? We will match it.</p></div>
             </div>
             <div className="home2-box">
@@ -43,7 +53,12 @@ const Home2Activities = () => {
               }}/>
 
             
-<div>         
+<div style={{
+  display:"flex",
+  alignItems:"start",
+  justifyContent:"center",
+  flexDirection:"column"
+}}>         
        <h4 className='center-alg margin-text-check'>Free Cancellation</h4>
 <p className='center-alg margin-text-check'>We understand how important flexibility is right now, just one click and it's done!</p></div>
             </div>

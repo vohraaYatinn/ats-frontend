@@ -216,7 +216,7 @@ const LoginModal = () => {
                 justifyContent:"center",
                 padding:"2rem 4rem"
               }}>
-  <img src="assets/img/home1/tick.png" style={{
+  <img src="/assets/img/home1/tick.png" style={{
     height:"5rem",
     width:"5rem",
     objectFit:"cover"

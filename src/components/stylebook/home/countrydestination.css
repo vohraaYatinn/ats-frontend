@@ -133,6 +133,12 @@ width: 100%;
 .country-top-destination {
   padding: 0rem !important;
 }
+#arrow-check-padd{
+  padding: 0rem;
+}
+.heading-for-all {
+  flex-direction: column;
+}
     
   }
   @media (max-width: 992px) {
