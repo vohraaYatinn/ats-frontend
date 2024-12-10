@@ -188,7 +188,7 @@ const Home2Blog = () => {
   ]
   const data4=[
     {
-      title:"Sunset Dubai Desert Safari With BBQ",
+      title:"Desert Safari With BBQ",
       image:image10,
       duration:"7 Hours",
       link:"package-detail/Sunset-Dubai-Desert-Safari-With-BBQ"

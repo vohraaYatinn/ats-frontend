@@ -286,11 +286,15 @@ const ExploreCities = () => {
         <img className="leaf-img" src={"assets/img/leaf.svg"}/>
    
         <div className="heading-for-all heading-for-all-with-arrow">
-        <div>
+        <div >
           <h2>Top Cities to Visit</h2>
           <span>Uncover secret wonders and celebrated attractions in top travel spots worldwide - your next escapade awaits!</span>
           </div>
-          <div>
+          <div style={{
+            display:"flex",
+            alignItems:"center",
+            justifyContent:"center"
+          }}>
             <button onClick={()=>{
 goToNextSlide()
 }}>    

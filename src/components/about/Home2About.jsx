@@ -289,12 +289,16 @@ const Home2about = () => {
   return (
     <div>
       <div className="height-above">
-      <div className="heading-for-all heading-for-all-with-arrow">
+      <div className="heading-for-all heading-for-all-with-arrow" id="arrow-check-padd">
         <div>
           <h2>With our Top Experience</h2>
           <span>Select the offer that suits you best</span>
           </div>
-          <div>
+          <div style={{
+            display:"flex",
+            alignItems:"center",
+            justifyContent:"center"
+          }}>
             <button onClick={()=>{
 goToNextSlide()
 }}>    

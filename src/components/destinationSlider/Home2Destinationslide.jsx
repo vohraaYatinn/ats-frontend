@@ -274,7 +274,11 @@ const Home2Destinationslide = () => {
           <h2>Explore Other Countries</h2>
           <span>Uncover secret wonders and celebrated attractions in top travel spots worldwide - your next escapade awaits!</span>
           </div>
-          <div>
+          <div style={{
+            display:"flex",
+            alignItems:"center",
+            justifyContent:"center"
+          }}>
             <button onClick={()=>{
 goToNextSlide()
 }}>    

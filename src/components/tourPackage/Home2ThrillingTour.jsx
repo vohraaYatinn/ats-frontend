@@ -1,12 +1,11 @@
 "use client"; // Ensures client-side rendering for React
-import { Swiper, SwiperSlide } from "swiper/react";
 
 import React, { useMemo } from "react";
 import Image from "next/image";
 import box1img from "../../../public/image/offer1.png"; // Update the path if necessary
 import box2img from "../../../public/image/offer2.png"; // Update the path if necessary
 import box3img from "../../../public/image/offer3.png"; // Update the path if necessary
-
+import Slider from "react-slick";
 
 const Home2Destinationslide = () => {
   
@@ -145,6 +144,299 @@ const Home2Destinationslide = () => {
       },
     };
   }, []);
+  const sliderSettings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    pauseOnHover: false, // Prevents slider from pausing on hover
+    pauseOnFocus: false, // Prevents slider from pausing on focus
+    pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered
+    centerMode: true, // Enable center mode
+    centerPadding: "40px", 
+
+    responsive: [
+      {
+        breakpoint: 1980,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "0px", 
+
+        },
+      },
+      {
+        breakpoint: 1836,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "250px", 
+
+        },
+      },
+      {
+        breakpoint: 1750,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "220px", 
+
+        },
+      },
+      {
+        breakpoint: 1700,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "220px", 
+
+        },
+      },
+      {
+        breakpoint: 1690,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "180px", 
+
+        },
+      },
+      {
+        breakpoint: 1600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "140px", 
+
+        },
+      },
+      {
+        breakpoint: 1530,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "100px", 
+
+        },
+      },
+      {
+        breakpoint: 1450,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "70px", 
+
+        },
+      },
+      {
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "30px", 
+
+        },
+      },
+      {
+        breakpoint: 1350,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "20px", 
+
+        },
+      },
+      {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "0px", 
+
+        },
+      },
+      {
+        breakpoint: 1270,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-20px", 
+
+        },
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-50px", 
+
+        },
+      },
+      {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-90px", 
+
+        },
+      },
+      {
+        breakpoint: 1040,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-90px", 
+
+        },
+      },
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-90px", 
+
+        },
+      },
+      {
+        breakpoint: 966,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-120px", 
+
+        },
+      },
+      {
+        breakpoint: 850,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-120px", 
+
+        },
+      },
+      {
+        breakpoint: 798,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-130px", 
+
+        },
+      },
+      {
+        breakpoint: 772,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-80px", 
+
+        },
+      },
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-110px", 
+
+        },
+      },
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-90px", 
+
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "-110px", 
+
+        },
+      },
+  
+      {
+        breakpoint: 556,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "60px", 
+
+        },
+      },
+      {
+        breakpoint: 515,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          centerMode: true,
+          centerPadding: "40px", 
+
+        },
+      },
+      {
+        breakpoint: 478,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          centerMode: true,
+          centerPadding: "0px", 
+
+
+        },
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          centerMode: true,
+          centerPadding: "-40px", 
+
+
+        },
+      },
+  
+  
+    ],
+  };
 
   return (
     <div className="margintop checkmail exlusive-top-main" >
@@ -153,42 +445,36 @@ const Home2Destinationslide = () => {
   <span>Select the offer that suits you best</span>
   </div>
   <div className="testimonial-card-slider-area">
-          <div className="row">
-            <div className="col-lg-12" style={{
-              zIndex:"-1"
-            }}>
-              <Swiper
-              style={{
-                padding:"1rem"
-              }}
-                {...settings}
-                className="swiper home3-testimonial-card-slider"
-              >
-            
-                {details.map((detail, index) => (
+    
+                     <Slider {...sliderSettings} >
+        
+                     {details.map((detail, index) => (
                 
-                  <SwiperSlide className="swiper-slide">
-             <div className="exclusive-deal row">
-                  <div className="div-image-excluse col-6">
-                    <Image src={detail.img} alt="" />
-                  </div>
+                <div className="swiper-slide">
+           <div className="exclusive-deal row">
+                <div className="div-image-excluse col-6">
+                  <Image src={detail.img} alt="" />
+                </div>
 
-                  <div className="≥≥≥≥. col-6">
-                    <p className="upper-head">{detail.flightname}</p>
-                    <h3 className="medium-head">{detail.title}</h3>
-                    <p className="lower-head">{detail.desc}</p>
-                    <button className="primary-btn1 two d-xl-flex d-none home-button book-now-thrill" data-bs-toggle="modal"
-              data-bs-target="#user-login">Book Now</button>
-                  </div>
-             </div>
-                  </SwiperSlide>
-                  )
-                )}
-     
+                <div className="≥≥≥≥. col-6">
+                  <p className="upper-head">{detail.flightname}</p>
+                  <h3 className="medium-head">{detail.title}</h3>
+                  <p className="lower-head">{detail.desc}</p>
+                  <button className="primary-btn1 two d-xl-flex d-none home-button book-now-thrill" data-bs-toggle="modal"
+            data-bs-target="#user-login">Book Now</button>
+                </div>
+           </div>
+                </div>
+                )
+              )}
+   
+      
+
+        </Slider>
+            
              
-              </Swiper>
-            </div>
-          </div>
+         
+           
        
         </div>
     </div>
