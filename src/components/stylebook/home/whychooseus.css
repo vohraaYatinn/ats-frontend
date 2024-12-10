@@ -19,7 +19,6 @@
   
   .banner-testimonials-check-box1 p {
     font-size: 1.1rem;
-    color: #666;
     margin-bottom: 20px;
   }
   
@@ -37,15 +36,34 @@
   
   .footer-comment-box {
     height: 276px;
-    width: 267px;
+    width: 96% !important;
     flex: 0 0 auto; /* Ensure each box doesn't shrink and is horizontally aligned */
     border: 0.7px solid #000000;
     border-radius: 45px;
     background: #fff;
-    padding: 20px;
+    padding: 28px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   
   }
+  @media (max-width: 550px) {
+
+    .footer-comment-box {
+    width: 23rem !important;
+    }
+    .country-box-img .overlay p {
+      margin-bottom: 1rem !important;
+    }
+    .overlay {
+      height: 176%;
+
+    }
+    .country-box-img .overlay {
+      height: 176%;
+    }
+    .overlay-content {
+      width: 100%;
+    }
+ }
   
   .footer-comment-box-header {
     margin-bottom: 15px;
@@ -66,13 +84,13 @@
   }
   
   .footer-comment-box-comment {
-    font-size: 0.95rem;
-    color: #444;
+    font-size: 0.9rem;
+    color: #000000;
     margin-bottom: 10px;
   }
   
   .footer-comment-box-date {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color:orange;
   
   }

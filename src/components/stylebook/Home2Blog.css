@@ -4,7 +4,7 @@
   padding-right: 115px;
   background-color: #FAFAFA;
     text-align: center;
-    padding-bottom: 1.5rem;
+    padding-bottom: 4.5rem;
   }
   
   .Home2Blog-heading h2 {
@@ -13,9 +13,13 @@
     font-weight: 700;
   }
   
-  .Home2Blog-heading p {
-    font-size: 1rem;
-    color: #666;
+  .Home2Blog-heading span {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 19.3px;
+    font-family: 'Manrope';
+    text-align: center;
+    width: 100%;
   }
   
   .Home2Blog-boxes {
@@ -29,7 +33,7 @@
   .Home2Blog-box {
     position: relative;
     height: 267px;
-    width: 402px; /* Adjust width as needed */
+    width: 96% !important; /* Adjust width as needed */
     overflow: hidden;
     border-radius: 40px;
 
@@ -112,6 +116,7 @@ width: 100%;
     }
     .overlay-of-image{
         flex-direction: row;
+        align-items: flex-end;
     }
     .Home2Blog-box {
       width: 100%; /* Full-width for smaller screens */

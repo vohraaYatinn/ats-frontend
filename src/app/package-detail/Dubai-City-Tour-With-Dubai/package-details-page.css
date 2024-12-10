@@ -30,9 +30,18 @@
 }
 .main-package-details-div ul{
     font-family: "Manrope";
-
+    font-size: 1.4rem !important;
+    min-width: 13rem;
     font-size: 70%;
 }
+.phone-react-thing ul{
+    min-width: 12rem;
+    font-size: 1.8rem !important
+  }
+.react-select-select-phone ul{
+    min-width: 12rem;
+    font-size: 1rem !important
+  }
 .package-details-area {
     padding: 0rem 105px;
 }
@@ -188,4 +197,21 @@ margin-top: 1rem;
         align-items: center;
         justify-content: center;
     }
+  }
+  .react-select-select-phone {
+    width: 30% !important;
+  }
+  .react-select-select-phone button{
+    border-radius: 18px;
+    background: #fff;
+    color: var(--title-color);
+    font-family: var(--font-jost);
+    font-size: 13px;
+    font-weight: 400;
+    padding: 7px 8px;
+    height: 50px;
+    border: 1px solid #eee;
+    width: 100% !important;
+    text-align: center;
+    overflow: hidden;
   }

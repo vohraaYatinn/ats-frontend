@@ -108,14 +108,15 @@ flex: 0 0 60%;
   }
 
   .exclusive-deal{
+    margin: 1.3rem 0rem;
     width: 571px;
     height: 209px;
-    padding: 17.5687px 14.7125px;
     box-shadow:  5px 4.42812px 17.7125px rgba(158, 158, 158, 0.25);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 16px
+    border-radius: 16px;
+    margin-top: 1rem;
 
   }
   .home-button{

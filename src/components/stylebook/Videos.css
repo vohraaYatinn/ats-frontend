@@ -16,10 +16,7 @@
   margin-bottom: 10px;
 }
 
-.center-heading-line p {
-  font-size: 1rem;
-  color: #555;
-}
+
 
 .scrollable-boxes {
   display: flex;
@@ -33,11 +30,12 @@
   background: #fff;
   border-radius: 45px;
   overflow: hidden;
-  width:400px;
+  width:23rem !important;
   height: 354px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0rem 1rem;
 }
 
 .event-bg-box-img {
@@ -61,8 +59,13 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 85%;
   margin: auto;
-  height: 10rem;
+  height: 2.4rem;
   padding-top: 0px;
+  padding-bottom: 0px;
+  position: relative;
+  top: -1rem;
+  border: 1px solid transparent;
+  border-radius: 9px;
 }
 
 .date-info {
@@ -110,12 +113,10 @@
     font-size: 1.5rem;
   }
 
-  .center-heading-line p {
-    font-size: 0.9rem;
-  }
+ 
 
   .events-box {
-    width: 95%;
+    width: 95% !important;
     max-width: 400px;
   }
   .popular-heading-main p {

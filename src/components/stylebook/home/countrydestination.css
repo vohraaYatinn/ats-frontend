@@ -7,9 +7,6 @@
   overflow: visible;
   /* padding-right: 6rem; */
 }
-.country-check-box{
-    width: 290px
-}
 
 .country-box-img {
     position: relative; /* Positioning context for the image */
@@ -100,11 +97,33 @@ width: 100%;
   }
 
 
+  @media (max-width: 500px) {
+    .leaf-img{
+      height: 200px;
+
+    }
+    .tour-box {
+      width: 327px !important;
+    }
+    .country-box-img{
+      width: 100% !important;
+    }}
+  @media (max-width: 380px) {
+
+    .tour-box {
+      width: 280px !important;
+    }
+
+.heading-for-all-with-arrow{
+  padding: 0rem 1rem;
+}
+  }
   @media (max-width: 1329px) {
     .country-box-img {
       height: 300px;
       width: 240px;
     }}
+
   @media (max-width: 1233px) {
     .country-box-img {
       height: 270px;
@@ -114,8 +133,21 @@ width: 100%;
 .country-top-destination {
   padding: 0rem !important;
 }
+#arrow-check-padd{
+  padding: 0rem;
+}
+.heading-for-all {
+  flex-direction: column;
+}
     
   }
+
+  @media (max-width: 500px) {
+  .country-top-destination {
+    padding: 0rem 1rem !important;
+  }
+  }
+
   @media (max-width: 992px) {
     .country-top {
        padding-top: 0rem !important;
@@ -130,6 +162,11 @@ width: 100%;
     }
 }
 
+@media (max-width: 500px) {
+  .country-box-img {
+    height: 300px;
+    width: 290px;
+  }}
 /* @media (max-width: 1254px) {
 
   .tour-boxes-countries {

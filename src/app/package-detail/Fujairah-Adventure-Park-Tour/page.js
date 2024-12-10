@@ -15,10 +15,76 @@ import "./package-details-page.css"
 import Newslatter from "@/components/common/Newslatter";
 import "./activites-breadcrum.css"
 import StarRating from "@/components/common/StarRating";
-import { countryCodes, sendEmail } from "@/hooks/CommonFunctions";
-
+import { countryCodes, customLabels, sendEmail } from "@/hooks/CommonFunctions";
+import ThankYouModal from "@/components/common/ThankYouModal";
+import ReactFlagsSelect from "react-flags-select";
+import Slider from "react-slick";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 const Page = () => {
+  const [showModal, setShowModal] = useState(false)
+  const [selected, setSelected] = useState("AE");
+  const sliderSettings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    pauseOnHover: false, // Prevents slider from pausing on hover
+    pauseOnFocus: false, // Prevents slider from pausing on focus
+    pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered
+    centerMode: true, // Enable center mode
+    centerPadding: "0px", 
+    arrows: false,
+    nextArrow: (
+      <ArrowForwardIosIcon
+        sx={{
+          fontSize: 20,
+          color: '#006370',
+          width: '35px',
+          height: '35px',
+          padding: '10px',
+          borderRadius: '50%',
+          backgroundColor: 'white',
+          marginRight: '-10px',
+          cursor: 'pointer', // Ensures pointer appears on hover
+          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
+        }}
+      />
+    ),
+    prevArrow: (
+      <ArrowBackIosNewIcon
+        sx={{
+          fontSize: 20,
+          color: '#006370',
+          width: '35px',
+          height: '35px',
+          padding: '10px',
+          borderRadius: '50%',
+          backgroundColor: 'white',
+          marginLeft: '-10px',
+        
+          cursor: 'pointer', // Ensures pointer appears on hover
+          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
+        }}
+      />
+    ),
+    responsive: [
+
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "0px", 
+
+        }}
+  
+  
+    ],
+  };
   const [isOpenModalVideo, setOpenModalVideo] = useState(false);
   const [isOpenimg, setOpenimg] = useState({
     openingState: false,
@@ -70,17 +136,19 @@ const Page = () => {
     if (!formData.fullName.trim()) {
       newErrors.fullName = "Full Name is required.";
     }
-    if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Valid email is required.";
-    }
+
     if (!formData.phone.trim() || !/^\d{7,15}$/.test(formData.phone)) {
       newErrors.phone = "Valid phone number (7-15 digits) is required.";
+    }
+    else if (!formData.countryCode) {
+      newErrors.phone = "Country code is required.";
     }
     if (!formData.message.trim()) {
       newErrors.message = "Message cannot be empty.";
     }
     return newErrors;
   };
+
 
   // Handle form submission
   const handleSubmit = (e) => {
@@ -89,6 +157,8 @@ const Page = () => {
     if (Object.keys(newErrors).length === 0) {
       sendEmail(formData?.fullName, formData?.email, formData?.countryCode + formData?.phone, "Fujairah Adventure Park Tour With Archery, Zip Lining & Kayaking", formData?.message)
       console.log("Form submitted successfully:", formData);
+      setShowModal(true)
+
       // Reset form or handle the successful form submission
       setFormData({ fullName: "", email: "", countryCode: "+1", phone: "", message: "" });
       setErrors({});
@@ -105,43 +175,64 @@ const Page = () => {
      <div className="package-details-area mb-120">
       <div className="container"> 
         <div className="row">
-          <div className="co-lg-12">
-            <div className="package-img-group" style={{
-              marginBottom:"35px"
-            }}>
-              <div className="row align-items-center g-3">
-                <div className="col-lg-9" style={{
-                    marginTop:"0rem",
-                    padding:"0rem"
+        <div className="co-lg-12">
+              <div className="package-img-group" style={{
+                marginBottom: "35px"
+              }}>
+                                     <Slider {...sliderSettings}  className="package-page-img-crousel">
+        
+                                     <div className="col-12">
+                        <div className="gallery-img-wrap">
+                          <img src="/assets/img/activities/inner-banner-1.png" alt="" />
+                        </div>
+                      </div>
+                                     <div className="col-12">
+                        <div className="gallery-img-wrap">
+                          <img src="/assets/img/activities/inner-banner-2.png" alt="" />
+                        </div>
+                      </div>
+                                     <div className="col-12">
+                        <div className="gallery-img-wrap">
+                          <img src="/assets/img/activities/inner-banner-3.png" alt="" />
+                        </div>
+                      </div>
+
+
+
+</Slider>
+                <div className="row align-items-center g-3 package-page-img-crousel-on-large">
+                  <div className="col-lg-9" style={{
+                    marginTop: "0rem",
+                    padding: "0rem"
 
                   }}>
-                  <div className="gallery-img-wrap first-wrap-image flip-image-check" style={{
-                    marginTop:"0rem",
-                    padding:"0rem"
-                  }}>
-                    <img src="/assets/img/activities/inner-banner-1.png" alt="" />
+                    <div className="gallery-img-wrap first-wrap-image flip-image-check" style={{
+                      marginTop: "0rem",
+                      padding: "0rem"
+                    }}>
+                      <img src="/assets/img/activities/inner-banner-1.png" alt="" />
+                    </div>
                   </div>
-                </div>
-                <div className="col-lg-3 h-100" style={{
-                    marginTop:"0rem"
+                  <div className="col-lg-3 h-100" style={{
+                    marginTop: "0rem"
                   }}>
-                  <div className="row g-3 h-100 ">
-                    <div className="col-12">
-                      <div className="gallery-img-wrap">
-                        <img src="/assets/img/activities/inner-banner-2.png" alt="" />
+                    <div className="row g-3 h-100 ">
+                      <div className="col-12">
+                        <div className="gallery-img-wrap">
+                          <img src="/assets/img/activities/inner-banner-2.png" alt="" />
+                        </div>
                       </div>
-                    </div>
-                    <div className="col-12">
-                      <div className="gallery-img-wrap">
-                        <img src="/assets/img/activities/inner-banner-3.png" alt="" />
+                      <div className="col-12">
+                        <div className="gallery-img-wrap">
+                          <img src="/assets/img/activities/inner-banner-3.png" alt="" />
+                        </div>
                       </div>
-                    </div>
 
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
         </div>
         <div className="others-image-wrap d-none">
           <a href="assets/img/innerpage/ski-touring-01.jpg" data-fancybox="images"><img src="/assets/img/innerpage/ski-touring-01.jpg" alt="" /></a>   
@@ -305,246 +396,161 @@ const Page = () => {
             <li><b className="bold-activity">Pick-Up From Hotel Or Accommodation:</b> Begin your journey with a convenient pick-up from your hotel or accommodation. Our comfortable, air-conditioned vehicle and friendly driver are ready to transport you to an exciting day of exploration.
             </li>
 
-             
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingOne">
-                  <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <span style={{
-                      minWidth:"180px"
-                    }}> 1st Activity</span> Fujairah Adventure Park:
-                  </button>
-                </h2>
-                <div id="collapseOne" className="accordion-collapse collapse show show-date-check"   aria-labelledby="headingOne" data-bs-parent="#tourPlan">
-                  <div className="accordion-body">
-                    <ul>
-                      <li>Dive into a world of adventure with activities like archery, zip lining, kayaking, and more.
+            <div className="accordion-item">
+  <h2 className="accordion-header" id="headingOne">
+    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <span style={{ minWidth: "180px" }}> 1st Activity</span> Fujairah Adventure Park:
+    </button>
+  </h2>
+  <div id="collapseOne" className="accordion-collapse collapse show show-date-check" aria-labelledby="headingOne" data-bs-parent="#tourPlan">
+    <div className="accordion-body">
+      <ul>
+        <li>Dive into a world of adventure with activities like archery, zip lining, kayaking, and more.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div className="accordion-item">
+  <h2 className="accordion-header" id="headingTwo">
+    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <span style={{ minWidth: "180px" }}> 2nd Activity</span> Scenic Photo Spot:
+    </button>
+  </h2>
+  <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#tourPlan">
+    <div className="accordion-body">
+      <ul>
+        <li>Capture the beauty of Fujairah with a stop at a picturesque location perfect for photos.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div className="accordion-item">
+  <h2 className="accordion-header" id="headingThree">
+    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      <span style={{ minWidth: "180px" }}> 3rd Activity</span> Archery Range:
+    </button>
+  </h2>
+  <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#tourPlan">
+    <div className="accordion-body">
+      <ul>
+        <li>Test your aim and precision at the archery range.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div className="accordion-item">
+  <h2 className="accordion-header" id="headingFour">
+    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+      <span style={{ minWidth: "180px" }}> 4th Activity</span> Zip Line:
+    </button>
+  </h2>
+  <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#tourPlan">
+    <div className="accordion-body">
+      <ul>
+        <li>Experience the thrill of soaring through the air on a zip line.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div className="accordion-item">
+  <h2 className="accordion-header" id="headingFive">
+    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+      <span style={{ minWidth: "180px" }}> 5th Activity</span> Kayaking Area:
+    </button>
+  </h2>
+  <div id="collapseFive" className="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#tourPlan">
+    <div className="accordion-body">
+      <ul>
+        <li>Enjoy a peaceful kayaking session on calm waters.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div className="accordion-item">
+  <h2 className="accordion-header" id="headingSix">
+    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+      <span style={{ minWidth: "180px" }}> 6th Activity</span> Axe Throwing:
+    </button>
+  </h2>
+  <div id="collapseSix" className="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#tourPlan">
+    <div className="accordion-body">
+      <ul>
+        <li>Try your hand at axe throwing, a unique and exciting activity.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div className="accordion-item">
+  <h2 className="accordion-header" id="headingSeven">
+    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+      <span style={{ minWidth: "180px" }}> 7th Activity</span> Bag Jumping:
+    </button>
+  </h2>
+  <div id="collapseSeven" className="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#tourPlan">
+    <div className="accordion-body">
+      <ul>
+        <li>Feel the rush of free-falling onto a giant airbag.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div className="accordion-item">
+  <h2 className="accordion-header" id="headingEight">
+    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+      <span style={{ minWidth: "180px" }}> 8th Activity</span> Wall Climbing:
+    </button>
+  </h2>
+  <div id="collapseEight" className="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#tourPlan">
+    <div className="accordion-body">
+      <ul>
+        <li>Challenge yourself with a wall climbing session.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div className="accordion-item">
+  <h2 className="accordion-header" id="headingNine">
+    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+      <span style={{ minWidth: "180px" }}> 9th Activity</span> Pump Track:
+    </button>
+  </h2>
+  <div id="collapseNine" className="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#tourPlan">
+    <div className="accordion-body">
+      <ul>
+        <li>Navigate the twists and turns of the pump track.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div className="accordion-item">
+  <h2 className="accordion-header" id="headingTen">
+    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+      <span style={{ minWidth: "180px" }}> 10th Activity</span> Quick Flight:
+    </button>
+  </h2>
+  <div id="collapseTen" className="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#tourPlan">
+    <div className="accordion-body">
+      <ul>
+        <li>End your adventure with a quick flight activity.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div className="accordion-item">
+  <h2 className="accordion-header" id="headingEleven">
+    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+      <span style={{ minWidth: "180px" }}>Drop-Off</span> To Hotel Or Accommodation:
+    </button>
+  </h2>
+  <div id="collapseEleven" className="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#tourPlan">
+    <div className="accordion-body">
+      <ul>
+        <li>Conclude your tour with a comfortable drop-off at your hotel or accommodation, bringing an end to a day filled with memorable sights and experiences.</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
-
-
-
-
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingTwo">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  <span style={{
-                    minWidth:"180px"
-                  }}> 2nd Activity</span> Scenic Photo Spot:
-                  </button>
-                </h2>
-                <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#tourPlan">
-                  <div className="accordion-body">
-                    <ul>
-                    <li>Capture the beauty of Fujairah with a stop at a picturesque location perfect for photos.
-
-
-
-
-
-                    </li>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingThree">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  <span style={{
-                    minWidth:"180px"
-                  }}> 3rd Activity</span> Archery Range:
-                  </button>
-                </h2>
-                <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#tourPlan">
-                  <div className="accordion-body">
-                    <ul>
-                    <li>Test your aim and precision at the archery range.
-
-
-
-
-
-                    </li>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingThree">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  <span style={{
-                    minWidth:"180px"
-                  }}> 4th Activity</span> Zip Line: 
-                  </button>
-                </h2>
-                <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#tourPlan">
-                  <div className="accordion-body">
-                    <ul>
-                    <li>Experience the thrill of soaring through the air on a zip line.
-
-
-
-
-
-
-                    </li>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingThree">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  <span style={{
-                    minWidth:"180px"
-                  }}> 5th Activity</span>Kayaking Area:
-                  </button>
-                </h2>
-                <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#tourPlan">
-                  <div className="accordion-body">
-                    <ul>
-                    <li>Enjoy a peaceful kayaking session on calm waters.
-
-
-
-
-
-
-                    </li>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingThree">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  <span style={{
-                    minWidth:"180px"
-                  }}> 6th Activity</span> Axe Throwing:
-                  </button>
-                </h2>
-                <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#tourPlan">
-                  <div className="accordion-body">
-                    <ul>
-                    <li>Try your hand at axe throwing, a unique and exciting activity.
-
-
-
-
-
-                    </li>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingThree">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  <span style={{
-                    minWidth:"180px"
-                  }}> 7th Activity</span> Bag Jumping:
-                  </button>
-                </h2>
-                <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#tourPlan">
-                  <div className="accordion-body">
-                    <ul>
-                    <li>Feel the rush of free-falling onto a giant airbag.
-
-
-
-                    </li>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingThree">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  <span style={{
-                    minWidth:"180px"
-                  }}> 8th Activity</span> Wall Climbing:
-                  </button>
-                </h2>
-                <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#tourPlan">
-                  <div className="accordion-body">
-                    <ul>
-                    <li>Challenge yourself with a wall climbing session.
-
-
-
-                    </li>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingThree">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  <span style={{
-                    minWidth:"180px"
-                  }}> 9th Activity</span> Pump Track:
-                  </button>
-                </h2>
-                <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#tourPlan">
-                  <div className="accordion-body">
-                    <ul>
-                    <li>Navigate the twists and turns of the pump track.
-
-
-
-
-                    </li>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingThree">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  <span style={{
-                    minWidth:"180px"
-                  }}> 10th Activity</span> Quick Flight:
-                  </button>
-                </h2>
-                <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#tourPlan">
-                  <div className="accordion-body">
-                    <ul>
-                    <li>End your adventure with a quick flight activity.
-
-                    </li>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingFour">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  <span style={{
-                    minWidth:"180px"
-                  }}>Drop-Off</span> To Hotel Or Accommodation: 
-                  </button>
-                </h2>
-                <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#tourPlan">
-                  <div className="accordion-body">
-                    <ul>
-                    <li>Conclude your tour with a comfortable drop-off at your hotel or accommodation, bringing an end to a day filled with memorable sights and experiences.</li>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
             </div>
  
             <div className="faq-content-wrap mb-80">
@@ -634,7 +640,9 @@ const Page = () => {
            </div>
         </div>
         <div className="col-xl-4">
-        <div className="banner2-card  mb-30">
+        <div className="banner2-card  mb-30" onClick={()=>{
+          window.location.href = "tel:+971529745592"
+        }}>
               <img src="/assets/img/activities/tele-cal.jpg" alt="" />
              
         </div>
@@ -729,73 +737,78 @@ const Page = () => {
                   <div className="tab-pane fade active show" id="v-pills-contact" role="tabpanel" aria-labelledby="v-pills-contact-tab">
                     <div className="sidebar-booking-form">
                       <form onSubmit={handleSubmit}>
-  <div className="form-inner mb-20">
-        <label>
-          Full Name <span>*</span>
-        </label>
-        <input
-          type="text"
-          name="fullName"
-          placeholder="Enter your full name"
-          value={formData.fullName}
-          onChange={handleChange}
-        />
-        {errors.fullName && <small style={{ color: "red", marginLeft:"0.7rem", marginTop:"0.4rem"}}>{errors.fullName}</small>}
-      </div>
-      <div className="form-inner mb-20">
-        <label>
-          Email Address <span>*</span>
-        </label>
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email address"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        {errors.email && <small style={{ color: "red", marginLeft:"0.7rem", marginTop:"0.4rem" }}>{errors.email}</small>}
-      </div>
-      <div className="form-inner mb-20">
-        <label>
-          Phone Number <span>*</span>
-        </label>
-        <div style={{ display: "flex", gap: "10px" }}>
-          <select
-            name="countryCode"
-            value={formData.countryCode}
-            onChange={handleChange}
-            style={{ width: "25%" }}
-          >
-            {countryCodes.map((country) => (
-              <option key={country.code} value={country.code}>
-                {country.label}
-              </option>
-            ))}
-          </select>
-          <input
-            type="text"
-            name="phone"
-            placeholder="Enter your phone number"
-            value={formData.phone}
-            onChange={handleChange}
-            style={{ flex: 1 }}
-          />
-        </div>
-        {errors.phone && <small style={{ color: "red", marginLeft:"0.7rem", marginTop:"0.4rem" }}>{errors.phone}</small>}
-      </div>
-      <div className="form-inner mb-30">
-        <label>
-          Write Your Message <span>*</span>
-        </label>
-        <textarea
-          name="message"
-          placeholder="Write your query"
-          value={formData.message}
-          onChange={handleChange}
-        />
-        {errors.message && <small style={{ color: "red", marginLeft:"0.7rem", marginTop:"0.4rem" }}>{errors.message}</small>}
-      </div>
-      <div className="form-inner">
+                        <div className="form-inner mb-20">
+                          <label>
+                            Full Name <span>*</span>
+                          </label>
+                          <input
+                            type="text"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            value={formData.fullName}
+                            onChange={handleChange}
+                          />
+                          {errors.fullName && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.fullName}</small>}
+                        </div>
+                        <div className="form-inner mb-20">
+                          <label>
+                            Email Address
+                          </label>
+                          <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            value={formData.email}
+                            onChange={handleChange}
+                          />
+                          {errors.email && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.email}</small>}
+                        </div>
+                        <div className="form-inner mb-20">
+                          <label>
+                            Phone Number <span>*</span>
+                          </label>
+                          <div style={{ display: "flex", gap: "10px" }}>
+                            <ReactFlagsSelect
+                              className="phone-react-thing"
+                              selected={selected}
+                              showSelectedLabel={false}
+                              optionsSize={17}
+                              customLabels={customLabels}
+                              countries={Object.keys(customLabels)}
+                              placeholder="+"
+                              selectedSize={24}
+                              onSelect={(code) => {
+                                setFormData({ ...formData, countryCode: customLabels[code].secondary })
+                                setSelected(code)
+                              }
+                              }
+
+                            />
+
+                            <input
+                              type="text"
+                              name="phone"
+                              placeholder="Enter your phone number"
+                              value={formData.phone}
+                              onChange={handleChange}
+                              style={{ flex: 1 }}
+                            />
+                          </div>
+                          {errors.phone && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.phone}</small>}
+                        </div>
+                        <div className="form-inner mb-30">
+                          <label>
+                            Write Your Message <span>*</span>
+                          </label>
+                          <textarea
+                            name="message"
+                            placeholder="Write your query"
+                            value={formData.message}
+                            onChange={handleChange}
+                          />
+                          {errors.message && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.message}</small>}
+                        </div>
+                        <div className="form-inner">
                           <button type="submit" className="primary-btn1 two book-now-activity">Submit Now</button>
                         </div>                      </form>
                     </div>
@@ -803,7 +816,8 @@ const Page = () => {
 
                 </div>
               </div>
- 
+
+
               
      
       </div>
@@ -820,6 +834,8 @@ const Page = () => {
           onClose={() => setOpenModalVideo(false)}
         />
       </React.Fragment>
+      <ThankYouModal showModal={showModal} setShowModal={setShowModal}/>
+
       {/* <Lightbox
         className="img-fluid"
         open={isOpenimg.openingState}

@@ -36,6 +36,7 @@ import Header6 from "@/components/header/Header6";
 import HomeBannerSlide from "@/components/destinationSlider/HomeBannerSlide";
 import Home3Testimonial from "@/components/testimonial/Home3Testimonial";
 import ExploreCities from "@/components/destinationSlider/ExploreCitites";
+
 export const metadata = {
   title: "ATS - tour & travel",
   description:
@@ -57,23 +58,23 @@ const page = () => {
         flexDirection:"column",
       }}> */}
 <Home2ThrillingTour />
-      <Home2About />
- <Home2Destinationslide />
-       <HomeBannerSlide />
-       <Home2Activities /> 
+     <Home2About />
+  <Home2Destinationslide />
+      <HomeBannerSlide />
+     <Home2Activities /> 
        {/* <div style={{
         alignSelf:"normal",
         justifySelf:"normal"
        }}> */}
-   <ExploreCities /> 
+  <ExploreCities />  
      {/* </div> */}
-        <Home2VideoSection/>
-      <Home2WhyChoose /> 
+      <Home2VideoSection/>
+       <Home2WhyChoose /> 
 
         {/* </div> */}
           <hr/>
 
-        <Footer/> 
+    <Footer/> 
     </>
   );
 };

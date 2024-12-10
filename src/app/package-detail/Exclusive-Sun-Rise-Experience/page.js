@@ -15,10 +15,76 @@ import "./package-details-page.css"
 import Newslatter from "@/components/common/Newslatter";
 import "./activites-breadcrum.css"
 import StarRating from "@/components/common/StarRating";
-import { countryCodes, sendEmail } from "@/hooks/CommonFunctions";
-
+import { countryCodes, customLabels, sendEmail } from "@/hooks/CommonFunctions";
+import ThankYouModal from "@/components/common/ThankYouModal";
+import ReactFlagsSelect from "react-flags-select";
+import Slider from "react-slick";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 const Page = () => {
+  const [showModal, setShowModal] = useState(false)
+  const [selected, setSelected] = useState("AE");
+  const sliderSettings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    pauseOnHover: false, // Prevents slider from pausing on hover
+    pauseOnFocus: false, // Prevents slider from pausing on focus
+    pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered
+    centerMode: true, // Enable center mode
+    centerPadding: "0px", 
+    arrows: false,
+    nextArrow: (
+      <ArrowForwardIosIcon
+        sx={{
+          fontSize: 20,
+          color: '#006370',
+          width: '35px',
+          height: '35px',
+          padding: '10px',
+          borderRadius: '50%',
+          backgroundColor: 'white',
+          marginRight: '-10px',
+          cursor: 'pointer', // Ensures pointer appears on hover
+          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
+        }}
+      />
+    ),
+    prevArrow: (
+      <ArrowBackIosNewIcon
+        sx={{
+          fontSize: 20,
+          color: '#006370',
+          width: '35px',
+          height: '35px',
+          padding: '10px',
+          borderRadius: '50%',
+          backgroundColor: 'white',
+          marginLeft: '-10px',
+        
+          cursor: 'pointer', // Ensures pointer appears on hover
+          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
+        }}
+      />
+    ),
+    responsive: [
+
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "0px", 
+
+        }}
+  
+  
+    ],
+  };
   const [isOpenModalVideo, setOpenModalVideo] = useState(false);
   const [isOpenimg, setOpenimg] = useState({
     openingState: false,
@@ -70,11 +136,12 @@ const Page = () => {
     if (!formData.fullName.trim()) {
       newErrors.fullName = "Full Name is required.";
     }
-    if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Valid email is required.";
-    }
+
     if (!formData.phone.trim() || !/^\d{7,15}$/.test(formData.phone)) {
       newErrors.phone = "Valid phone number (7-15 digits) is required.";
+    }
+    else if (!formData.countryCode) {
+      newErrors.phone = "Country code is required.";
     }
     if (!formData.message.trim()) {
       newErrors.message = "Message cannot be empty.";
@@ -89,7 +156,7 @@ const Page = () => {
     if (Object.keys(newErrors).length === 0) {
       sendEmail(formData?.fullName, formData?.email, formData?.countryCode + formData?.phone, "Exclusive Sun-Rise Experience with Adventure & Thrill.", formData?.message)
       console.log("Form submitted successfully:", formData);
-      // Reset form or handle the successful form submission
+      setShowModal(true)
       setFormData({ fullName: "", email: "", countryCode: "+1", phone: "", message: "" });
       setErrors({});
 
@@ -106,43 +173,64 @@ const Page = () => {
      <div className="package-details-area mb-120">
       <div className="container"> 
         <div className="row">
-          <div className="co-lg-12">
-            <div className="package-img-group" style={{
-              marginBottom:"35px"
-            }}>
-              <div className="row align-items-center g-3">
-                <div className="col-lg-9" style={{
-                    marginTop:"0rem",
-                    padding:"0rem"
+        <div className="co-lg-12">
+              <div className="package-img-group" style={{
+                marginBottom: "35px"
+              }}>
+                                     <Slider {...sliderSettings}  className="package-page-img-crousel">
+        
+                                     <div className="col-12">
+                        <div className="gallery-img-wrap">
+                          <img src="/assets/img/activities/inner-banner-1.png" alt="" />
+                        </div>
+                      </div>
+                                     <div className="col-12">
+                        <div className="gallery-img-wrap">
+                          <img src="/assets/img/activities/inner-banner-2.png" alt="" />
+                        </div>
+                      </div>
+                                     <div className="col-12">
+                        <div className="gallery-img-wrap">
+                          <img src="/assets/img/activities/inner-banner-3.png" alt="" />
+                        </div>
+                      </div>
+
+
+
+</Slider>
+                <div className="row align-items-center g-3 package-page-img-crousel-on-large">
+                  <div className="col-lg-9" style={{
+                    marginTop: "0rem",
+                    padding: "0rem"
 
                   }}>
-                  <div className="gallery-img-wrap first-wrap-image flip-image-check" style={{
-                    marginTop:"0rem",
-                    padding:"0rem"
-                  }}>
-                    <img src="/assets/img/activities/inner-banner-1.png" alt="" />
+                    <div className="gallery-img-wrap first-wrap-image flip-image-check" style={{
+                      marginTop: "0rem",
+                      padding: "0rem"
+                    }}>
+                      <img src="/assets/img/activities/inner-banner-1.png" alt="" />
+                    </div>
                   </div>
-                </div>
-                <div className="col-lg-3 h-100" style={{
-                    marginTop:"0rem"
+                  <div className="col-lg-3 h-100" style={{
+                    marginTop: "0rem"
                   }}>
-                  <div className="row g-3 h-100 ">
-                    <div className="col-12">
-                      <div className="gallery-img-wrap">
-                        <img src="/assets/img/activities/inner-banner-2.png" alt="" />
+                    <div className="row g-3 h-100 ">
+                      <div className="col-12">
+                        <div className="gallery-img-wrap">
+                          <img src="/assets/img/activities/inner-banner-2.png" alt="" />
+                        </div>
                       </div>
-                    </div>
-                    <div className="col-12">
-                      <div className="gallery-img-wrap">
-                        <img src="/assets/img/activities/inner-banner-3.png" alt="" />
+                      <div className="col-12">
+                        <div className="gallery-img-wrap">
+                          <img src="/assets/img/activities/inner-banner-3.png" alt="" />
+                        </div>
                       </div>
-                    </div>
 
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
         </div>
         <div className="others-image-wrap d-none">
           <a href="assets/img/innerpage/ski-touring-01.jpg" data-fancybox="images"><img src="/assets/img/innerpage/ski-touring-01.jpg" alt="" /></a>   
@@ -309,7 +397,9 @@ const Page = () => {
            </div>
         </div>
         <div className="col-xl-4">
-        <div className="banner2-card  mb-30">
+        <div className="banner2-card  mb-30" onClick={()=>{
+          window.location.href = "tel:+971529745592"
+        }}>
               <img src="/assets/img/activities/tele-cal.jpg" alt="" />
              
         </div>
@@ -404,73 +494,78 @@ const Page = () => {
                   <div className="tab-pane fade active show" id="v-pills-contact" role="tabpanel" aria-labelledby="v-pills-contact-tab">
                     <div className="sidebar-booking-form">
                       <form onSubmit={handleSubmit}>
-  <div className="form-inner mb-20">
-        <label>
-          Full Name <span>*</span>
-        </label>
-        <input
-          type="text"
-          name="fullName"
-          placeholder="Enter your full name"
-          value={formData.fullName}
-          onChange={handleChange}
-        />
-        {errors.fullName && <small style={{ color: "red", marginLeft:"0.7rem", marginTop:"0.4rem"}}>{errors.fullName}</small>}
-      </div>
-      <div className="form-inner mb-20">
-        <label>
-          Email Address <span>*</span>
-        </label>
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email address"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        {errors.email && <small style={{ color: "red", marginLeft:"0.7rem", marginTop:"0.4rem" }}>{errors.email}</small>}
-      </div>
-      <div className="form-inner mb-20">
-        <label>
-          Phone Number <span>*</span>
-        </label>
-        <div style={{ display: "flex", gap: "10px" }}>
-          <select
-            name="countryCode"
-            value={formData.countryCode}
-            onChange={handleChange}
-            style={{ width: "25%" }}
-          >
-            {countryCodes.map((country) => (
-              <option key={country.code} value={country.code}>
-                {country.label}
-              </option>
-            ))}
-          </select>
-          <input
-            type="text"
-            name="phone"
-            placeholder="Enter your phone number"
-            value={formData.phone}
-            onChange={handleChange}
-            style={{ flex: 1 }}
-          />
-        </div>
-        {errors.phone && <small style={{ color: "red", marginLeft:"0.7rem", marginTop:"0.4rem" }}>{errors.phone}</small>}
-      </div>
-      <div className="form-inner mb-30">
-        <label>
-          Write Your Message <span>*</span>
-        </label>
-        <textarea
-          name="message"
-          placeholder="Write your query"
-          value={formData.message}
-          onChange={handleChange}
-        />
-        {errors.message && <small style={{ color: "red", marginLeft:"0.7rem", marginTop:"0.4rem" }}>{errors.message}</small>}
-      </div>
-      <div className="form-inner">
+                        <div className="form-inner mb-20">
+                          <label>
+                            Full Name <span>*</span>
+                          </label>
+                          <input
+                            type="text"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            value={formData.fullName}
+                            onChange={handleChange}
+                          />
+                          {errors.fullName && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.fullName}</small>}
+                        </div>
+                        <div className="form-inner mb-20">
+                          <label>
+                            Email Address
+                          </label>
+                          <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            value={formData.email}
+                            onChange={handleChange}
+                          />
+                          {errors.email && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.email}</small>}
+                        </div>
+                        <div className="form-inner mb-20">
+                          <label>
+                            Phone Number <span>*</span>
+                          </label>
+                          <div style={{ display: "flex", gap: "10px" }}>
+                            <ReactFlagsSelect
+                              className="phone-react-thing"
+                              selected={selected}
+                              showSelectedLabel={false}
+                              optionsSize={17}
+                              customLabels={customLabels}
+                              countries={Object.keys(customLabels)}
+                              placeholder="+"
+                              selectedSize={24}
+                              onSelect={(code) => {
+                                setFormData({ ...formData, countryCode: customLabels[code].secondary })
+                                setSelected(code)
+                              }
+                              }
+
+                            />
+
+                            <input
+                              type="text"
+                              name="phone"
+                              placeholder="Enter your phone number"
+                              value={formData.phone}
+                              onChange={handleChange}
+                              style={{ flex: 1 }}
+                            />
+                          </div>
+                          {errors.phone && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.phone}</small>}
+                        </div>
+                        <div className="form-inner mb-30">
+                          <label>
+                            Write Your Message <span>*</span>
+                          </label>
+                          <textarea
+                            name="message"
+                            placeholder="Write your query"
+                            value={formData.message}
+                            onChange={handleChange}
+                          />
+                          {errors.message && <small style={{ color: "red", marginLeft: "0.7rem", marginTop: "0.4rem" }}>{errors.message}</small>}
+                        </div>
+                        <div className="form-inner">
                           <button type="submit" className="primary-btn1 two book-now-activity">Submit Now</button>
                         </div>                      </form>
                     </div>
@@ -479,7 +574,7 @@ const Page = () => {
                 </div>
               </div>
 
- 
+
               
      
       </div>
@@ -496,6 +591,8 @@ const Page = () => {
           onClose={() => setOpenModalVideo(false)}
         />
       </React.Fragment>
+      <ThankYouModal showModal={showModal} setShowModal={setShowModal}/>
+
       {/* <Lightbox
         className="img-fluid"
         open={isOpenimg.openingState}

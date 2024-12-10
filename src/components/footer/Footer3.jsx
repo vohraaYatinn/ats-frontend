@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import footerimglogo from '../../../public/image/image 11.png';
 import footerback from '../../../public/image/footer-last.png';
-
+import "./footer-wasy.css"
 const Footer3 = () => {
   return (
     <div className="footer-boxes">
@@ -11,8 +11,10 @@ const Footer3 = () => {
         <h1>Sign up for our Newsletter</h1>
         <p>Save up to 50% on tours and trips. Get instant access to lower prices.</p>
         <form action="">
-          <input type="email" placeholder="abcd@gmail.com" />
-          <button type="sub-home-button">Subscribe</button>
+          <input type="email" placeholder="abcd@gmail.com" className='footer-input-easy'/>
+          <button style={{
+            borderRadius:"14px"
+          }}>Subscribe</button>
         </form>
       </div>
       {/* Footer links sections */}

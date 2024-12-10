@@ -1383,7 +1383,7 @@ const Page = () => {
                         </div>
                         <div className="form-inner mb-20">
                           <label>
-                            Email Address <span>*</span>
+                            Email Address
                           </label>
                           <input
                             type="email"
@@ -1438,7 +1438,7 @@ const Page = () => {
                       <div className="content">
                         <span>To More Inquiry</span>
                         <h6>
-                          <a href="tel:+990737621432">+990-737 621 432</a>
+                          <a href="tel:+971-529745592">+971-529745592</a>
                         </h6>
                       </div>
                     </div>

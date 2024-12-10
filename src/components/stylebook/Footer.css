@@ -39,7 +39,9 @@
   }
   
   .footer-box1 button {
-    padding: 10px 20px;
+    padding: 16px 24px;
+    font-size: 1rem;
+    font-weight: 400;
     background-color: #ff5722;
     color: white;
     border: none;
@@ -105,8 +107,8 @@ height: 300px;
     font-family: Nexa;
   }
   .footer-box3-box {
-    
-    padding: 0rem 197px;
+    margin: -1rem;
+    padding: 0rem 214px;
 width: 100%;
     display: flex;
     justify-content: space-between;
@@ -116,12 +118,10 @@ width: 100%;
   
   .footer-box3 h6 {
     font-size: 14px;
-    margin-bottom: 10px;
   }
   
   .footer-box3 img {
     width: 150px;
-    margin-top: 10px;
   }
   
   @media (max-width: 1214px) {
@@ -154,13 +154,28 @@ width: 100%;
   }
   @media (max-width: 757px) {
 
-.footer-box3-box {
-  padding: 0rem 0px;
-
-}
+    .footer-box3-box {
+      align-items: center;
+      padding: 0rem 0px;
+      justify-content: center;
+      width: 100vw;
+  }
     .footer-box2-boxes {
       padding: 0rem 0px;
     }
+    .footer-box2-boxes img{
+      margin-top: 0rem !important;
+    }
+    .footer-box3-box {
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      padding: 0rem 0px;
+      justify-content: center;
+      flex-direction: column;
+  
+}
+    
 
   }
 
@@ -242,12 +257,12 @@ width: 100%;
 .footer-comment-box-header h3{
   font-family: Manrope-medium !important;
 }
-.footer-comment-box-comment{
-  font-family: Manrope !important;
-  font-weight: 500;
-
+.footer-comment-box-comment {
+  font-size: 0.9rem;
+  color: #000000;
+  margin-bottom: 10px;
+  font-weight: 400 !important;
 }
-
 
 
   /* General styles */
@@ -286,16 +301,16 @@ width: 100%;
     width: 250px;
     margin-right: 10px;
   }
-  
   .footer-box1 button {
-    padding: 10px 20px;
+    padding: 16px 24px;
+    font-size: 1rem;
+    font-weight: 400;
     background-color: #ff5722;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 40px;
   }
-  
   /* .footer-box2 {
     display: flex;
     justify-content: space-between;
@@ -337,12 +352,10 @@ height: 300px;
   
   .footer-box3 h6 {
     font-size: 14px;
-    margin-bottom: 10px;
   }
   
   .footer-box3 img {
     width: 150px;
-    margin-top: 10px;
   }
   
   /* Media queries for responsiveness */
@@ -501,17 +514,7 @@ padding: 10px 30px;
     padding: 10px;
   }
   
-  .footer-comment-box {
-    flex: 0 0 auto; /* Ensure each box doesn't shrink and is horizontally aligned */
-    width: 300px;
-    background: #fff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 
-    padding: 2rem;
-    border: 1px solid black;
-    border-radius: 40px;
- 
-  }
   
   .footer-comment-box-header {
     margin-bottom: 15px;
@@ -532,13 +535,14 @@ padding: 10px 30px;
   }
   
   .footer-comment-box-comment {
-    font-size: 0.95rem;
-    color: #444;
+    font-size: 0.9rem;
+    color: #000000;
+
     margin-bottom: 10px;
   }
   
   .footer-comment-box-date {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color:orange;
 
   }
@@ -594,24 +598,24 @@ padding: 10px 30px;
 
 @media (max-width: 1450px) {
   .blur-text{
-    font-size: 9rem;
+    font-size: 7rem;
    }
 }
 
 @media (max-width: 1230px) {
   .blur-text{
-    font-size: 8rem;
+    font-size: 6rem;
    }
 }
 @media (max-width: 1100px) {
   .blur-text{
-    font-size: 7rem;
+    font-size: 6rem;
    }
 }
 
 @media (max-width: 980px) {
   .blur-text{
-    font-size: 6rem;
+    font-size: 5rem;
    }
 }
 
@@ -650,6 +654,12 @@ padding: 10px 30px;
   .center-alg{
     text-align: center !important;
    }
+   .footer-input-easy {
+    right: 0;
+   }
+   .footer-comment-box {
+   width: 23rem !important;
+   }
 }
 @media (max-width: 1200px) {
   .checkmail{
@@ -659,6 +669,9 @@ padding: 10px 30px;
 @media (max-width: 600px) {
   .checkmail{
    padding-top: 15rem;
+   }
+   .footer-box3-box h6{
+    margin: 0rem !important;
    }
 }
 
