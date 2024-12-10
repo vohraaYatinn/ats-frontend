@@ -138,38 +138,40 @@ const Home2VideoSection = () => {
       },
     };
   }, []);
+
   const details = [
     {
-      img: image1,
-      title: "World Tennis In Abu Dhabi",
-      date: "25 Dec 2024",
-      location: "Dubai",
-      price: "AED 400.00",
+img: image1,
+title: "Mind2mind Connected In Dubai",
+date: "25 Dec 2024",
+location: "Dubai",
+price: "AED 400.00",
     },
 
     {
-      img: image2,
-      title: "World Tennis In Abu Dhabi",
-      date: "25 Dec 2024",
-      location: "Dubai",
-      price: "AED 400.00",
+img: image2,
+title: "Ravi Gupta Stand Up Comedy",
+date: "25 Dec 2024",
+location: "Dubai",
+price: "AED 400.00",
     },
     {
-      img: image3,
-      title: "World Tennis In Abu Dhabi",
-      date: "25 Dec 2024",
-      location: "Dubai",
-      price: "AED 400.00",
+img: image3,
+title: "Ruki Vverh Live In Dubai",
+date: "25 Dec 2024",
+location: "Dubai",
+price: "AED 400.00",
     },
 
     {
-      img: image4,
-      title: "World Tennis In Abu Dhabi",
-      date: "25 Dec 2024",
-      location: "Dubai",
-      price: "AED 400.00",
+img: image4,
+title: "World Tennis In Abu Dhabi",
+date: "25 Dec 2024",
+location: "Dubai",
+price: "AED 400.00",
     },
   ];
+
   return (
     <div className="video-section-part video-container">
       <div className=" heading-for-all center-heading-line text-center Home2Blog-heading popular-heading-main">

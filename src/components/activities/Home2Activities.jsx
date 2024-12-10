@@ -14,11 +14,11 @@ const Home2Activities = () => {
         
           />
         </div>
-        <div className="boxes1-det col-lg-6 col-md-6 col-sm-12">
+        <div className="heading-for-all boxes1-det col-lg-6 col-md-6 col-sm-12">
           <h2>We create the trips you love</h2>
-          <p>
+          <span>
             We take the best of what we’ve learned over our 25 years of experience as luxury travel agents and bring it all together to create bespoke luxury travel experiences.
-          </p>
+          </span>
           <div className="home2-boxes">
             <div className="home2-box">
               <Image src={imagelogo1} alt="Best Tours" className="img-fluid" width={80} height={80} 
