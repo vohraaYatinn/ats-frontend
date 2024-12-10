@@ -45,6 +45,25 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   
   }
+  @media (max-width: 550px) {
+
+    .footer-comment-box {
+    width: 23rem !important;
+    }
+    .country-box-img .overlay p {
+      margin-bottom: 1rem !important;
+    }
+    .overlay {
+      height: 176%;
+
+    }
+    .country-box-img .overlay {
+      height: 176%;
+    }
+    .overlay-content {
+      width: 100%;
+    }
+ }
   
   .footer-comment-box-header {
     margin-bottom: 15px;

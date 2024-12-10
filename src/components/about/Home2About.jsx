@@ -264,7 +264,19 @@ const Home2about = () => {
 
         },
       },
-  
+      {
+        breakpoint: 390,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          centerMode: true,
+          centerPadding: "0px", 
+
+
+        },
+      },
+
   
     ],
   };

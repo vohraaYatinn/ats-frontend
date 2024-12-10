@@ -19,7 +19,7 @@ const Home2VideoSection = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     pauseOnHover: false, // Prevents slider from pausing on hover
     pauseOnFocus: false, // Prevents slider from pausing on focus
     pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered
@@ -47,6 +47,15 @@ const Home2VideoSection = () => {
         },
       },
       {
+        breakpoint: 750,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "40px",
+        },
+      },
+      {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
@@ -55,61 +64,37 @@ const Home2VideoSection = () => {
           centerPadding: "80px",
         },
       },
+      {
+        breakpoint: 557,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "60px",
+        },
+      },
+      {
+        breakpoint: 503,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "40px",
+        },
+      },
+      {
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "0px",
+        },
+      },
+
     ],
   };
-  const settings = useMemo(() => {
-    return {
-      slidesPerView: "auto",
-      speed: 1500,
-      spaceBetween: 0,
-      loop: true,
-      autoplay: {
-        delay: 2500, 
-        disableOnInteraction: false,
-      },
-      navigation: {
-        nextEl: ".testimonial-card-tab-next",
-        prevEl: ".testimonial-card-tab-prev",
-      },
 
-      breakpoints: {
-        280: {
-          slidesPerView: 1,
-        },
-        386: {
-          slidesPerView: 1,
-          spaceBetween: 0,
-
-        },
-        576: {
-          slidesPerView: 1,
-          spaceBetween: 0,
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 0,
-        },
-        992: {
-          slidesPerView: 3,
-          spaceBetween: 0,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 0,
-        },
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 0,
-        },
-        1400: {
-          slidesPerView: 3,
-          spaceBetween: 0,
-
-
-        },
-      },
-    };
-  }, []);
 
   const details = [
     {

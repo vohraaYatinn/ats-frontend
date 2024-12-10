@@ -207,7 +207,7 @@ const Home2Blog = () => {
     <div className="Home2Blog">
       <div className="Home2Blog-heading heading-for-all">
         <h2>Discover Our Hottest Packages</h2>
-        <p className='mb-4'>Select a service that suits you best</p>
+        <span className='mb-4'>Select a service that suits you best</span>
       </div>
              <Slider ref={sliderRef} {...sliderSettings}>
         {

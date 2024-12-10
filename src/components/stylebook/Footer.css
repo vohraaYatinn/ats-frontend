@@ -654,6 +654,12 @@ padding: 10px 30px;
   .center-alg{
     text-align: center !important;
    }
+   .footer-input-easy {
+    right: 0;
+   }
+   .footer-comment-box {
+   width: 23rem !important;
+   }
 }
 @media (max-width: 1200px) {
   .checkmail{

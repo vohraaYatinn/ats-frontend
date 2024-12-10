@@ -752,6 +752,12 @@ padding: 10px 30px;
     margin: 20px 10px;
  
   }
+  @media (max-width: 550px) {
+
+     .footer-comment-box {
+     width: 23rem !important;
+     }
+  }
   
   .footer-comment-box-header {
     margin-bottom: 15px;
@@ -892,6 +898,18 @@ padding: 10px 30px;
   .center-alg{
     text-align: center !important;
    }
+   .exclusive-deal {
+    padding: 11.5687px 2.7125px;
+   }
+   .lower-head {
+    line-height: 0.9rem;
+   }
+}
+@media (max-width: 664px) {
+  .exclusive-deal {
+      width: 360px;
+      height: 150px;
+  }
 }
 @media (max-width: 1200px) {
   .checkmail{

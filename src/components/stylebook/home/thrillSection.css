@@ -12,7 +12,7 @@
 
 @media (max-width: 777px) {
     .exclusive-deal {
-        width: 434px;
+        width: 360px;
         height: 150px;
     }
     .medium-head {
@@ -21,10 +21,7 @@
     }
 }
 @media (max-width: 664px) {
-    .exclusive-deal {
-        width: 400px;
-        height: 150px;
-    }
+
     .medium-head {
         font-weight: 500 !important;
         font-size: 0.9rem;

@@ -149,7 +149,7 @@ const Home2Destinationslide = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     pauseOnHover: false, // Prevents slider from pausing on hover
     pauseOnFocus: false, // Prevents slider from pausing on focus
     pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered
@@ -430,6 +430,18 @@ const Home2Destinationslide = () => {
           infinite: true,
           centerMode: true,
           centerPadding: "-40px", 
+
+
+        },
+      },
+      {
+        breakpoint: 390,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          centerMode: true,
+          centerPadding: "0px", 
 
 
         },

@@ -23,15 +23,6 @@
 
 }
 
-@media (max-width: 821px) {
-    .events-box { 
-        width: 350px;
-    }
-    /* .video-background{
-        height: 59vh !important;
-    } */
-
-}
 /* @media (max-width: 770px) {
     .video-background{
         height: 70vh !important;
