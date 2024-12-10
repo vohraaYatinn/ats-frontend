@@ -24,7 +24,7 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 const Page = () => {
   const [showModal, setShowModal] = useState(false)
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState("AE");
   const sliderSettings = {
     infinite: true,
     speed: 500,

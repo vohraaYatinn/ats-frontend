@@ -29,6 +29,33 @@ const Home2VideoSection = () => {
 
     responsive: [
       {
+        breakpoint: 1600,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "170px",
+        },
+      },
+      {
+        breakpoint: 1523,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "120px",
+        },
+      },
+      {
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          centerPadding: "90px",
+        },
+      },
+      {
         breakpoint: 1350,
         settings: {
           slidesToShow: 3,
