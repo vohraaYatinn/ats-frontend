@@ -333,6 +333,25 @@ height: 100%;
   }
   
   /* Responsive Design */
+  @media (max-width: 500px) {
+    .overlay h3 {
+      font-size: 1.3rem;
+    }
+    
+    .overlay p {
+      font-size: 0.83rem;
+
+    }
+    .country-box-img .overlay h3 {
+      font-size: 1.3rem !important;
+
+    }
+    .country-box-img .overlay p {
+      font-size: 0.83rem !important;
+
+    }
+
+  }
   @media (max-width: 768px) {
     .tour-boxes div{
       margin-left: 1rem !important;

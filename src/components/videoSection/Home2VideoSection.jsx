@@ -172,7 +172,7 @@ const Home2VideoSection = () => {
   ];
   return (
     <div className="video-section-part video-container">
-      <div className="center-heading-line text-center Home2Blog-heading popular-heading-main">
+      <div className=" heading-for-all center-heading-line text-center Home2Blog-heading popular-heading-main">
         <h2>Discover Most Popular Events in UAE</h2>
         <p>
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.

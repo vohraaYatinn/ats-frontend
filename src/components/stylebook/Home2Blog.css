@@ -14,8 +14,11 @@
   }
   
   .Home2Blog-heading p {
-    font-size: 1rem;
-    color: #666;
+    display: block;
+    margin-bottom: 20px;
+    font-size: 19.3px;
+    font-family: 'Manrope';
+    text-align: center;
   }
   
   .Home2Blog-boxes {
@@ -112,6 +115,7 @@ width: 100%;
     }
     .overlay-of-image{
         flex-direction: row;
+        align-items: flex-end;
     }
     .Home2Blog-box {
       width: 100%; /* Full-width for smaller screens */

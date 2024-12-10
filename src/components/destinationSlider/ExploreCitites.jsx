@@ -68,27 +68,27 @@ const ExploreCities = () => {
       {
         breakpoint: 1980,
         settings: {
-          slidesToShow: 6,
+          slidesToShow: 5,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "20px", 
+          centerPadding: "-10px", 
 
         },
       },
       {
-        breakpoint: 1750,
+        breakpoint: 1720,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "0px", 
+          centerPadding: "-100px", 
 
         },
       },
       {
         breakpoint: 1700,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
           centerPadding: "100px", 
@@ -98,7 +98,7 @@ const ExploreCities = () => {
       {
         breakpoint: 1600,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
           centerPadding: "50px", 
@@ -108,7 +108,7 @@ const ExploreCities = () => {
       {
         breakpoint: 1530,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
           centerPadding: "0px", 
@@ -118,7 +118,7 @@ const ExploreCities = () => {
       {
         breakpoint: 1450,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
           centerPadding: "-10px", 
@@ -128,7 +128,7 @@ const ExploreCities = () => {
       {
         breakpoint: 1350,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
           centerPadding: "-50px", 
@@ -138,7 +138,7 @@ const ExploreCities = () => {
       {
         breakpoint: 1300,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
           centerPadding: "-80px", 
@@ -148,7 +148,7 @@ const ExploreCities = () => {
       {
         breakpoint: 1270,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
           centerPadding: "-100px", 
@@ -165,8 +165,9 @@ const ExploreCities = () => {
 
         },
       },
+
       {
-        breakpoint: 1100,
+        breakpoint: 1104,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
@@ -196,11 +197,13 @@ const ExploreCities = () => {
         },
       },
       {
-        breakpoint: 850,
+        breakpoint: 900,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
+          centerPadding: "-50px", 
+
         },
       },
       {
