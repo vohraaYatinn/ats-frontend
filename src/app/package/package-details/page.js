@@ -57,7 +57,7 @@ const Page = () => {
               <div className="package-img-group" style={{
                 marginBottom: "35px"
               }}>
-                                     <Slider {...sliderSettings}  className="package-page-img-crousel">
+                                     {/* <Slider {...sliderSettings}  className="package-page-img-crousel">
         
                                      <div className="col-12">
                         <div className="gallery-img-wrap">
@@ -77,7 +77,7 @@ const Page = () => {
 
 
 
-</Slider>
+</Slider> */}
                 <div className="row align-items-center g-3 package-page-img-crousel-on-large">
                   <div className="col-lg-9" style={{
                     marginTop: "0rem",
