@@ -12,7 +12,7 @@ import Home2ThrillingTour from "@/components/tourPackage/Home2ThrillingTour";
 import Home2VideoSection from "@/components/videoSection/Home2VideoSection";
 import Home2WhyChoose from "@/components/whyChoose/Home2WhyChoose";
 import React from "react";
-import './index2/style.css'
+import '../app/index2/style.css'
 
 import '../components/stylebook/Home.css'
 import '../components/stylebook/Exclusive.css'
