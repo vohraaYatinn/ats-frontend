@@ -115,3 +115,10 @@
  
     }
   }
+
+  .left-side-contact-container{
+
+    display: flex;
+        gap: 3rem;
+        flex-direction: column;
+  }

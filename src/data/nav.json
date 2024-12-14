@@ -7,7 +7,7 @@
     {
         "id": "2",
         "label": "About Us",
-        "link": "#",
+        "link": "/about",
                 "icon": false
     },
     {
@@ -25,8 +25,8 @@
     {
         "id": "2",
         "label": "Contact Us",
-        "link": "#",
-                "icon": false
+        "link": "contact",
+        "icon": false
     },
     {
         "id": "2",
