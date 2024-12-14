@@ -13,3 +13,9 @@
     padding:0px 180px;
     padding-top: 120px;
 }
+.main-card-for-umrah{
+    border-radius: 45px !important;
+    border: 1px solid #F1871C;
+    background: #FFF5EB;
+    overflow: hidden;
+}
