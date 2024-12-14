@@ -22897,8 +22897,12 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 }
 
 .contact-map {
+  width: 85%;
   line-height: 0.6;
   position: relative;
+          border: 1px solid transparent;
+        border-radius: 45px;
+        overflow: hidden; 
 }
 .contact-map .banner3-section {
   margin: 0;
