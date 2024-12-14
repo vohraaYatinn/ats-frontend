@@ -335,3 +335,72 @@ width: 100%;
 .actions-rakshit{
   padding: 5px;
 }
+
+.rakshit-heading-for-all a{
+  text-decoration: underline;
+  font-family: 'Roboto';
+  margin-left: 2rem;
+  color: #F1871C;
+}
+
+.rakshit-heading-for-all{
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.rakshit-book-now-btn{
+  background: transparent !important;
+  border-radius: 8px;
+  font-family: 'Manrope' !important;
+  font-weight: bolder;
+  color: #F1871C;
+  padding: 0 10px;
+}
+
+
+
+.exclusive-deal {
+  background: #fff6ec;
+  border: 1px solid #ff6d00;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.div-image-exclusive img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.exclusive-content {
+  padding-left: 20px;
+}
+
+.fixed-departure {
+  display: inline-block;
+  background: #ff6d00;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+.medium-head {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #000;
+}
+
+.lower-head {
+  font-size: 14px;
+  color: #757575;
+  margin-bottom: 20px;
+}
+
