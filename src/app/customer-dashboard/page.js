@@ -1,7 +1,7 @@
 import Header from "@/components/header/Header";
 import Link from "next/link";
 import React from "react";
-import "../customer-dashboard/rakshit.css";
+import "./rakshit.css";
 const page = () => {
   return (
     <>
