@@ -9,7 +9,7 @@ import TourCategoryDropdown from "./TourCategoryDropdown";
 import GuestDropdown from "./GuestDropdown";
 import DateRange from "./DateRange";
 import homeimg from '../../../public/image/home.png'
-import '../../components/stylebook/Home.css'
+import '../stylebook/Home.css'
 import { GiPalmTree } from "react-icons/gi"; // Holiday Packages
 import { FaPlane, FaKaaba, FaHotel, FaPassport, FaTaxi } from "react-icons/fa"; // Flights, Umrah, Hotel Booking, VISA, Cab Service
 import { MdOutlineSportsHandball } from "react-icons/md"; // Activities
