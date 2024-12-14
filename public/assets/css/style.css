@@ -1563,7 +1563,7 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--primary-color1);
+  color: #F1871C;
   font-family: var(--font-satisfy);
   font-size: 17px;
   font-weight: 400;
