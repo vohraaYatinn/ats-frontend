@@ -25,7 +25,9 @@ const page = () => {
                     />
                   </svg>
 
-                  <h6 className="rakshit-font dashboard-sidebar-active-text">Dashboard</h6>
+                  <h6 className="rakshit-font dashboard-sidebar-active-text">
+                    Dashboard
+                  </h6>
                 </Link>
               </li>
               <li>
@@ -222,9 +224,7 @@ const page = () => {
                             </defs>
                           </svg>
 
-                          <p className=" title-counter">
-                            Total Booked Tour
-                          </p>
+                          <p className=" title-counter">Total Booked Tour</p>
                         </div>
                         <div className="number rakshit-flex-number">
                           <h3 className="counter rakshit-black-text">19</h3>
@@ -309,9 +309,7 @@ const page = () => {
                             </defs>
                           </svg>
 
-                          <p className="title-counter">
-                            Total Paid Amount
-                          </p>
+                          <p className="title-counter">Total Paid Amount</p>
                         </div>
                         <div className="number rakshit-flex-number">
                           <h3 className="counter rakshit-black-text">
@@ -397,9 +395,7 @@ const page = () => {
                             </defs>
                           </svg>
 
-                          <p className="title-counter">
-                            Total Transaction
-                          </p>
+                          <p className="title-counter">Total Transaction</p>
                         </div>
                         <div className="number rakshit-flex-number">
                           <h3 className="counter rakshit-black-text">5</h3>
@@ -483,9 +479,7 @@ const page = () => {
                             </defs>
                           </svg>
 
-                          <p className="title-counter">
-                            Total Support Ticket
-                          </p>
+                          <p className="title-counter">Total Support Ticket</p>
                         </div>
                         <div className="number rakshit-flex-number">
                           <h3 className="counter rakshit-black-text">25</h3>
@@ -501,7 +495,7 @@ const page = () => {
               <div className="rakshit-table-heading">
                 <h6>Favourite List</h6>
                 <div className="rakshit-filter-button">
-                    <p>Filter</p>
+                  <p>Filter</p>
                 </div>
               </div>
               <div className="recent-listing-area rakshit-recent-listing-area">
@@ -509,8 +503,12 @@ const page = () => {
                   <table className="eg-table2 rakshit-eg-table2">
                     <thead>
                       <tr>
-                        <th id="serial_number" className="table-header-serial" >Sl No.</th>
-                        <th id="" className="table-header-product">Package</th>
+                        <th id="serial_number" className="table-header-serial">
+                          Sl No.
+                        </th>
+                        <th id="" className="table-header-product">
+                          Package
+                        </th>
                         <th id="price">Price</th>
                         <th id="timeline">Added At</th>
                         <th id="action">Action</th>
@@ -522,26 +520,31 @@ const page = () => {
                         <td data-label="Package">
                           <div className="product-name ">
                             <div className="rakshit-table-img">
-                              <img
-                                src="https://picsum.photos/80/80"
-                                alt=""
-                              />
+                              <img src="https://picsum.photos/80/80" alt="" />
                             </div>
                             <div className="product-content">
                               <h6>
-                                <a href="#">
-                                  Saint Martin: Tour Package
-                                </a>
+                                <a href="#">Saint Martin: Tour Package</a>
                               </h6>
                             </div>
                           </div>
                         </td>
                         <td data-label="Price">$720</td>
-                        <td data-label="Added At">
-                          30/10/24
-                        </td>
+                        <td data-label="Added At">30/10/24</td>
                         <td data-label="Action">
-                          <span className="">Details</span>
+                        <svg
+                            width="16"
+                            height="12"
+                            viewBox="0 0 16 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M15.4439 5.5484C15.4971 5.69007 15.5236 5.84059 15.5236 5.99997C15.5236 6.15934 15.4971 6.30986 15.4439 6.45153C14.7002 8.11611 13.6554 9.44866 12.3096 10.4492C10.9637 11.4497 9.48509 11.95 7.87363 11.95C6.26217 11.95 4.78353 11.4497 3.4377 10.4492C2.09186 9.44866 1.04707 8.11611 0.30332 6.45153C0.250195 6.30986 0.223633 6.15934 0.223633 5.99997C0.223633 5.84059 0.250195 5.69007 0.30332 5.5484C1.04707 3.88382 2.09186 2.55127 3.4377 1.55075C4.78353 0.550226 6.26217 0.0499659 7.87363 0.0499659C9.48509 0.0499659 10.9637 0.550226 12.3096 1.55075C13.6554 2.55127 14.7002 3.88382 15.4439 5.5484ZM4.18145 9.41325C4.18145 9.41325 4.46478 9.62353 5.03145 10.0441C5.59811 10.4647 6.54551 10.675 7.87363 10.675C9.20176 10.675 10.4325 10.2544 11.5658 9.41325C12.6992 8.5721 13.5934 7.43434 14.2486 5.99997C13.5934 4.56559 12.6992 3.42783 11.5658 2.58669C10.4325 1.74554 9.20176 1.32497 7.87363 1.32497C6.54551 1.32497 5.31478 1.74554 4.18145 2.58669C3.04811 3.42783 2.15384 4.56559 1.49863 5.99997C2.15384 7.43434 3.04811 8.5721 4.18145 9.41325ZM5.46973 3.59606C5.46973 3.59606 5.63574 3.43004 5.96777 3.09801C6.2998 2.76598 6.93509 2.59997 7.87363 2.59997C8.81217 2.59997 9.61348 2.932 10.2775 3.59606C10.9416 4.26012 11.2736 5.06142 11.2736 5.99997C11.2736 6.61976 11.1231 7.19085 10.8221 7.71325C10.521 8.23564 10.1093 8.64736 9.58691 8.9484C9.06452 9.24945 8.49342 9.39997 7.87363 9.39997C6.93509 9.39997 6.13379 9.06793 5.46973 8.40387C4.80566 7.73981 4.47363 6.93851 4.47363 5.99997C4.47363 5.06142 4.80566 4.26012 5.46973 3.59606ZM6.37285 7.50075C6.37285 7.50075 6.47689 7.60478 6.68496 7.81286C6.89303 8.02093 7.28926 8.12497 7.87363 8.12497C8.45801 8.12497 8.95827 7.91689 9.37441 7.50075C9.79056 7.0846 9.99863 6.58434 9.99863 5.99997C9.99863 5.61038 9.90566 5.25179 9.71973 4.92418C9.53379 4.59658 9.27702 4.33981 8.94941 4.15387C8.62181 3.96794 8.26322 3.87497 7.87363 3.87497C7.87363 3.87497 7.86478 3.87497 7.84707 3.87497C7.82936 3.87497 7.82051 3.87497 7.82051 3.87497C7.85592 4.03434 7.87363 4.17601 7.87363 4.29997C7.87363 4.77809 7.70983 5.18096 7.38223 5.50856C7.05462 5.83616 6.65176 5.99997 6.17363 5.99997C6.04967 5.99997 5.90801 5.98226 5.74863 5.94684C5.74863 5.94684 5.74863 5.9557 5.74863 5.9734C5.74863 5.99111 5.74863 5.99997 5.74863 5.99997C5.74863 6.58434 5.95671 7.0846 6.37285 7.50075Z"
+                              fill="#212529"
+                            />
+                          </svg>
+                          <span className="actions-rakshit">Details</span>
                         </td>
                       </tr>
                       <tr>
@@ -549,27 +552,32 @@ const page = () => {
                         <td data-label="Package">
                           <div className="product-name ">
                             <div className="rakshit-table-img">
-                              <img
-                                src="/assets/img/home1/package-card-img1.png"
-                                alt=""
-                              />
+                              <img src="https://picsum.photos/80/80" alt="" />
                             </div>
                             <div className="product-content">
                               <h6>
-                                <a href="#">
-                                  Saint Martin: Tour Package
-                                </a>
+                                <a href="#">Saint Martin: Tour Package</a>
                               </h6>
-          
                             </div>
                           </div>
                         </td>
                         <td data-label="Price">$720</td>
-                        <td data-label="Added At">
-                          30/10/24
-                        </td>
+                        <td data-label="Added At">30/10/24</td>
                         <td data-label="Action">
-                          <span className="">Details</span>
+                          <svg
+                            width="16"
+                            height="12"
+                            viewBox="0 0 16 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M15.4439 5.5484C15.4971 5.69007 15.5236 5.84059 15.5236 5.99997C15.5236 6.15934 15.4971 6.30986 15.4439 6.45153C14.7002 8.11611 13.6554 9.44866 12.3096 10.4492C10.9637 11.4497 9.48509 11.95 7.87363 11.95C6.26217 11.95 4.78353 11.4497 3.4377 10.4492C2.09186 9.44866 1.04707 8.11611 0.30332 6.45153C0.250195 6.30986 0.223633 6.15934 0.223633 5.99997C0.223633 5.84059 0.250195 5.69007 0.30332 5.5484C1.04707 3.88382 2.09186 2.55127 3.4377 1.55075C4.78353 0.550226 6.26217 0.0499659 7.87363 0.0499659C9.48509 0.0499659 10.9637 0.550226 12.3096 1.55075C13.6554 2.55127 14.7002 3.88382 15.4439 5.5484ZM4.18145 9.41325C4.18145 9.41325 4.46478 9.62353 5.03145 10.0441C5.59811 10.4647 6.54551 10.675 7.87363 10.675C9.20176 10.675 10.4325 10.2544 11.5658 9.41325C12.6992 8.5721 13.5934 7.43434 14.2486 5.99997C13.5934 4.56559 12.6992 3.42783 11.5658 2.58669C10.4325 1.74554 9.20176 1.32497 7.87363 1.32497C6.54551 1.32497 5.31478 1.74554 4.18145 2.58669C3.04811 3.42783 2.15384 4.56559 1.49863 5.99997C2.15384 7.43434 3.04811 8.5721 4.18145 9.41325ZM5.46973 3.59606C5.46973 3.59606 5.63574 3.43004 5.96777 3.09801C6.2998 2.76598 6.93509 2.59997 7.87363 2.59997C8.81217 2.59997 9.61348 2.932 10.2775 3.59606C10.9416 4.26012 11.2736 5.06142 11.2736 5.99997C11.2736 6.61976 11.1231 7.19085 10.8221 7.71325C10.521 8.23564 10.1093 8.64736 9.58691 8.9484C9.06452 9.24945 8.49342 9.39997 7.87363 9.39997C6.93509 9.39997 6.13379 9.06793 5.46973 8.40387C4.80566 7.73981 4.47363 6.93851 4.47363 5.99997C4.47363 5.06142 4.80566 4.26012 5.46973 3.59606ZM6.37285 7.50075C6.37285 7.50075 6.47689 7.60478 6.68496 7.81286C6.89303 8.02093 7.28926 8.12497 7.87363 8.12497C8.45801 8.12497 8.95827 7.91689 9.37441 7.50075C9.79056 7.0846 9.99863 6.58434 9.99863 5.99997C9.99863 5.61038 9.90566 5.25179 9.71973 4.92418C9.53379 4.59658 9.27702 4.33981 8.94941 4.15387C8.62181 3.96794 8.26322 3.87497 7.87363 3.87497C7.87363 3.87497 7.86478 3.87497 7.84707 3.87497C7.82936 3.87497 7.82051 3.87497 7.82051 3.87497C7.85592 4.03434 7.87363 4.17601 7.87363 4.29997C7.87363 4.77809 7.70983 5.18096 7.38223 5.50856C7.05462 5.83616 6.65176 5.99997 6.17363 5.99997C6.04967 5.99997 5.90801 5.98226 5.74863 5.94684C5.74863 5.94684 5.74863 5.9557 5.74863 5.9734C5.74863 5.99111 5.74863 5.99997 5.74863 5.99997C5.74863 6.58434 5.95671 7.0846 6.37285 7.50075Z"
+                              fill="#212529"
+                            />
+                          </svg>
+
+                          <span className="actions-rakshit">Details</span>
                         </td>
                       </tr>
                     </tbody>
@@ -624,7 +632,7 @@ const page = () => {
         <div className="dashboard-footer">
           <div className="copyright-area">
             <p>
-              Copyright 2023 <a href="#">Triprex</a> | Design By{" "}
+              Copyright 2024 <a href="#">Triprex</a> | Design By{" "}
               <a href="#">Egens Lab</a>
             </p>
           </div>
