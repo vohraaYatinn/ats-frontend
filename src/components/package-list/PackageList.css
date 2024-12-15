@@ -10,6 +10,9 @@
     font-size: 22px;        
     padding: 0 70px;
   }
+  .header h1{
+    font-family: 'Nexa-heavy';
+  }
   .content {
     display: flex;
     flex-grow: 1;
@@ -41,6 +44,7 @@
     font-weight: 500;
     height: 57px;
     border-bottom: 1px solid orange;
+    font-family: 'Nexa-heavy';
 }
 .tabs{
     height: 60px!important;
@@ -54,6 +58,7 @@
       font-size: 12px!important;
       text-transform: uppercase;
       font-weight: bold;
+      font-family: 'Nexa-heavy';
   }
   .filterGroup {
     margin-bottom: 20px;
@@ -62,11 +67,18 @@
 }
   .filterGroup h4 {
     margin-bottom: 10px;
+    font-family: "Nexa-heavy";
   }
   .filterGroup input[type="range"] {
     width: 100%;
   }
-
+  .filterGroup p{
+    font-family: "Manrope";
+  }
+  .filterGroup label{
+    font-family: "Manrope";
+  }
+  
   /* Main Content */
   .main {
     flex: 1;
