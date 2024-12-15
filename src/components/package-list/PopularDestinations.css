@@ -34,6 +34,14 @@
     height: 100%;
     margin: 1%;
 }
+.starts-from-text p{
+    font-family: "Nexa-heavy";
+    font-weight: normal;
+}
+.starts-from-text .starts-from-description{
+    font-family: "Manrope";
+    padding-right: 1rem;
+}
 .starts-from-text p:nth-child(1){
     font-weight: 500;
     font-size: 18px;
@@ -44,8 +52,9 @@
     line-height: 15px;
 }
 .starts-from-price{
-    background-color: rgba(255, 68, 0, 0.165);
-    border: 1px solid rgb(232, 88, 36);
+    font-family: "Manrope";
+    background-color: #FFDEBC;
+    border: 0.8px solid #FFA800;
     border-radius: 20px;
     font-size: 15px;
     padding: 2px 10px;
@@ -57,6 +66,7 @@
     justify-content: end;
     text-transform: uppercase;
     font-size: 13px;
+    font-family: "Nexa-heavy";
 }
 .starts-from-image{
     height: 3.5rem;
@@ -145,4 +155,8 @@
 }
 .image-text-1{
     font-weight: bold;
+    font-family: "Nexa-heavy";
+}
+.image-text-2{
+    font-family: "Manrope";
 }
