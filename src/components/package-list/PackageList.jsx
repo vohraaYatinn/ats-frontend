@@ -673,10 +673,6 @@ const PackagesList = () => {
           </div>
         </main>
       </div>
-
-      <footer className="footer">
-        <p>&copy; 2024 Travel Agency. All rights reserved.</p>
-      </footer>
     </div>
   );
 };
