@@ -396,3 +396,98 @@
   }
  
   
+@media screen and (max-width: 1200px) {
+  .content {
+    padding: 20px 40px;
+  }
+
+  .header {
+    padding: 0 40px;
+  }
+
+  .packages {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .package-card {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .content {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .header {
+    padding: 0 20px;
+    margin-top: 60px;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .packages {
+    grid-template-columns: 1fr;
+  }
+
+  .package-card {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+  }
+
+  .package-card-top-facilities {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .col-1 {
+    width: 100%;
+  }
+
+  .package-card-price {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    margin-top: 40px;
+  }
+
+  .filterGroup {
+    padding: 0 15px;
+  }
+
+  .package-card-img {
+    height: 180px;
+  }
+
+  .options-available {
+    font-size: 10px;
+    height: 24px;
+    padding: 0 12px;
+  }
+
+  .sort-button select {
+    width: 85px;
+    font-size: 13px;
+  }
+}
