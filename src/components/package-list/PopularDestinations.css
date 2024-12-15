@@ -93,7 +93,7 @@
 }
 .popular-destinations-title button{
     color: white;
-    background-color: rgb(213, 91, 46);
+    background: linear-gradient(95.27deg, #F1871C 1.46%, #E35515 105.76%) !important;
     border-radius: 5px;
     padding: 3px 15px;
     font-weight: lighter;
@@ -160,3 +160,94 @@
 .image-text-2{
     font-family: "Manrope";
 }
+
+
+@media screen and (max-width: 1200px) {
+    .popular-destinations-container {
+      padding: 0 40px;
+      height: auto;
+    }
+  
+    .popular-destinations-title {
+      padding: 0 40px;
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    .popular-destinations-container {
+      padding: 0 20px;
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .popular-destinations-title {
+      padding: 0 20px;
+    }
+  
+    .starts-from {
+      width: 100%;
+      height: auto;
+      padding: 15px;
+    }
+  
+    .popular-destinations-images {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .starts-from-card {
+      margin-bottom: 15px;
+    }
+  
+    .starts-from-text p:nth-child(1) {
+      font-size: 16px;
+    }
+  
+    .starts-from-text p:nth-child(2) {
+      font-size: 12px;
+    }
+  
+    .starts-from-price {
+      font-size: 13px;
+    }
+  
+    .popular-destinations-images {
+      flex-direction: column;
+    }
+  
+    .grp-1, .grp-2 {
+      margin: 10px 0;
+    }
+  
+    .grp-1-img-1, .grp-1-img-2,
+    .grp-2-img-1, .grp-2-img-2 {
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .popular-destinations-title h2 {
+      font-size: 20px;
+    }
+  
+    .starts-from-image {
+      height: 3rem;
+      width: 4rem;
+    }
+  
+    .image-text {
+      left: 10px;
+      bottom: 5px;
+    }
+  
+    .image-text-1 {
+      font-size: 14px;
+    }
+  
+    .image-text-2 {
+      font-size: 12px;
+    }
+  }
