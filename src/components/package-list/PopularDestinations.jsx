@@ -19,7 +19,7 @@ const PopularDestinations = () => {
                             <div className='starts-from-image'><img src="https://picsum.photos/500/600?random=1" alt="" /></div>
                             <div className='starts-from-text'>
                                 <p>Honeymoon</p>
-                                <p>Maldives | Seychelles | Andaman | Mauritius | New Zealand | Bali</p>
+                                <p className='starts-from-description'>Maldives | Seychelles | Andaman | Mauritius | New Zealand | Bali</p>
                             </div>
                         </div>
                         <div className='starts-from-price'>
@@ -31,7 +31,7 @@ const PopularDestinations = () => {
                             <div className='starts-from-image'><img src="https://picsum.photos/500/600?random=1" alt="" /></div>
                             <div className='starts-from-text'>
                                 <p>Honeymoon</p>
-                                <p>Maldives | Seychelles | Andaman | Mauritius |  New Zealand | Bali</p>
+                                <p className='starts-from-description'>Maldives | Seychelles | Andaman | Mauritius |  New Zealand | Bali</p>
                             </div>
                         </div>
                         <div className='starts-from-price'>
@@ -43,7 +43,7 @@ const PopularDestinations = () => {
                             <div className='starts-from-image'><img src="https://picsum.photos/500/600?random=1" alt="" /></div>
                             <div className='starts-from-text'>
                                 <p>Honeymoon</p>
-                                <p>Maldives | Seychelles | Andaman | Mauritius | New Zealand | Bali</p>
+                                <p className='starts-from-description'>Maldives | Seychelles | Andaman | Mauritius | New Zealand | Bali</p>
                             </div>
                         </div>
                         <div className='starts-from-price'>
@@ -55,7 +55,7 @@ const PopularDestinations = () => {
                             <div className='starts-from-image'><img src="https://picsum.photos/500/600?random=1" alt="" /></div>
                             <div className='starts-from-text'>
                                 <p>Honeymoon</p>
-                                <p>Maldives | Seychelles | Andaman | Mauritius | New Zealand | Bali</p>
+                                <p className='starts-from-description'>Maldives | Seychelles | Andaman | Mauritius | New Zealand | Bali</p>
                             </div>
                         </div>
                         <div className='starts-from-price'>
@@ -67,7 +67,7 @@ const PopularDestinations = () => {
                             <div className='starts-from-image'><img src="https://picsum.photos/500/600?random=1" alt="" /></div>
                             <div className='starts-from-text'>
                                 <p>Honeymoon</p>
-                                <p>Maldives | Seychelles | Andaman | Mauritius | New Zealand | Bali</p>
+                                <p className='starts-from-description'>Maldives | Seychelles | Andaman | Mauritius | New Zealand | Bali</p>
                             </div>
                         </div>
                         <div className='starts-from-price'>
@@ -79,7 +79,7 @@ const PopularDestinations = () => {
                             <div className='starts-from-image'><img src="https://picsum.photos/500/600?random=1" alt="" /></div>
                             <div className='starts-from-text'>
                                 <p>Honeymoon</p>
-                                <p>Maldives | Seychelles | Andaman | Mauritius | New Zealand | Bali</p>
+                                <p className='starts-from-description'>Maldives | Seychelles | Andaman | Mauritius | New Zealand | Bali</p>
                             </div>
                         </div>
                         <div className='starts-from-price'>
