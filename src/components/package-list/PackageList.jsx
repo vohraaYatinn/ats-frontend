@@ -4,6 +4,13 @@ import { FaStar } from 'react-icons/fa';
 
 const PackagesList = () => {
   const [selectedTab, setSelectedTab] = useState("all");
+  const [duration, setDuration] = useState(100000);
+  const [budget, setBudget] = useState(50000);
+
+  const handleDurationChange = (event) => {
+    setDuration(event.target.value);
+  };
+
 
   const packages = [
     {
@@ -69,7 +76,7 @@ const PackagesList = () => {
             {/* Duration Section */}
             <h4 className="filter-title">Duration (in Nights)</h4>
             <div class="rangeSlider">
-              <input type="range" min="0" max="100000" id="rangeInput" />
+              <input type="range" min="0" max="100000" id="rangeInput" onChange={handleDurationChange} />
             </div>
             <ul>
               <li className="duration-list">
