@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './PackageList.css';
 import { FaStar } from 'react-icons/fa';
+import PackageCard from "./PackageCard";
 
 const PackagesList = () => {
   const [selectedTab, setSelectedTab] = useState("all");
-  const [duration, setDuration] = useState(100000);
-  const [budget, setBudget] = useState(50000);
+  const [isActive,setIsActive] = useState(false)
 
-  const handleDurationChange = (event) => {
-    setDuration(event.target.value);
-  };
-
+  const toggleActive = () => {
+    setIsActive(!isActive)
+  }
 
   const packages = [
     {
@@ -60,6 +59,36 @@ const PackagesList = () => {
     { id: "xpress", label: "Xpress holidays (11)" },
   ];
 
+  useEffect(()=>{
+    const rangeInput = document.getElementById("rangeInput");
+    const rangeValue = document.getElementById("rangeValue");
+    
+    // Display initial value
+    rangeValue.textContent = rangeInput.value;
+    
+    // Update value dynamically as the slider moves
+    rangeInput.addEventListener("input", function() {
+      rangeValue.textContent = rangeInput.value;
+    });
+  },[])
+
+
+
+useEffect(()=>{
+  const budgetInput = document.getElementById("budgetInput");
+  const budgetValue = document.getElementById("budgetValue");
+  
+  // Display initial value
+  budgetValue.textContent = budgetInput.value;
+  
+  // Update value dynamically as the slider moves
+  budgetInput.addEventListener("input", function() {
+    budgetValue.textContent = budgetInput.value;
+  });
+},[])
+
+
+
   return (
     <div className="page">
       <header className="header">
@@ -76,8 +105,10 @@ const PackagesList = () => {
             {/* Duration Section */}
             <h4 className="filter-title">Duration (in Nights)</h4>
             <div class="rangeSlider">
-              <input type="range" min="0" max="100000" id="rangeInput" onChange={handleDurationChange} />
-            </div>
+  <input type="range" min="0" max="100000" id="rangeInput" />
+  <span id="rangeValue">0</span>
+</div>
+
             <ul>
               <li className="duration-list">
                 <div className="">
@@ -113,10 +144,10 @@ const PackagesList = () => {
             <h4>Flights</h4>
             <div className="flightOptions">
               <div className="row-filter">
-                <div className="box">
+                <div className={`box ${isActive ? "" : "active-box"}`} onClick={toggleActive}>
                   <p>With Flight (232)</p>
                 </div>
-                <div className="box">
+                <div className={`box ${isActive ? "active-box" : ""}`} onClick={toggleActive}>
                   <p>Without Flight (207)</p>
                 </div>
               </div>
@@ -128,9 +159,10 @@ const PackagesList = () => {
 
             {/* Budget Section */}
             <h4 className="filter-title">Budget (per person)</h4>
-            <div className="rangeSlider">
-              <input type="range" min="0" max="100000" />
-            </div>
+            <div class="rangeSlider">
+  <input type="range" min="0" max="100000" id="budgetInput" />
+  <span id="budgetValue">0</span>
+</div>
             <ul>
               <li className="duration-list">
                 <div className="filter-cover">
@@ -341,339 +373,11 @@ const PackagesList = () => {
 
 
 
-            <div className="package-card-cover">
-              <div className="options-available">
-                1 More &nbsp;&nbsp;Option Available
-              </div>
-              <div className="package-card-1">
-                <div className="package-card-1-content"></div>
-              </div>
-              <div className="package-card-2">
-                <div className="package-card-2-content"></div>
-              </div>
-              <div className="package-card">
-                <div className="package-card-img">
-                  <img src="https://picsum.photos/500/500" alt="" />
-                </div>
-                <div className="package-card-title">
-                  <p className="package-card-title-1">Most Wanted South India Package</p>
-                  <p className="package-card-title-2">2N Coorg <li>2N Ooty</li> <li>1N Mysore</li></p>
-                  <div className="duration">5N/6D</div>
-                </div>
-                <div style={{ padding: "0 10px" }}>
-                  <hr style={{ color: "gray" }} />
-                  <br />
-                </div>
-                <div className="package-card-top-facilities">
-                  <div className="col-1">
-                    <li>Round Trip Flights</li>
-                    <li>3 Star Hotels</li>
-                    <li>3 4 Activities</li>
-                  </div>
-                  <div className="col-1">
-                    <li>Intercity Car Transfers</li>
-                    <li>Airport Transfers</li>
-                    <li>Selected Meals</li>
-                  </div>
-                </div>
-                <div className="package-card-text">
-                  <p>Visit to Dubare Elephant Camp, Omkareshwara Temple, Raja Seat</p>
-                  <p>Visit to bhagandeshwara temple, Nilgiri Hills, Tea Gardens</p>
-                  <p>Visit to Bandipur National Park, Pykara Waterfalls, Lamb's Rock</p>
-                </div>
-                <div className="package-card-price-cover">
-                  <div className="package-card-price">
-                    <p>This price is lower than the average price in December</p>
-                    <div>
-                      <p><strong style={{fontFamily:"Nexa-heavy"}}>₹56,886</strong> /Person</p>
-                      <p>Total Price ₹1,13,772</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="package-card-offer">
-
-
-
-
-                  Extra &nbsp;&nbsp;&nbsp;<strong>₹11,932</strong>&nbsp;&nbsp;&nbsp; off. UseCode &nbsp;&nbsp;&nbsp;<strong>WELCOMENEW40</strong>
-                </div>
-              </div>
-            </div>
-
-            <div className="package-card-cover">
-              <div className="options-available">
-                1 More &nbsp;&nbsp;Option Available
-              </div>
-              <div className="package-card-1">
-                <div className="package-card-1-content"></div>
-              </div>
-              <div className="package-card-2">
-                <div className="package-card-2-content"></div>
-              </div>
-              <div className="package-card">
-                <div className="package-card-img">
-                  <img src="https://picsum.photos/500/500" alt="" />
-                </div>
-                <div className="package-card-title">
-                  <p className="package-card-title-1">Most Wanted South India Package</p>
-                  <p className="package-card-title-2">2N Coorg <li>2N Ooty</li> <li>1N Mysore</li></p>
-                  <div className="duration">5N/6D</div>
-                </div>
-                <div style={{ padding: "0 10px" }}>
-                  <hr style={{ color: "gray" }} />
-                  <br />
-                </div>
-                <div className="package-card-top-facilities">
-                  <div className="col-1">
-                    <li>Round Trip Flights</li>
-                    <li>3 Star Hotels</li>
-                    <li>3 4 Activities</li>
-                  </div>
-                  <div className="col-1">
-                    <li>Intercity Car Transfers</li>
-                    <li>Airport Transfers</li>
-                    <li>Selected Meals</li>
-                  </div>
-                </div>
-                <div className="package-card-text">
-                  <p>Visit to Dubare Elephant Camp, Omkareshwara Temple, Raja Seat</p>
-                  <p>Visit to bhagandeshwara temple, Nilgiri Hills, Tea Gardens</p>
-                  <p>Visit to Bandipur National Park, Pykara Waterfalls, Lamb's Rock</p>
-                </div>
-                <div className="package-card-price-cover">
-                  <div className="package-card-price">
-                    <p>This price is lower than the average price in December</p>
-                    <div>
-                      <p><strong>₹56,886</strong> /Person</p>
-                      <p>Total Price ₹1,13,772</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="package-card-offer">
-                  Extra &nbsp;&nbsp;&nbsp;<strong>₹11,932</strong>&nbsp;&nbsp;&nbsp; off. UseCode &nbsp;&nbsp;&nbsp;<strong>WELCOMENEW40</strong>
-                </div>
-              </div>
-            </div>
-
-            <div className="package-card-cover">
-              <div className="options-available">
-                1 More &nbsp;&nbsp;Option Available
-              </div>
-              <div className="package-card-1">
-                <div className="package-card-1-content"></div>
-              </div>
-              <div className="package-card-2">
-                <div className="package-card-2-content"></div>
-              </div>
-              <div className="package-card">
-                <div className="package-card-img">
-                  <img src="https://picsum.photos/500/500" alt="" />
-                </div>
-                <div className="package-card-title">
-                  <p className="package-card-title-1">Most Wanted South India Package</p>
-                  <p className="package-card-title-2">2N Coorg <li>2N Ooty</li> <li>1N Mysore</li></p>
-                  <div className="duration">5N/6D</div>
-                </div>
-                <div style={{ padding: "0 10px" }}>
-                  <hr style={{ color: "gray" }} />
-                  <br />
-                </div>
-                <div className="package-card-top-facilities">
-                  <div className="col-1">
-                    <li>Round Trip Flights</li>
-                    <li>3 Star Hotels</li>
-                    <li>3 4 Activities</li>
-                  </div>
-                  <div className="col-1">
-                    <li>Intercity Car Transfers</li>
-                    <li>Airport Transfers</li>
-                    <li>Selected Meals</li>
-                  </div>
-                </div>
-                <div className="package-card-text">
-                  <p>Visit to Dubare Elephant Camp, Omkareshwara Temple, Raja Seat</p>
-                  <p>Visit to bhagandeshwara temple, Nilgiri Hills, Tea Gardens</p>
-                  <p>Visit to Bandipur National Park, Pykara Waterfalls, Lamb's Rock</p>
-                </div>
-                <div className="package-card-price-cover">
-                  <div className="package-card-price">
-                    <p>This price is lower than the average price in December</p>
-                    <div>
-                      <p><strong>₹56,886</strong> /Person</p>
-                      <p>Total Price ₹1,13,772</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="package-card-offer">
-                  Extra &nbsp;&nbsp;&nbsp;<strong>₹11,932</strong>&nbsp;&nbsp;&nbsp; off. UseCode &nbsp;&nbsp;&nbsp;<strong>WELCOMENEW40</strong>
-                </div>
-              </div>
-            </div>
-
-            <div className="package-card-cover">
-              <div className="options-available">
-                1 More &nbsp;&nbsp;Option Available
-              </div>
-              <div className="package-card-1">
-                <div className="package-card-1-content"></div>
-              </div>
-              <div className="package-card-2">
-                <div className="package-card-2-content"></div>
-              </div>
-              <div className="package-card">
-                <div className="package-card-img">
-                  <img src="https://picsum.photos/500/500" alt="" />
-                </div>
-                <div className="package-card-title">
-                  <p className="package-card-title-1">Most Wanted South India Package</p>
-                  <p className="package-card-title-2">2N Coorg <li>2N Ooty</li> <li>1N Mysore</li></p>
-                  <div className="duration">5N/6D</div>
-                </div>
-                <div style={{ padding: "0 10px" }}>
-                  <hr style={{ color: "gray" }} />
-                  <br />
-                </div>
-                <div className="package-card-top-facilities">
-                  <div className="col-1">
-                    <li>Round Trip Flights</li>
-                    <li>3 Star Hotels</li>
-                    <li>3 4 Activities</li>
-                  </div>
-                  <div className="col-1">
-                    <li>Intercity Car Transfers</li>
-                    <li>Airport Transfers</li>
-                    <li>Selected Meals</li>
-                  </div>
-                </div>
-                <div className="package-card-text">
-                  <p>Visit to Dubare Elephant Camp, Omkareshwara Temple, Raja Seat</p>
-                  <p>Visit to bhagandeshwara temple, Nilgiri Hills, Tea Gardens</p>
-                  <p>Visit to Bandipur National Park, Pykara Waterfalls, Lamb's Rock</p>
-                </div>
-                <div className="package-card-price-cover">
-                  <div className="package-card-price">
-                    <p>This price is lower than the average price in December</p>
-                    <div>
-                      <p><strong>₹56,886</strong> /Person</p>
-                      <p>Total Price ₹1,13,772</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="package-card-offer">
-                  Extra &nbsp;&nbsp;&nbsp;<strong>₹11,932</strong>&nbsp;&nbsp;&nbsp; off. UseCode &nbsp;&nbsp;&nbsp;<strong>WELCOMENEW40</strong>
-                </div>
-              </div>
-            </div>
-
-            <div className="package-card-cover">
-              <div className="options-available">
-                1 More &nbsp;&nbsp;Option Available
-              </div>
-              <div className="package-card-1">
-                <div className="package-card-1-content"></div>
-              </div>
-              <div className="package-card-2">
-                <div className="package-card-2-content"></div>
-              </div>
-              <div className="package-card">
-                <div className="package-card-img">
-                  <img src="https://picsum.photos/500/500" alt="" />
-                </div>
-                <div className="package-card-title">
-                  <p className="package-card-title-1">Most Wanted South India Package</p>
-                  <p className="package-card-title-2">2N Coorg <li>2N Ooty</li> <li>1N Mysore</li></p>
-                  <div className="duration">5N/6D</div>
-                </div>
-                <div style={{ padding: "0 10px" }}>
-                  <hr style={{ color: "gray" }} />
-                  <br />
-                </div>
-                <div className="package-card-top-facilities">
-                  <div className="col-1">
-                    <li>Round Trip Flights</li>
-                    <li>3 Star Hotels</li>
-                    <li>3 4 Activities</li>
-                  </div>
-                  <div className="col-1">
-                    <li>Intercity Car Transfers</li>
-                    <li>Airport Transfers</li>
-                    <li>Selected Meals</li>
-                  </div>
-                </div>
-                <div className="package-card-text">
-                  <p>Visit to Dubare Elephant Camp, Omkareshwara Temple, Raja Seat</p>
-                  <p>Visit to bhagandeshwara temple, Nilgiri Hills, Tea Gardens</p>
-                  <p>Visit to Bandipur National Park, Pykara Waterfalls, Lamb's Rock</p>
-                </div>
-                <div className="package-card-price-cover">
-                  <div className="package-card-price">
-                    <p>This price is lower than the average price in December</p>
-                    <div>
-                      <p><strong>₹56,886</strong> /Person</p>
-                      <p>Total Price ₹1,13,772</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="package-card-offer">
-                  Extra &nbsp;&nbsp;&nbsp;<strong>₹11,932</strong>&nbsp;&nbsp;&nbsp; off. UseCode &nbsp;&nbsp;&nbsp;<strong>WELCOMENEW40</strong>
-                </div>
-              </div>
-            </div>
-
-            <div className="package-card-cover">
-              <div className="options-available">
-                1 More &nbsp;&nbsp;Option Available
-              </div>
-              <div className="package-card-1">
-                <div className="package-card-1-content"></div>
-              </div>
-              <div className="package-card-2">
-                <div className="package-card-2-content"></div>
-              </div>
-              <div className="package-card">
-                <div className="package-card-img">
-                  <img src="https://picsum.photos/500/500" alt="" />
-                </div>
-                <div className="package-card-title">
-                  <p className="package-card-title-1">Most Wanted South India Package</p>
-                  <p className="package-card-title-2">2N Coorg <li>2N Ooty</li> <li>1N Mysore</li></p>
-                  <div className="duration">5N/6D</div>
-                </div>
-                <div style={{ padding: "0 10px" }}>
-                  <hr style={{ color: "gray" }} />
-                  <br />
-                </div>
-                <div className="package-card-top-facilities">
-                  <div className="col-1">
-                    <li>Round Trip Flights</li>
-                    <li>3 Star Hotels</li>
-                    <li>3 4 Activities</li>
-                  </div>
-                  <div className="col-1">
-                    <li>Intercity Car Transfers</li>
-                    <li>Airport Transfers</li>
-                    <li>Selected Meals</li>
-                  </div>
-                </div>
-                <div className="package-card-text">
-                  <p>Visit to Dubare Elephant Camp, Omkareshwara Temple, Raja Seat</p>
-                  <p>Visit to bhagandeshwara temple, Nilgiri Hills, Tea Gardens</p>
-                  <p>Visit to Bandipur National Park, Pykara Waterfalls, Lamb's Rock</p>
-                </div>
-                <div className="package-card-price-cover">
-                  <div className="package-card-price">
-                    <p>This price is lower than the average price in December</p>
-                    <div>
-                      <p><strong>₹56,886</strong> /Person</p>
-                      <p>Total Price ₹1,13,772</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="package-card-offer">
-                  Extra &nbsp;&nbsp;&nbsp;<strong>₹11,932</strong>&nbsp;&nbsp;&nbsp; off. UseCode &nbsp;&nbsp;&nbsp;<strong>WELCOMENEW40</strong>
-                </div>
-              </div>
-            </div>
+            <PackageCard/>
+            <PackageCard/>
+            <PackageCard/>
+            <PackageCard/>
+            <PackageCard/>
 
 
 
