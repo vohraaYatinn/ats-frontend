@@ -59,7 +59,7 @@
     font-size: 24px;
   }
   .arrow-left{
-    background-color: rgb(173, 170, 170);
+    background-color: #adaaaa;
     border-radius: 100%;
     color: white;
     height: 20px;
@@ -93,7 +93,7 @@
     background-color: #fffaf0;
     padding: 10px;
     position: relative;
-    gap: 40px;
+    gap: 20px!important;
     width: 290px!important;
     height: 230px;
     border-radius: 20px;
@@ -105,7 +105,6 @@
     position: absolute;
     overflow: visible;
     left: -50px;
-    
   }
   .slide-content{
     width: 100%;
@@ -117,7 +116,6 @@
   }
   
   .image-container img {
-    
     width: 97px;
     height: 160px;
      border-radius: 8px;
@@ -132,13 +130,15 @@
   
   .slide-details h3 {
     margin: 0;
-    font-size: 18px;
-    color: orange;
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
   }
   
   .slide-details p {
     font-size: 14px;
     margin: 5px 0;
+    color: gray;
   }
   
   .book-now {
@@ -149,6 +149,10 @@
     position: absolute;
     right: 10px;
     bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transform: scale(0.9);
   }
   
   .fixed-departure {
@@ -163,108 +167,3 @@
     font-weight: 500;
   }
   
-
-.custom-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 24px;
-  color: #ff9b4a;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.custom-arrow-left {
-  left: -30px;
-}
-
-.custom-arrow-right {
-  right: -30px;
-}
-
-@media screen and (max-width: 1024px) {
-  .exclusive-deals-carousel {
-    gap: 10px!important;
-  }
-
-  .carousel-slide {
-    width: 250px!important;
-    height: 200px;
-  }
-
-  .image-container img {
-    width: 80px;
-    height: 140px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .exclusive-deals-container {
-    padding: 10px;
-  }
-
-  .exclusive-deals-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .arrows {
-    margin-top: 10px;
-  }
-
-  .carousel-slide {
-    width: 220px!important;
-    height: 180px;
-  }
-
-  .image-container {
-    left: -30px;
-  }
-
-  .image-container img {
-    width: 70px;
-    height: 120px;
-  }
-
-  .slide-details {
-    margin-left: 35px;
-  }
-
-  .slide-details h3 {
-    font-size: 16px;
-  }
-
-  .slide-details p {
-    font-size: 12px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .exclusive-deals-container {
-    padding: 5px;
-  }
-
-  .hot-deal {
-    width: 150px;
-    font-size: 13px;
-  }
-
-  .carousel-slide {
-    width: 200px!important;
-    height: 170px;
-  }
-
-  .image-container {
-    left: -25px;
-  }
-
-  .image-container img {
-    width: 60px;
-    height: 100px;
-  }
-
-  .slide-details {
-    margin-left: 30px;
-  }
-}
