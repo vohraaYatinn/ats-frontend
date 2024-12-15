@@ -360,7 +360,7 @@ width: 100%;
 
 
 
-.exclusive-deal {
+/* .exclusive-deal {
   background: #fff6ec;
   border: 1px solid #ff6d00;
   border-radius: 10px;
@@ -368,16 +368,16 @@ width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-}
+} */
 
 .div-image-exclusive img {
   width: 100%;
   border-radius: 10px;
 }
 
-.exclusive-content {
+/* .exclusive-content {
   padding-left: 20px;
-}
+} */
 
 .fixed-departure {
   display: inline-block;
