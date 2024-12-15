@@ -378,7 +378,7 @@ const PackagesList = () => {
                   <div className="package-card-price">
                     <p>This price is lower than the average price in December</p>
                     <div>
-                      <p><strong>₹56,886</strong> /Person</p>
+                      <p><strong style={{fontFamily:"Nexa-heavy"}}>₹56,886</strong> /Person</p>
                       <p>Total Price ₹1,13,772</p>
                     </div>
                   </div>
