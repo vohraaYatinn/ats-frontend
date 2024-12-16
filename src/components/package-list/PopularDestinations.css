@@ -150,7 +150,7 @@
     .popular-destinations-container {
         padding: 0 40px;
         flex-direction: column;
-        transform: scale(0.9);
+        transform: scale(0.98);
         align-items: center;
     }
 
