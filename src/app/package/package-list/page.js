@@ -9,15 +9,15 @@ import ExclusiveDealsCarousel from '../../../components/package-list/ExclusiveDe
 import PopularDestinations from '@/components/package-list/PopularDestinations';
 import PackagesList from '@/components/package-list/PackageList';
 import '../../../components/stylebook/Footer.css'
+import Home2Banner from "@/components/banner/Home2Banner";
+import Header6 from "@/components/header/Header6";
 
 const page = () => {
   return (
     <>
         <Header/>
         <Home2BannerPackgeList/>
-        <div
-          style={{padding: "0 50px"}}
-        >
+        <div>
           <ExclusiveDealsCarousel/>
         </div>
         <PopularDestinations/>
