@@ -53,10 +53,10 @@ const PackagesList = () => {
 
   const tabs = [
     { id: "all", label: "All Packages (240)" },
-    { id: "honeymoon", label: "Honeymoon (19)" },
-    { id: "pilgrimage", label: "Pilgrimage (18)" },
-    { id: "homestays", label: "HomeStays & More (6)" },
-    { id: "xpress", label: "Xpress holidays (11)" },
+    // { id: "honeymoon", label: "Honeymoon (19)" },
+    // { id: "pilgrimage", label: "Pilgrimage (18)" },
+    // { id: "homestays", label: "HomeStays & More (6)" },
+    // { id: "xpress", label: "Xpress holidays (11)" },
   ];
 
   useEffect(()=>{
