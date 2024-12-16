@@ -13,7 +13,7 @@ import '../../components/stylebook/Home.css'
 import { GiPalmTree } from "react-icons/gi"; // Holiday Packages
 import { FaPlane, FaKaaba, FaHotel, FaPassport, FaTaxi } from "react-icons/fa"; // Flights, Umrah, Hotel Booking, VISA, Cab Service
 import { MdOutlineSportsHandball } from "react-icons/md"; // Activities
-import "../../app/customer-dashboard/rakshit.css";
+// import "../../app/customer-dashboard/rakshit.css";
 
  SwiperCore.use([ Autoplay, EffectFade, Navigation, Pagination]);
 
