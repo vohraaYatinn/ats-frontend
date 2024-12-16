@@ -499,32 +499,34 @@ const ActivitiesMainPage = () => {
           {/* <div className="tour-boxes tour-boxes-countries "> */}
           <Slider {...sliderSettings} ref={sliderRef}>
             {details.map((item, index) => (
-              <div className="card" key={index}>
-                <Image src={item.img} objectFit="cover" className="image" />
-                <div className="card-body">
-                  <h5 className="card-title flex">
-                    {item.title}
-                    <p>4+ Rating</p>
-                  </h5>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <div>{item.rating}</div>
-                  </div>
-                  <div className="d-flex">
-                    <div>
-                      <div>Starting From:</div>
-                      <div>
-                        <div className="text-success">$2898</div>
-                        <div className="text-muted text-decoration-line-through">
-                          $3000
-                        </div>
-                      </div>
-                      <div />
-                      <div className="text-muted mt-2">TAXES INCL/PERS</div>
+              <div className="p-1" key={index}>
+                <div className="card">
+                  <Image src={item.img} objectFit="cover" className="image" />
+                  <div className="card-body">
+                    <h5 className="card-title flex">
+                      {item.title}
+                      <p>4+ Rating</p>
+                    </h5>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <div>{item.rating}</div>
                     </div>
-                    <button className="btn btn-primary">View Details</button>
+                    <div className="d-flex">
+                      <div>
+                        <div>Starting From:</div>
+                        <div>
+                          <div className="text-success">$2898</div>
+                          <div className="text-muted text-decoration-line-through">
+                            $3000
+                          </div>
+                        </div>
+                        <div />
+                        <div className="text-muted mt-2">TAXES INCL/PERS</div>
+                      </div>
+                      <button className="btn btn-primary">View Details</button>
+                    </div>
                   </div>
+                  <div className="floater"> 3 DAYS/4 NIGHT</div>
                 </div>
-                <div className="floater"> 3 DAYS/4 NIGHT</div>
               </div>
             ))}
           </Slider>
@@ -604,35 +606,37 @@ const ActivitiesMainPage = () => {
 
           {/* <div className="tour-boxes tour-boxes-countries "> */}
           <Slider {...sliderSettings} ref={sliderRef}>
-          {details.map((item, index) => (
-            <div className="card" key={index}>
-              <Image src={item.img} objectFit="cover" className="image" />
-              <div className="card-body">
-                <h5 className="card-title flex">
-                  {item.title}
-                  <p>4+ Rating</p>
-                </h5>
-                <div className="d-flex justify-content-between align-items-center">
-                  <div>{item.rating}</div>
-                </div>
-                <div className="d-flex">
-                  <div>
-                    <div>Starting From:</div>
-                    <div>
-                      <div className="text-success">$2898</div>
-                      <div className="text-muted text-decoration-line-through">
-                        $3000
-                      </div>
+            {details.map((item, index) => (
+              <div className="p-1" key={index}>
+                <div className="card">
+                  <Image src={item.img} objectFit="cover" className="image" />
+                  <div className="card-body">
+                    <h5 className="card-title flex">
+                      {item.title}
+                      <p>4+ Rating</p>
+                    </h5>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <div>{item.rating}</div>
                     </div>
-                    <div />
-                    <div className="text-muted mt-2">TAXES INCL/PERS</div>
+                    <div className="d-flex">
+                      <div>
+                        <div>Starting From:</div>
+                        <div>
+                          <div className="text-success">$2898</div>
+                          <div className="text-muted text-decoration-line-through">
+                            $3000
+                          </div>
+                        </div>
+                        <div />
+                        <div className="text-muted mt-2">TAXES INCL/PERS</div>
+                      </div>
+                      <button className="btn btn-primary">View Details</button>
+                    </div>
                   </div>
-                  <button className="btn btn-primary">View Details</button>
+                  <div className="floater"> 3 DAYS/4 NIGHT</div>
                 </div>
               </div>
-              <div className="floater"> 3 DAYS/4 NIGHT</div>
-            </div>
-          ))}
+            ))}
           </Slider>
 
           {/* </div> */}
@@ -713,32 +717,34 @@ const ActivitiesMainPage = () => {
           {/* <div className="tour-boxes tour-boxes-countries "> */}
           <Slider {...sliderSettings} ref={sliderRef}>
             {details.map((item, index) => (
-              <div className="card" key={index}>
-                <Image src={item.img} objectFit="cover" className="image" />
-                <div className="card-body">
-                  <h5 className="card-title flex">
-                    {item.title}
-                    <p>4+ Rating</p>
-                  </h5>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <div>{item.rating}</div>
-                  </div>
-                  <div className="d-flex">
-                    <div>
-                      <div>Starting From:</div>
-                      <div>
-                        <div className="text-success">$2898</div>
-                        <div className="text-muted text-decoration-line-through">
-                          $3000
-                        </div>
-                      </div>
-                      <div />
-                      <div className="text-muted mt-2">TAXES INCL/PERS</div>
+              <div className="p-1" key={index}>
+                <div className="card">
+                  <Image src={item.img} objectFit="cover" className="image" />
+                  <div className="card-body">
+                    <h5 className="card-title flex">
+                      {item.title}
+                      <p>4+ Rating</p>
+                    </h5>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <div>{item.rating}</div>
                     </div>
-                    <button className="btn btn-primary">View Details</button>
+                    <div className="d-flex">
+                      <div>
+                        <div>Starting From:</div>
+                        <div>
+                          <div className="text-success">$2898</div>
+                          <div className="text-muted text-decoration-line-through">
+                            $3000
+                          </div>
+                        </div>
+                        <div />
+                        <div className="text-muted mt-2">TAXES INCL/PERS</div>
+                      </div>
+                      <button className="btn btn-primary">View Details</button>
+                    </div>
                   </div>
+                  <div className="floater"> 3 DAYS/4 NIGHT</div>
                 </div>
-                <div className="floater"> 3 DAYS/4 NIGHT</div>
               </div>
             ))}
           </Slider>
