@@ -1,14 +1,14 @@
 "use client"; // Add this if you're using Next.js Client Component
 
-import React, { useRef, useState } from 'react';
-import Image from 'next/image';
-import image1 from '../../../public/image/count-1.png';
-import image2 from '../../../public/image/count-2.png';
-import image3 from '../../../public/image/count-3.png';
-import image4 from '../../../public/image/count-4.png';
-import leaf from '../../../public/image/leaf.svg';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import React, { useRef, useState } from "react";
+import Image from "next/image";
+import image1 from "../../../public/image/count-1.png";
+import image2 from "../../../public/image/count-2.png";
+import image3 from "../../../public/image/count-3.png";
+import image4 from "../../../public/image/count-4.png";
+import leaf from "../../../public/image/leaf.svg";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import Slider from "react-slick";
 
 const Home2Destinationslide = () => {
@@ -33,8 +33,6 @@ const Home2Destinationslide = () => {
       title: "japan",
       desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
-
-  
   ];
   const sliderSettings = {
     infinite: true,
@@ -45,7 +43,7 @@ const Home2Destinationslide = () => {
     pauseOnHover: false, // Prevents slider from pausing on hover
     pauseOnFocus: false, // Prevents slider from pausing on focus
     pauseOnDotsHover: false, // Prevents slider from pausing when dots are hovered
-    centerPadding: "10px", 
+    centerPadding: "10px",
     arrows: false,
 
     responsive: [
@@ -55,8 +53,7 @@ const Home2Destinationslide = () => {
           slidesToShow: 5,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "-10px", 
-
+          centerPadding: "-10px",
         },
       },
       {
@@ -65,8 +62,7 @@ const Home2Destinationslide = () => {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "-100px", 
-
+          centerPadding: "-100px",
         },
       },
       {
@@ -75,8 +71,7 @@ const Home2Destinationslide = () => {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "100px", 
-
+          centerPadding: "100px",
         },
       },
       {
@@ -85,8 +80,7 @@ const Home2Destinationslide = () => {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "50px", 
-
+          centerPadding: "50px",
         },
       },
       {
@@ -95,8 +89,7 @@ const Home2Destinationslide = () => {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "0px", 
-
+          centerPadding: "0px",
         },
       },
       {
@@ -105,8 +98,7 @@ const Home2Destinationslide = () => {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "-10px", 
-
+          centerPadding: "-10px",
         },
       },
       {
@@ -115,8 +107,7 @@ const Home2Destinationslide = () => {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "-50px", 
-
+          centerPadding: "-50px",
         },
       },
       {
@@ -125,8 +116,7 @@ const Home2Destinationslide = () => {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "-80px", 
-
+          centerPadding: "-80px",
         },
       },
       {
@@ -135,8 +125,7 @@ const Home2Destinationslide = () => {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "-100px", 
-
+          centerPadding: "-100px",
         },
       },
       {
@@ -145,8 +134,7 @@ const Home2Destinationslide = () => {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "0px", 
-
+          centerPadding: "0px",
         },
       },
 
@@ -156,8 +144,7 @@ const Home2Destinationslide = () => {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "-30px", 
-
+          centerPadding: "-30px",
         },
       },
       {
@@ -166,8 +153,7 @@ const Home2Destinationslide = () => {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "-70px", 
-
+          centerPadding: "-70px",
         },
       },
       {
@@ -176,8 +162,7 @@ const Home2Destinationslide = () => {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "-90px", 
-
+          centerPadding: "-90px",
         },
       },
       {
@@ -186,8 +171,7 @@ const Home2Destinationslide = () => {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "-50px", 
-
+          centerPadding: "-50px",
         },
       },
       {
@@ -196,8 +180,7 @@ const Home2Destinationslide = () => {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "-20px", 
-
+          centerPadding: "-20px",
         },
       },
       {
@@ -206,8 +189,7 @@ const Home2Destinationslide = () => {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "60px", 
-
+          centerPadding: "60px",
         },
       },
       {
@@ -216,19 +198,17 @@ const Home2Destinationslide = () => {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "50px", 
-
+          centerPadding: "50px",
         },
       },
-  
+
       {
         breakpoint: 556,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "30px", 
-
+          centerPadding: "30px",
         },
       },
       {
@@ -238,111 +218,122 @@ const Home2Destinationslide = () => {
           slidesToScroll: 1,
           infinite: true,
           centerMode: true,
-
         },
       },
-  
-  
     ],
   };
-  
+
   const sliderRef = useRef(null);
-  const [selectedOne, setSelectOne] = useState(1)
+  const [selectedOne, setSelectOne] = useState(1);
 
   const goToSlide = (slideIndex) => {
     sliderRef.current.slickGoTo(slideIndex); // Navigate to the desired slide
   };
   const goToNextSlide = () => {
     sliderRef.current.slickPrev(); // Navigate to the previous slide
-
   };
 
   const goToPreviousSlide = () => {
     sliderRef.current.slickNext(); // Navigate to the next slide
-
   };
-
-
 
   return (
     <div>
       <div className="country-top-destination countries-conatiner">
-        <img className="leaf-img" src={"assets/img/leaf.svg"}/>
-   
+        <img className="leaf-img" src={"assets/img/leaf.svg"} />
 
         <div className="heading-for-all heading-for-all-with-arrow">
-        <div>
-          <h2>Explore Other Countries</h2>
-          <span>Uncover secret wonders and celebrated attractions in top travel spots worldwide - your next escapade awaits!</span>
+          <div>
+            <h2>Explore Other Countries</h2>
+            <span>
+              Uncover secret wonders and celebrated attractions in top travel
+              spots worldwide - your next escapade awaits!
+            </span>
           </div>
-          <div style={{
-            display:"flex",
-            alignItems:"center",
-            justifyContent:"center"
-          }}>
-            <button onClick={()=>{
-goToNextSlide()
-}}>    
-            <ArrowBackIosNewIcon
-        sx={{
-          fontSize: 20,
-          color: '#006370',
-          width: '35px',
-          height: '35px',
-          padding: '10px',
-          borderRadius: '50%',
-          backgroundColor: 'white',
-          marginLeft: '-10px',
-        
-          cursor: 'pointer', // Ensures pointer appears on hover
-          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
-        }}
-      />
-      </button>
-            <button onClick={()=>{
-goToPreviousSlide()
-}}>     
- <ArrowForwardIosIcon
-        sx={{
-          fontSize: 20,
-          color: '#006370',
-          width: '35px',
-          height: '35px',
-          padding: '10px',
-          borderRadius: '50%',
-          backgroundColor: 'white',
-          marginRight: '-10px',
-          cursor: 'pointer', // Ensures pointer appears on hover
-          '&:hover': { backgroundColor: '#f0f0f0',color:'#006370' }, // Optional hover effect
-        }}
-      /></button>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <button
+              onClick={() => {
+                goToNextSlide();
+              }}
+            >
+              <ArrowBackIosNewIcon
+                sx={{
+                  fontSize: 20,
+                  color: "#006370",
+                  width: "35px",
+                  height: "35px",
+                  padding: "10px",
+                  borderRadius: "50%",
+                  backgroundColor: "white",
+                  marginLeft: "-10px",
+
+                  cursor: "pointer", // Ensures pointer appears on hover
+                  "&:hover": { backgroundColor: "#f0f0f0", color: "#006370" }, // Optional hover effect
+                }}
+              />
+            </button>
+            <button
+              onClick={() => {
+                goToPreviousSlide();
+              }}
+            >
+              <ArrowForwardIosIcon
+                sx={{
+                  fontSize: 20,
+                  color: "#006370",
+                  width: "35px",
+                  height: "35px",
+                  padding: "10px",
+                  borderRadius: "50%",
+                  backgroundColor: "white",
+                  marginRight: "-10px",
+                  cursor: "pointer", // Ensures pointer appears on hover
+                  "&:hover": { backgroundColor: "#f0f0f0", color: "#006370" }, // Optional hover effect
+                }}
+              />
+            </button>
           </div>
         </div>
 
         {/* <div className="tour-boxes tour-boxes-countries "> */}
         <Slider {...sliderSettings} ref={sliderRef}>
-        {details.map((item, index) => (
+          {details.map((item, index) => (
             <div
               key={index}
               data-bs-toggle="modal"
               data-bs-target="#user-login"
-              className={`tour-box ${index % 2 === 0 ? "up" : "down-box" } country-check-box`} 
+              className={`tour-box ${
+                index % 2 === 0 ? "up" : "down-box"
+              } country-check-box`}
             >
               <div className="country-box-img">
-                <Image src={item.img} alt={item.title} layout="fill" objectFit="cover" />
+                <Image
+                  src={item.img}
+                  alt={item.title}
+                  layout="fill"
+                  objectFit="cover"
+                />
                 <div className="overlay">
                   <h3>{item.title}</h3>
-                  <p style={{
-                    color:"white"
-                  }}>{item.desc}</p>
+                  <p
+                    style={{
+                      color: "white",
+                    }}
+                  >
+                    {item.desc}
+                  </p>
                 </div>
               </div>
             </div>
           ))}
-      
-
         </Slider>
-         
+
         {/* </div> */}
       </div>
     </div>
