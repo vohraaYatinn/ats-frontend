@@ -150,6 +150,8 @@
     .popular-destinations-container {
         padding: 0 40px;
         flex-direction: column;
+        transform: scale(0.9);
+        align-items: center;
     }
 
     .starts-from {
