@@ -21,6 +21,72 @@ import img2 from "@/../public/image/activity/img2.png";
 import img3 from "@/../public/image/activity/img3.png";
 import img4 from "@/../public/image/activity/img4.png";
 const ActivitiesMainPage = () => {
+  const ads = [
+    {
+      img: image1,
+      title: "Zip Lining",
+    },
+    {
+      img: image2,
+      title: "Bungee Jumping",
+    },
+    {
+      img: image3,
+      title: "Para Gliding",
+    },
+    {
+      img: image4,
+      title: "Surfing",
+    },
+    {
+      img: image1,
+      title: "Zip Lining",
+    },
+    {
+      img: image2,
+      title: "Bungee Jumping",
+    },
+    {
+      img: image3,
+      title: "Para Gliding",
+    },
+    {
+      img: image4,
+      title: "Surfing",
+    },
+    {
+      img: image1,
+      title: "Zip Lining",
+    },
+    {
+      img: image2,
+      title: "Bungee Jumping",
+    },
+    {
+      img: image3,
+      title: "Para Gliding",
+    },
+    {
+      img: image4,
+      title: "Surfing",
+    },
+    {
+      img: image1,
+      title: "Zip Lining",
+    },
+    {
+      img: image2,
+      title: "Bungee Jumping",
+    },
+    {
+      img: image3,
+      title: "Para Gliding",
+    },
+    {
+      img: image4,
+      title: "Surfing",
+    },
+  ];
   const details = [
     {
       img: image1,
@@ -43,7 +109,7 @@ const ActivitiesMainPage = () => {
       desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
   ];
- 
+
   const sliderSettings = {
     infinite: true,
     speed: 500,
@@ -432,35 +498,33 @@ const ActivitiesMainPage = () => {
 
           {/* <div className="tour-boxes tour-boxes-countries "> */}
           <Slider {...sliderSettings} ref={sliderRef}>
-          {details.map((item, index) => (
-              <div
-                key={index}
-                data-bs-toggle="modal"
-                data-bs-target="#user-login"
-                className={`tour-box ${
-                  index % 2 === 0 ? "up" : "down-box"
-                } country-check-box`}
-              >
-                <div className="container ">
-                  <Image src={item.img} objectFit="cover" className="image" />
-                  <div className="card-body">
-                    <h5 className="card-title">{item.title}</h5>
-                    <div className="d-flex justify-content-between align-items-center mb-3">
-                      <div>{item.rating}</div>
-                    </div>
+            {details.map((item, index) => (
+              <div className="card" key={index}>
+                <Image src={item.img} objectFit="cover" className="image" />
+                <div className="card-body">
+                  <h5 className="card-title flex">
+                    {item.title}
+                    <p>4+ Rating</p>
+                  </h5>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <div>{item.rating}</div>
+                  </div>
+                  <div className="d-flex">
                     <div>
-                      <p>Starting From:</p>
-                      <p className="text-success">{item.startingPrice}</p>
-                      <p className="text-muted text-decoration-line-through">
-                        {item.originalPrice}
-                      </p>
+                      <div>Starting From:</div>
+                      <div>
+                        <div className="text-success">$2898</div>
+                        <div className="text-muted text-decoration-line-through">
+                          $3000
+                        </div>
+                      </div>
+                      <div />
+                      <div className="text-muted mt-2">TAXES INCL/PERS</div>
                     </div>
-                    <div className="mt-3">
-                      <button className="btn btn-primary">View Details</button>
-                      <p className="text-muted mt-2">TAXES INCL/PERS</p>
-                    </div>
+                    <button className="btn btn-primary">View Details</button>
                   </div>
                 </div>
+                <div className="floater"> 3 DAYS/4 NIGHT</div>
               </div>
             ))}
           </Slider>
@@ -540,33 +604,35 @@ const ActivitiesMainPage = () => {
 
           {/* <div className="tour-boxes tour-boxes-countries "> */}
           <Slider {...sliderSettings} ref={sliderRef}>
-            {details.map((item, index) => (
-              <div
-                key={index}
-                data-bs-toggle="modal"
-                data-bs-target="#user-login"
-                className={`tour-box ${
-                  index % 2 === 0 ? "up" : "down-box"
-                } country-check-box`}
-              >
-                <div className="container m-4 rounded-xl ">
-                  <Image src={item.img} objectFit="cover" />
-                  <div>title</div>
-                  <div>rating</div>
+          {details.map((item, index) => (
+            <div className="card" key={index}>
+              <Image src={item.img} objectFit="cover" className="image" />
+              <div className="card-body">
+                <h5 className="card-title flex">
+                  {item.title}
+                  <p>4+ Rating</p>
+                </h5>
+                <div className="d-flex justify-content-between align-items-center">
+                  <div>{item.rating}</div>
+                </div>
+                <div className="d-flex">
                   <div>
+                    <div>Starting From:</div>
                     <div>
-                      <p>Starting From:</p>
-                      <p>AED 140.00</p>
-                      <p>AED 150.00</p>
+                      <div className="text-success">$2898</div>
+                      <div className="text-muted text-decoration-line-through">
+                        $3000
+                      </div>
                     </div>
-                    <div>
-                      <button>View Details</button>
-                      <p>TAXES INCL/PERS</p>
-                    </div>
+                    <div />
+                    <div className="text-muted mt-2">TAXES INCL/PERS</div>
                   </div>
+                  <button className="btn btn-primary">View Details</button>
                 </div>
               </div>
-            ))}
+              <div className="floater"> 3 DAYS/4 NIGHT</div>
+            </div>
+          ))}
           </Slider>
 
           {/* </div> */}
@@ -647,34 +713,32 @@ const ActivitiesMainPage = () => {
           {/* <div className="tour-boxes tour-boxes-countries "> */}
           <Slider {...sliderSettings} ref={sliderRef}>
             {details.map((item, index) => (
-              <div
-                key={index}
-                data-bs-toggle="modal"
-                data-bs-target="#user-login"
-                className={`tour-box ${
-                  index % 2 === 0 ? "up" : "down-box"
-                } country-check-box`}
-              >
-                <div className="container ">
-                  <Image src={item.img} objectFit="cover" className="image" />
-                  <div className="card-body">
-                    <h5 className="card-title">{item.title}</h5>
-                    <div className="d-flex justify-content-between align-items-center mb-3">
-                      <div>{item.rating}</div>
-                    </div>
+              <div className="card" key={index}>
+                <Image src={item.img} objectFit="cover" className="image" />
+                <div className="card-body">
+                  <h5 className="card-title flex">
+                    {item.title}
+                    <p>4+ Rating</p>
+                  </h5>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <div>{item.rating}</div>
+                  </div>
+                  <div className="d-flex">
                     <div>
-                      <p>Starting From:</p>
-                      <p className="text-success">{item.startingPrice}</p>
-                      <p className="text-muted text-decoration-line-through">
-                        {item.originalPrice}
-                      </p>
+                      <div>Starting From:</div>
+                      <div>
+                        <div className="text-success">$2898</div>
+                        <div className="text-muted text-decoration-line-through">
+                          $3000
+                        </div>
+                      </div>
+                      <div />
+                      <div className="text-muted mt-2">TAXES INCL/PERS</div>
                     </div>
-                    <div className="mt-3">
-                      <button className="btn btn-primary">View Details</button>
-                      <p className="text-muted mt-2">TAXES INCL/PERS</p>
-                    </div>
+                    <button className="btn btn-primary">View Details</button>
                   </div>
                 </div>
+                <div className="floater"> 3 DAYS/4 NIGHT</div>
               </div>
             ))}
           </Slider>
