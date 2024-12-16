@@ -499,7 +499,7 @@ const ActivitiesMainPage = () => {
           {/* <div className="tour-boxes tour-boxes-countries "> */}
           <Slider {...sliderSettings} ref={sliderRef}>
             {details.map((item, index) => (
-              <div className="p-1" key={index}>
+              <div className="p-2 mt-5" key={index}>
                 <div className="card">
                   <Image src={item.img} objectFit="cover" className="image" />
                   <div className="card-body">
@@ -607,7 +607,7 @@ const ActivitiesMainPage = () => {
           {/* <div className="tour-boxes tour-boxes-countries "> */}
           <Slider {...sliderSettings} ref={sliderRef}>
             {details.map((item, index) => (
-              <div className="p-1" key={index}>
+              <div className="p-2 mt-5" key={index}>
                 <div className="card">
                   <Image src={item.img} objectFit="cover" className="image" />
                   <div className="card-body">
@@ -717,7 +717,7 @@ const ActivitiesMainPage = () => {
           {/* <div className="tour-boxes tour-boxes-countries "> */}
           <Slider {...sliderSettings} ref={sliderRef}>
             {details.map((item, index) => (
-              <div className="p-1" key={index}>
+              <div className="p-2 mt-5" key={index}>
                 <div className="card">
                   <Image src={item.img} objectFit="cover" className="image" />
                   <div className="card-body">
