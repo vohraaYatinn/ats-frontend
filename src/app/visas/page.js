@@ -6,12 +6,11 @@ import Link from "next/link";
 import Topbar from "@/components/topbar/Topbar";
 import Header from "@/components/header/Header";
 import Newslatter from "@/components/common/Newslatter";
-import Footer from "@/components/footer/Footer3";
-import '@/components/stylebook/Footer.css'
+import Footer from "@/components/footer/Footer";
 export const metadata = {
-  title: "ATS - tour & travel",
+  title: "TripRex - Tour & Travel Agency  NextJs Template",
   description:
-    "ATS is a Tour and Travel Agency",
+    "TripRex is a NextJs Template for Tour and Travel Agency purpose",
   icons: {
     icon: "/assets/img/sm-logo.svg",
   },
@@ -945,6 +944,7 @@ const page = () => {
           </div>
         </div>
       </div>
+      <Newslatter />
       <Footer />
     </>
   );
