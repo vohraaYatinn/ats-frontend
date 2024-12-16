@@ -19,3 +19,30 @@
     background: #FFF5EB;
     overflow: hidden;
 }
+.hotel-suits-card-button{
+    border-radius: 21px;
+background: linear-gradient(95deg, #F1871C 1.46%, #E35515 105.76%) ;
+
+}
+.room-card-hotel h6{
+    font-weight: 400 !important;
+
+}
+.room-card-hotel h6 span{
+    font-weight: 100;
+    color: #F1871C;    
+}
+.list-room-ul{
+    display: flex;
+}
+.list-room-ul div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.list-room-ul div p{
+    margin: 0rem;
+}
+.room-ul-left{
+    margin-left: 1rem;
+}

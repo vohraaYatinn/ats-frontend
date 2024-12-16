@@ -24767,7 +24767,6 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 }
 
 .room-suits-card {
-  border: 1px solid #eee;
   border-radius: 5px;
 }
 .room-suits-card .hotel-img-slider {
@@ -24775,6 +24774,7 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   position: relative;
 }
 .room-suits-card .hotel-img-slider .batch {
+  width: 100%;
   color: var(--white-color);
   font-family: var(--font-rubik);
   font-size: 14px;
@@ -24782,7 +24782,7 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   line-height: 1;
   text-transform: capitalize;
   display: inline-block;
-  padding: 7px 16px;
+  padding: 15px 16px;
   border-radius: 5px 0 5px 0;
   background-color: #228B22;
   position: absolute;
@@ -24790,6 +24790,9 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   left: 0;
   transition: 0.5s;
   z-index: 2;
+  text-align: center;
+  background: #F1871C;
+
 }
 .room-suits-card .hotel-img-slider .swiper-pagination5 {
   position: absolute;
@@ -24924,7 +24927,7 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding: 25px;
+  padding: 25px 25px 13px 25px;
 }
 @media (max-width: 576px) {
   .room-suits-card .room-content {
@@ -25024,7 +25027,6 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   fill: var(--primary-color1);
 }
 .room-suits-card .room-content .content-bottom {
-  display: flex;
   align-items: center;
   justify-content: space-between;
 }
@@ -25056,14 +25058,14 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   padding-top: 7px;
 }
 .room-suits-card .room-content .content-bottom .room-type .deals span {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 400;
   color: var(--text-color);
   font-family: var(--font-jost);
   line-height: 1.3;
 }
 .room-suits-card .room-content .content-bottom .room-type .deals span strong {
-  color: var(--primary-color1);
+  color: #F1871C;
   font-family: var(--font-rubik);
   font-weight: 500;
 }
@@ -25071,6 +25073,9 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   display: flex;
   flex-direction: column;
   align-items: end;
+  align-self: end;
+  position: relative;
+  top: -1rem;
 }
 @media (max-width: 576px) {
   .room-suits-card .room-content .content-bottom .price-and-book {
@@ -27225,6 +27230,7 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   margin: 0;
   padding: 0;
   list-style: none;
+  padding: 0rem 1rem 0rem 1rem !important;
 }
 .sidebar-area .single-widget .checkbox-container > ul > li {
   display: flex;
