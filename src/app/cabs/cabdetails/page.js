@@ -12,13 +12,7 @@ import "@/app/cabs/cabdetails/page.css";
 import "@/components/stylebook/Footer.css";
 import "@/app/activities/activities-details/activity-detail.css";
 import SelectComponent from "@/uitils/SelectComponent";
-import icon from "@/../public/image/icons/image.png"
-import icon1 from "@/../public/image/icons/image (1).png"
-import icon2 from "@/../public/image/icons/image (2).png"
-import icon3 from "@/../public/image/icons/image (3).png"
-import icon4 from "@/../public/image/icons/image (4).png"
-import icon5 from "@/../public/image/icons/image (5).png"
-import icon6 from "@/../public/image/icons/image (6).png"
+
 const CabDetail = () => {
   return (
     <div className="cab-details-search">
@@ -48,13 +42,14 @@ const CabDetail = () => {
       </div>
       <div className="container">
         <div className="cuscard mt-10">
-          <p className="review"> <Image src={icon} className="icons"/>Operating Hours</p>
-          <p className="review"> <Image src={icon1} className="icons"/>Instant Confirmation</p>
-          <p className="review"> <Image src={icon2} className="icons"/>Mobile Voucher Accepted</p>
-          <p className="review"> <Image src={icon3} className="icons"/>Free Cancellation 24 hours Prior</p>
-          <p className="review"> <Image src={icon4} className="icons"/>English</p>
-          <p className="review"> <Image src={icon5} className="icons"/>Transfer options Available</p>
-          <p className="review link"> <Image src={icon6} className="icons"/>Google Map</p>
+        <p className="review"> <img src="/image/icons/image.png" alt="Operating Hours" className="icons"/>Operating Hours</p>
+<p className="review"> <img src="/image/icons/image (1).png" alt="Instant Confirmation" className="icons"/>Instant Confirmation</p>
+<p className="review"> <img src="/image/icons/image (2).png" alt="Mobile Voucher Accepted" className="icons"/>Mobile Voucher Accepted</p>
+<p className="review"> <img src="/image/icons/image (3).png" alt="Free Cancellation 24 hours Prior" className="icons"/>Free Cancellation 24 hours Prior</p>
+<p className="review"> <img src="/image/icons/image (4).png" alt="English" className="icons"/>English</p>
+<p className="review"> <img src="/image/icons/image (5).png" alt="Transfer Options Available" className="icons"/>Transfer options Available</p>
+<p className="review link"> <img src="/image/icons/image (6).png" alt="Google Map" className="icons"/>Google Map</p>
+
         </div>
       </div>
 
