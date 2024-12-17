@@ -95,7 +95,7 @@ useEffect(()=>{
         <h1>Packages List</h1>
       </header>
 
-      <div className="content">
+      <div className="content-package">
         <aside className="sidebar">
           <h3>Filters</h3>
 

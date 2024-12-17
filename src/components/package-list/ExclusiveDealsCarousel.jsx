@@ -1,8 +1,8 @@
 // Import necessary dependencies
 import React from 'react';
 import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
 import './ExclusiveDeals.css';
 
 const ExclusiveDeals = () => {
@@ -63,22 +63,22 @@ const ExclusiveDeals = () => {
 
   const slides = [
     {
-      image: 'https://picsum.photos/400/400',
+      image: '/assets/img/activity-details/png1.png',
       title: 'Solo Travellers',
       text: 'Social Travel for 18-35 years old.',
     },
     {
-      image: 'https://picsum.photos/400/400',
+      image: '/assets/img/activity-details/png2.png',
       title: 'Europe Summer 2025',
       text: 'EMI Starting from ₹16,516/- Per Month',
     },
     {
-      image: 'https://picsum.photos/400/400',
+      image: '/assets/img/activity-details/png3.png',
       title: 'Discover Dubai in Cruise Style',
       text: 'EMI Starting from ₹8148/- Per Month',
     },
     {
-      image: 'https://picsum.photos/400/400',
+      image: '/assets/img/activity-details/png4.png',
       title: 'Yas island Tour Packages',
       text: 'Price starting from Rs47,838 PP',
     },

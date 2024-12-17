@@ -87,9 +87,7 @@ const Home2BannerPackgeList = () => {
     })
     return (
         <>
-            <div className="package-list-banner">
-                <img src="https://picsum.photos/1920/450" alt="" />
-            </div>
+      
             <div className="home2-banner-content-wrap ">
                 <div className="home1-banner-bottom style-2 mar-to-bottom" >
                     <div className="container-md container-fluid">

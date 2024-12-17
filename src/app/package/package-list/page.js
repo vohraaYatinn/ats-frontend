@@ -15,12 +15,21 @@ import '../../../components/stylebook/Header.css'
 import '../../../components/stylebook/Home.css'
 import '../../../components/stylebook/home/Header.css'
 import '../../../components/stylebook/home/Banner.css'
+import Topbar from "@/components/topbar/Topbar";
+import Breadcrumb from "@/components/common/Breadcrumb";
+import DestinationSearch from "@/components/banner/DestinationSearch";
+import TourCategoryDropdown from "@/components/banner/TourCategoryDropdown";
+import QuantityCounter from "@/uitils/QuantityCounter";
+
 
 const page = () => {
   return (
-    <>
-        <Header/>
-        {/* <Home2Banner/> */}
+    <div className='package-list-custom'>
+      <Topbar />
+      <Header />
+      <Breadcrumb pagename="Package Grid" pagetitle="Package Grid" />
+ 
+              {/* <Home2Banner/> */}
         <Home2BannerPackgeList/>
         <div>
           <ExclusiveDealsCarousel/>
@@ -29,7 +38,7 @@ const page = () => {
         <PackagesList/>
         <hr/>
         <Footer/>
-    </>
+    </div>
   )
 }
 
