@@ -15,6 +15,10 @@
   grid-column-start: 4;
 }
 
+.cab-details-search .review {
+  display: flex;
+  align-items: center;
+}
 .cab-details-search .car {
   border-radius: 25px;
 }
