@@ -576,7 +576,7 @@ ul {
 }
 
 .mb-20 {
-  margin-bottom: 20px !important;
+  margin-bottom: 20px;
 }
 
 .mt-15 {
@@ -1563,7 +1563,7 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: #F1871C;
+  color: var(--primary-color1);
   font-family: var(--font-satisfy);
   font-size: 17px;
   font-weight: 400;
@@ -8276,7 +8276,7 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 }
 .banner2-card .banner2-content-wrap {
   padding: 60px 20px 35px 20px;
-  background-image: url(../img/home1/vector/banner2-content-bg1.svg);
+  background-image: url(../img/home1/b2svg.png);
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -17845,11 +17845,11 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 ========================================*/
 .package-card4 {
   display: flex;
-  background-image: url(../img/home4/package-card4-bg.png);
+  background-color: #FFF5EB;
   background-size: cover;
   background-repeat: no-repeat;
-  border: 1px solid #eee;
-  border-radius: 5px;
+  border: 1px solid #F1871C;
+  border-radius: 45px;
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .package-card4 {
@@ -17866,7 +17866,7 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   min-width: 250px;
   max-width: 250px;
   display: block;
-  border-radius: 5px 0 0 5px;
+  border-radius: 45px 0 0 45px;
   transition: all 0.5s ease-out;
 }
 @media (min-width: 1200px) and (max-width: 1399px) {
@@ -18075,7 +18075,7 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   line-height: 1;
   text-transform: capitalize;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 21px;
   white-space: nowrap;
   position: relative;
   overflow: hidden;
@@ -22897,12 +22897,8 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 }
 
 .contact-map {
-  width: 85%;
   line-height: 0.6;
   position: relative;
-          border: 1px solid transparent;
-        border-radius: 45px;
-        overflow: hidden; 
 }
 .contact-map .banner3-section {
   margin: 0;
@@ -24771,7 +24767,6 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 }
 
 .room-suits-card {
-  border: 1px solid #eee;
   border-radius: 5px;
 }
 .room-suits-card .hotel-img-slider {
@@ -24794,6 +24789,10 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   left: 0;
   transition: 0.5s;
   z-index: 2;
+  width: 100%;
+  text-align: center;
+  background: #F1871C;
+
 }
 .room-suits-card .hotel-img-slider .swiper-pagination5 {
   position: absolute;
@@ -24928,7 +24927,7 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding: 25px;
+  padding: 25px 25px 13px 25px;
 }
 @media (max-width: 576px) {
   .room-suits-card .room-content {
@@ -25060,14 +25059,15 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   padding-top: 7px;
 }
 .room-suits-card .room-content .content-bottom .room-type .deals span {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 400;
   color: var(--text-color);
   font-family: var(--font-jost);
   line-height: 1.3;
 }
 .room-suits-card .room-content .content-bottom .room-type .deals span strong {
-  color: var(--primary-color1);
+  color: #F1871C;
+
   font-family: var(--font-rubik);
   font-weight: 500;
 }
@@ -25075,6 +25075,9 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   display: flex;
   flex-direction: column;
   align-items: end;
+  align-self: end;
+  position: relative;
+  top: -1rem;
 }
 @media (max-width: 576px) {
   .room-suits-card .room-content .content-bottom .price-and-book {
@@ -29351,4 +29354,45 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
     padding: 4px 5px;
   }
 
+}
+
+.widget-titled{
+  font-size: 20px;
+  font-weight: 400;
+  /* width: 442px; */
+  height: 51px;
+  background-color: #FFE4C8;
+  border-radius: 45px;
+  padding: 10px 20px;
+}
+
+/* Add this media query to remove zoom effect on mobile */
+@media (max-width: 768px) {
+  .package-card-img img {
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  .package-card-img:hover img {
+    transform: none !important;
+  }
+}
+
+.contact-hr-line{
+  text-align: center;
+  margin-top: 5rem;
+}
+.hr-contact-div{
+  padding: 0rem 8rem;
+
+}
+@media (max-width: 576px) {
+  .contact-hr-line{
+      margin-top: 2rem;
+  }
+  .hr-contact-div{
+      padding: 0rem 2rem;
+      
+  
+  }
 }
