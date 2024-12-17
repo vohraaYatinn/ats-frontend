@@ -15,7 +15,7 @@ import img4 from "@/../public/image/icons/Frame (3).png";
 import img5 from "@/../public/image/icons/Frame (4).png";
 import head from "@/../public/image/icons/head.png";
 import link from "@/../public/image/link.png";
-import "@/app/cabs/cabsearch/card.css";
+import "@/app/cabs/cabsearch/page.css";
 import Image from "next/image";
 import QuantityCounter from "@/uitils/QuantityCounter";
 import "@/components/stylebook/Footer.css";
