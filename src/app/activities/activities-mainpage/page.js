@@ -16,11 +16,15 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import Slider from "react-slick";
 import "@/components/stylebook/home/countrydestination.css";
+import plane from "@/../public/image/SVG.png"
 import img1 from "@/../public/image/activity/img1.png";
 import img2 from "@/../public/image/activity/img2.png";
 import img3 from "@/../public/image/activity/img3.png";
 import img4 from "@/../public/image/activity/img4.png";
 const ActivitiesMainPage = () => {
+
+
+
   const ads = [
     {
       img: img1,
@@ -286,7 +290,7 @@ const ActivitiesMainPage = () => {
               width: "100%",
             }}
           >
-            <div style={{ marginBottom: "1rem" }}>
+            <div style={{ marginBottom: "3rem" }}>
               <h2>Top Cities to Visit</h2>
               <span>
                 Uncover secret wonders and celebrated attractions in top travel
@@ -317,7 +321,7 @@ const ActivitiesMainPage = () => {
                     marginLeft: "-10px",
 
                     cursor: "pointer", // Ensures pointer appears on hover
-                    "&:hover": { backgroundColor: "#f0f0f0", color: "#006370" }, // Optional hover effect
+                   // Optional hover effect
                   }}
                 />
               </button>
@@ -329,7 +333,7 @@ const ActivitiesMainPage = () => {
                 <ArrowForwardIosIcon
                   sx={{
                     fontSize: 20,
-                    color: "#006370",
+                    color: "#F36911",
                     width: "35px",
                     height: "35px",
                     padding: "10px",
@@ -437,7 +441,7 @@ const ActivitiesMainPage = () => {
                 <ArrowForwardIosIcon
                   sx={{
                     fontSize: 20,
-                    color: "#006370",
+                    color: "#F36911",
                     width: "35px",
                     height: "35px",
                     padding: "10px",
@@ -481,9 +485,7 @@ const ActivitiesMainPage = () => {
                         <div />
                       </div>
                       <div>
-                        <button className="btn btn-primary">
-                          View Details
-                        </button>
+                       <button className="btn-primary">View Details <Image src={plane} className="plane"/></button>
                         <div className="text-muted tax">TAXES INCL/PERS</div>
                       </div>
                     </div>
@@ -551,7 +553,7 @@ const ActivitiesMainPage = () => {
                 <ArrowForwardIosIcon
                   sx={{
                     fontSize: 20,
-                    color: "#006370",
+                    color: "#F36911",
                     width: "35px",
                     height: "35px",
                     padding: "10px",
@@ -595,9 +597,7 @@ const ActivitiesMainPage = () => {
                         <div />
                       </div>
                       <div>
-                        <button className="btn btn-primary">
-                          View Details
-                        </button>
+                      <button className="btn-primary">View Details <Image src={plane} className="plane"/></button>
                         <div className="text-muted tax">TAXES INCL/PERS</div>
                       </div>
                     </div>
@@ -655,7 +655,7 @@ const ActivitiesMainPage = () => {
                     marginLeft: "-10px",
 
                     cursor: "pointer", // Ensures pointer appears on hover
-                    "&:hover": { backgroundColor: "#f0f0f0", color: "#006370" }, // Optional hover effect
+                     // Optional hover effect
                   }}
                 />
               </button>
@@ -667,7 +667,7 @@ const ActivitiesMainPage = () => {
                 <ArrowForwardIosIcon
                   sx={{
                     fontSize: 20,
-                    color: "#006370",
+                    color: "#F36911",
                     width: "35px",
                     height: "35px",
                     padding: "10px",
@@ -711,9 +711,7 @@ const ActivitiesMainPage = () => {
                         <div />
                       </div>
                       <div>
-                        <button className="btn btn-primary">
-                          View Details
-                        </button>
+                      <button className="btn-primary">View Details <Image src={plane} className="plane"/></button>
                         <div className="text-muted tax">TAXES INCL/PERS</div>
                       </div>
                     </div>
@@ -726,6 +724,9 @@ const ActivitiesMainPage = () => {
           {/* </div> */}
         </div>
       </div>
+
+
+      
       <Footer />
     </>
   );
