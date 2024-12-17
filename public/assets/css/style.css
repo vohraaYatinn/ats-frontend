@@ -24767,7 +24767,6 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 }
 
 .room-suits-card {
-  border: 1px solid #eee;
   border-radius: 5px;
 }
 .room-suits-card .hotel-img-slider {
@@ -29393,6 +29392,7 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   }
   .hr-contact-div{
       padding: 0rem 2rem;
+      
   
   }
 }

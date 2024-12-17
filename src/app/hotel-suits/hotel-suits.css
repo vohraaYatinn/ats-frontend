@@ -46,3 +46,18 @@ background: linear-gradient(95deg, #F1871C 1.46%, #E35515 105.76%) ;
 .room-ul-left{
     margin-left: 1rem;
 }
+
+@media (max-width: 1440px) {
+    .room-suits-page {
+        padding: 0rem 50px;
+        padding-top: 90px;
+
+    }
+}
+@media (max-width: 576px) {
+    .room-suits-page {
+        padding: 0rem;
+        padding-top: 50px;
+
+    }
+}

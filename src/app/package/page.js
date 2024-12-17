@@ -135,7 +135,7 @@ const page = () => {
       <div className="package-grid-with-sidebar-section pt-50 mb-60 package-ui-cstm">
         <div className="container">
           <div className="row g-lg-4 gy-5">
-            <div className="col-lg-8">
+            <div className="col-lg-12">
               <div className="package-inner-title-section mb-40">
                 <p>Showing 1–12 of 101 results</p>
                 <div className="selector-and-grid">
@@ -205,7 +205,7 @@ const page = () => {
               </div>
               <div className="list-grid-product-wrap mb-70">
                 <div className="row gy-4">
-                  <div className="col-md-6 item">
+                  <div className="col-md-4 item">
                     <div className="package-card">
                       <div className="package-card-img-wrap">
                         <Link
@@ -415,7 +415,7 @@ const page = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-6 item">
+                  <div className="col-md-4 item">
                     <div className="package-card">
                       <div className="package-card-img-wrap">
                         <Link
@@ -623,7 +623,7 @@ const page = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-6 item">
+                  <div className="col-md-4 item">
                     <div className="package-card">
                       <div className="package-card-img-wrap">
                         <Link
@@ -831,7 +831,7 @@ const page = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-6 item">
+                  <div className="col-md-4 item">
                     <div className="package-card">
                       <div className="package-card-img-wrap">
                         <Link
@@ -1039,7 +1039,7 @@ const page = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-6 item">
+                  <div className="col-md-4 item">
                     <div className="package-card">
                       <div className="package-card-img-wrap">
                         <Link
@@ -1249,7 +1249,7 @@ const page = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-6 item">
+                  <div className="col-md-4 item">
                     <div className="package-card">
                       <div className="package-card-img-wrap">
                         <Link
@@ -1497,115 +1497,7 @@ const page = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4">
-              <div className="sidebar-area package-sidebar">
-                <div className="single-widget mb-30">
-                  <h5 className="widget-title">Activity</h5>
-                  <ul className="category-list">
-                    <li>
-                      <Link href="/blog">All Package</Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">Beaches</Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">City Tours</Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">Cruises</Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">Hiking</Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">Historical</Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">Museum Tours</Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">Adventure</Link>
-                    </li>
-                  </ul>
-                </div>
-                <div className="single-widget mb-30">
-                  <h5 className="widget-title">Destination</h5>
-                  <ul className="category-list two">
-                    <li>
-                      <Link href="/blog">
-                        Indonesia
-                        <span>20</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">
-                        Switzerland
-                        <span>35</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">
-                        Egypt
-                        <span>25</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">
-                        Saudi Arab
-                        <span>18</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">
-                        Europe
-                        <span>06</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">
-                        Bangladesh
-                        <span>08</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">
-                        Luxury Retreat
-                        <span>15</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">
-                        Photography Expedition
-                        <span>25</span>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-                <div className="single-widget mb-30">
-                  <h5 className="widget-title">Durations</h5>
-                  <ul className="category-list">
-                    <li>
-                      <Link href="/blog">1 - 2 Days Tour</Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">2 - 3 Days Tour</Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">4 - 5 Days Tour</Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">6 - 7 Days Tour</Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">8 - 9 Days Tour</Link>
-                    </li>
-                    <li>
-                      <Link href="/blog">10 - 13 Days Tour</Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
