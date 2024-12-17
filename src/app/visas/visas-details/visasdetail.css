@@ -40,7 +40,7 @@
 }
 
 .visas-row-cstm {
-    gap: 120px;
+    gap: 100px;
 }
 
 .visas-row-cstm .col-lg-8 {
@@ -51,6 +51,26 @@
 .visas-row-cstm .col-lg-4 {
     max-width: 460px;
     width: 100%;
+}
+
+.visa-details-pages 
+ .visas-row-cstm .visa-meta li span,
+ .visa-details-pages .visas-row-cstm .accordion-header button,
+ .visa-details-pages .visas-row-cstm h4.widget-title,
+ .visa-details-pages .visas-row-cstm  .document-list h3,
+ .visas-row-cstm  .faq-content .accordion .accordion-item .accordion-header .accordion-button::after {
+    font-weight: 400;
+}
+
+.visa-sidebar .form-inner label{
+    font-weight: 400;
+}
+
+.visa-dtl-cstm .container {
+    margin-right: inherit;
+    @media (max-width:991px){
+        margin-right: auto !important;
+    }
 }
 
 @media (max-width:991px){
