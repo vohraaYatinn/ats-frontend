@@ -22,6 +22,7 @@ const page = () => {
       <Topbar />
       <Header />
       <Breadcrumb pagename="Visa Details" pagetitle="Visa Details" />
+      <div className="container">
       <div className="visa-details-pages pt-120 mb-120 visa-dtl-cstm">
         <div className="container">
           <div className="row g-lg-4 gy-5 visas-row-cstm">
@@ -441,6 +442,7 @@ const page = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
       {/* <Newslatter /> */}
       <Footer />
