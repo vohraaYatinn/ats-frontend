@@ -24767,6 +24767,7 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 }
 
 .room-suits-card {
+  border: 1px solid #eee;
   border-radius: 5px;
 }
 .room-suits-card .hotel-img-slider {
@@ -24774,7 +24775,6 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   position: relative;
 }
 .room-suits-card .hotel-img-slider .batch {
-  width: 100%;
   color: var(--white-color);
   font-family: var(--font-rubik);
   font-size: 14px;
@@ -24782,7 +24782,7 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   line-height: 1;
   text-transform: capitalize;
   display: inline-block;
-  padding: 15px 16px;
+  padding: 7px 16px;
   border-radius: 5px 0 5px 0;
   background-color: #228B22;
   position: absolute;
@@ -24790,6 +24790,7 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   left: 0;
   transition: 0.5s;
   z-index: 2;
+  width: 100%;
   text-align: center;
   background: #F1871C;
 
@@ -25027,6 +25028,7 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   fill: var(--primary-color1);
 }
 .room-suits-card .room-content .content-bottom {
+  display: flex;
   align-items: center;
   justify-content: space-between;
 }
@@ -25066,6 +25068,7 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 }
 .room-suits-card .room-content .content-bottom .room-type .deals span strong {
   color: #F1871C;
+
   font-family: var(--font-rubik);
   font-weight: 500;
 }
@@ -27230,7 +27233,6 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   margin: 0;
   padding: 0;
   list-style: none;
-  padding: 0rem 1rem 0rem 1rem !important;
 }
 .sidebar-area .single-widget .checkbox-container > ul > li {
   display: flex;
@@ -29358,9 +29360,39 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 .widget-titled{
   font-size: 20px;
   font-weight: 400;
-  width: 442px;
+  /* width: 442px; */
   height: 51px;
   background-color: #FFE4C8;
   border-radius: 45px;
   padding: 10px 20px;
+}
+
+/* Add this media query to remove zoom effect on mobile */
+@media (max-width: 768px) {
+  .package-card-img img {
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  .package-card-img:hover img {
+    transform: none !important;
+  }
+}
+
+.contact-hr-line{
+  text-align: center;
+  margin-top: 5rem;
+}
+.hr-contact-div{
+  padding: 0rem 8rem;
+
+}
+@media (max-width: 576px) {
+  .contact-hr-line{
+      margin-top: 2rem;
+  }
+  .hr-contact-div{
+      padding: 0rem 2rem;
+  
+  }
 }

@@ -6,7 +6,9 @@ import Link from "next/link";
 import Topbar from "@/components/topbar/Topbar";
 import Header from "@/components/header/Header";
 import Newslatter from "@/components/common/Newslatter";
-import Footer from "@/components/footer/Footer";
+import Footer from "@/components/footer/Footer3";
+import "@/components/stylebook/Footer.css";
+
 export const metadata = {
   title: "TripRex - Tour & Travel Agency  NextJs Template",
   description:
@@ -341,6 +343,9 @@ const page = () => {
                         <img
                           src="/image/Link.png"
                           alt=""
+                          style={{
+                            borderRadius: '45px',
+                          }}
                         />
                       </Link>
                       <div className="package-card-content">
@@ -392,6 +397,9 @@ const page = () => {
                         <img
                           src="/image/Link.png"
                           alt=""
+                          style={{
+                            borderRadius: '45px',
+                          }}
                         />
                       </Link>
                       <div className="package-card-content">
@@ -441,6 +449,9 @@ const page = () => {
                         <img
                           src="/image/Link.png"
                           alt=""
+                          style={{
+                            borderRadius: '45px',
+                          }}
                         />
                       </Link>
                       <div className="package-card-content">
@@ -492,6 +503,9 @@ const page = () => {
                         <img
                           src="/image/Link.png"
                           alt=""
+                          style={{
+                            borderRadius: '45px',
+                          }}
                         />
                       </Link>
                       <div className="package-card-content">
@@ -541,6 +555,9 @@ const page = () => {
                         <img
                           src="/image/Link.png"
                           alt=""
+                          style={{
+                            borderRadius: '45px',
+                          }}
                         />
                       </Link>
                       <div className="package-card-content">
@@ -592,6 +609,9 @@ const page = () => {
                         <img
                           src="/image/Link.png"
                           alt=""
+                          style={{
+                            borderRadius: '45px',
+                          }}
                         />
                       </Link>
                       <div className="package-card-content">
@@ -704,7 +724,7 @@ const page = () => {
                     </div>
                   </div>
                 </div>
-                <h5 className="widget-titled mb-30">
+                <h5 className="visas-room-page widget-titled mb-30">
                   FAQ - General Visa Information:
                 </h5>
                 <div className="faq-content mb-50">
@@ -944,7 +964,9 @@ const page = () => {
           </div>
         </div>
       </div>
-      <Newslatter />
+      <div className="hr-contact-div">
+      <hr className="contact-hr-line"/>
+      </div>
       <Footer />
     </>
   );
