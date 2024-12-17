@@ -10,6 +10,7 @@ import image5 from '../../../public/image/service5.jpeg';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import Slider from "react-slick";
+import "../../app/customer-dashboard/rakshit.css"
 import {
   Box,
   Typography,
