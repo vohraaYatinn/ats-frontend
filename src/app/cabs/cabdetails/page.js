@@ -12,6 +12,13 @@ import "@/app/cabs/cabdetails/page.css";
 import "@/components/stylebook/Footer.css";
 import "@/app/activities/activities-details/activity-detail.css";
 import SelectComponent from "@/uitils/SelectComponent";
+import icon from "@/../public/image/icons/image.png"
+import icon1 from "@/../public/image/icons/image (1).png"
+import icon2 from "@/../public/image/icons/image (2).png"
+import icon3 from "@/../public/image/icons/image (3).png"
+import icon4 from "@/../public/image/icons/image (4).png"
+import icon5 from "@/../public/image/icons/image (5).png"
+import icon6 from "@/../public/image/icons/image (6).png"
 const CabDetail = () => {
   return (
     <>
@@ -37,6 +44,17 @@ const CabDetail = () => {
             </div>
             <button>Book Now</button>
           </p>
+        </div>
+      </div>
+      <div className="container">
+        <div className="cuscard mt-10">
+          <p className="review"> <Image src={icon} className="icons"/>Operating Hours</p>
+          <p className="review"> <Image src={icon1} className="icons"/>Instant Confirmation</p>
+          <p className="review"> <Image src={icon2} className="icons"/>Mobile Voucher Accepted</p>
+          <p className="review"> <Image src={icon3} className="icons"/>Free Cancellation 24 hours Prior</p>
+          <p className="review"> <Image src={icon4} className="icons"/>English</p>
+          <p className="review"> <Image src={icon5} className="icons"/>Transfer options Available</p>
+          <p className="review link"> <Image src={icon6} className="icons"/>Google Map</p>
         </div>
       </div>
 
@@ -245,7 +263,7 @@ const CabDetail = () => {
             </div>
             <div className="act-table-ftr container mb-4">
               <span>More Activities</span>
-              <button>Book Now</button>
+              <button style={{margin:"1rem"}}>Book Now</button>
             </div>
           </div>
         </div>
