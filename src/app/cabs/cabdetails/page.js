@@ -17,7 +17,7 @@ const CabDetail = () => {
     <>
       <Topbar />
       <Header />
-      <Breadcrumb pagename="Cab Detail" pagetitle="Cab Detail" />
+      <Breadcrumb pagename="Cab Detail" pagetitle="Cab Detail" img={"/assets/cabbg.png"} />
 
       <div className="car-grid container pt-10">
         <Image src={car3} className="big-car car" />

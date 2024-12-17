@@ -7,7 +7,7 @@
 .card{
     background-color: #fff7f0;
     border: 1px solid #f8bf86;
-    padding:0.5rem
+    padding:0.5rem;
 }
 
 .image {
@@ -37,11 +37,21 @@
 
   
   .text-success {
-    color: #28a745 !important;
+    color: #f1871c !important;
+    font-weight:500;
+    height: 20px;
+    font-size: 20px;
+    margin-top: 5px;
   }
   
   .text-muted {
     color: #6c757d !important;
+    font-size: 12px;
+    height: 10px;
+  }
+  .tax{
+    text-align: right;
+    font-size: 10px;
   }
   
   .text-decoration-line-through {
@@ -90,7 +100,7 @@
  .flex{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
  }
  .drpdown{
     height: 3rem;
@@ -107,5 +117,9 @@
     top:2rem;
     color: white;
 
+ }
+ .text-xs{
+  font-size: 10px;
+  height: 15px;
  }
  

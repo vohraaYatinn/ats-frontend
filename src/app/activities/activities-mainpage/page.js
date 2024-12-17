@@ -11,7 +11,7 @@ import image1 from "../../../../public/image/count-1.png";
 import image2 from "../../../../public/image/count-2.png";
 import image3 from "../../../../public/image/count-3.png";
 import image4 from "../../../../public/image/count-4.png";
-
+import rating from "@/../public/image/rating.png";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import Slider from "react-slick";
@@ -23,68 +23,24 @@ import img4 from "@/../public/image/activity/img4.png";
 const ActivitiesMainPage = () => {
   const ads = [
     {
-      img: image1,
+      img: img1,
       title: "Zip Lining",
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
     {
-      img: image2,
-      title: "Bungee Jumping",
+      img: img2,
+      title: "Bunglee Jumping",
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
     {
-      img: image3,
-      title: "Para Gliding",
+      img: img3,
+      title: "Rafting",
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
     {
-      img: image4,
-      title: "Surfing",
-    },
-    {
-      img: image1,
-      title: "Zip Lining",
-    },
-    {
-      img: image2,
-      title: "Bungee Jumping",
-    },
-    {
-      img: image3,
-      title: "Para Gliding",
-    },
-    {
-      img: image4,
-      title: "Surfing",
-    },
-    {
-      img: image1,
-      title: "Zip Lining",
-    },
-    {
-      img: image2,
-      title: "Bungee Jumping",
-    },
-    {
-      img: image3,
-      title: "Para Gliding",
-    },
-    {
-      img: image4,
-      title: "Surfing",
-    },
-    {
-      img: image1,
-      title: "Zip Lining",
-    },
-    {
-      img: image2,
-      title: "Bungee Jumping",
-    },
-    {
-      img: image3,
-      title: "Para Gliding",
-    },
-    {
-      img: image4,
-      title: "Surfing",
+      img: img4,
+      title: "Ski Touring",
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
   ];
   const details = [
@@ -316,7 +272,7 @@ const ActivitiesMainPage = () => {
     <>
       <Topbar />
       <Header />
-      <Breadcrumb pagename="Activitis Details" pagetitle="Activities Details" />
+      <Breadcrumb pagename="Activitis Details" pagetitle="Activities Details" img={"/assets/bg.png"} />
       <div>
         <div
           className="country-top-destination countries-conatiner"
@@ -330,7 +286,7 @@ const ActivitiesMainPage = () => {
               width: "100%",
             }}
           >
-            <div>
+            <div style={{ marginBottom: "1rem" }}>
               <h2>Top Cities to Visit</h2>
               <span>
                 Uncover secret wonders and celebrated attractions in top travel
@@ -498,34 +454,40 @@ const ActivitiesMainPage = () => {
 
           {/* <div className="tour-boxes tour-boxes-countries "> */}
           <Slider {...sliderSettings} ref={sliderRef}>
-            {details.map((item, index) => (
-              <div className="p-2 mt-5" key={index}>
-                <div className="card">
+            {ads.map((item, index) => (
+              <div className="p-2 mt-5">
+                <div className="card" key={index}>
                   <Image src={item.img} objectFit="cover" className="image" />
                   <div className="card-body">
                     <h5 className="card-title flex">
                       {item.title}
-                      <p>4+ Rating</p>
+                      <p className="tax">
+                        <Image src={rating} alt="rating" />
+                        4+ Rating
+                      </p>
                     </h5>
                     <div className="d-flex justify-content-between align-items-center">
                       <div>{item.rating}</div>
                     </div>
                     <div className="d-flex">
                       <div>
-                        <div>Starting From:</div>
+                        <div className="text-xs">Starting From:</div>
                         <div>
-                          <div className="text-success">$2898</div>
+                          <div className="text-success">AED 140.00</div>
                           <div className="text-muted text-decoration-line-through">
-                            $3000
+                            AED 150.00
                           </div>
                         </div>
                         <div />
-                        <div className="text-muted mt-2">TAXES INCL/PERS</div>
                       </div>
-                      <button className="btn btn-primary">View Details</button>
+                      <div>
+                        <button className="btn btn-primary">
+                          View Details
+                        </button>
+                        <div className="text-muted tax">TAXES INCL/PERS</div>
+                      </div>
                     </div>
                   </div>
-                  <div className="floater"> 3 DAYS/4 NIGHT</div>
                 </div>
               </div>
             ))}
@@ -606,34 +568,40 @@ const ActivitiesMainPage = () => {
 
           {/* <div className="tour-boxes tour-boxes-countries "> */}
           <Slider {...sliderSettings} ref={sliderRef}>
-            {details.map((item, index) => (
-              <div className="p-2 mt-5" key={index}>
-                <div className="card">
+            {ads.map((item, index) => (
+              <div className="p-2 mt-5">
+                <div className="card" key={index}>
                   <Image src={item.img} objectFit="cover" className="image" />
                   <div className="card-body">
                     <h5 className="card-title flex">
                       {item.title}
-                      <p>4+ Rating</p>
+                      <p className="tax">
+                        <Image src={rating} alt="rating" />
+                        4+ Rating
+                      </p>
                     </h5>
                     <div className="d-flex justify-content-between align-items-center">
                       <div>{item.rating}</div>
                     </div>
                     <div className="d-flex">
                       <div>
-                        <div>Starting From:</div>
+                        <div className="text-xs">Starting From:</div>
                         <div>
-                          <div className="text-success">$2898</div>
+                          <div className="text-success">AED 140.00</div>
                           <div className="text-muted text-decoration-line-through">
-                            $3000
+                            AED 150.00
                           </div>
                         </div>
                         <div />
-                        <div className="text-muted mt-2">TAXES INCL/PERS</div>
                       </div>
-                      <button className="btn btn-primary">View Details</button>
+                      <div>
+                        <button className="btn btn-primary">
+                          View Details
+                        </button>
+                        <div className="text-muted tax">TAXES INCL/PERS</div>
+                      </div>
                     </div>
                   </div>
-                  <div className="floater"> 3 DAYS/4 NIGHT</div>
                 </div>
               </div>
             ))}
@@ -716,34 +684,40 @@ const ActivitiesMainPage = () => {
 
           {/* <div className="tour-boxes tour-boxes-countries "> */}
           <Slider {...sliderSettings} ref={sliderRef}>
-            {details.map((item, index) => (
-              <div className="p-2 mt-5" key={index}>
-                <div className="card">
+            {ads.map((item, index) => (
+              <div className="p-2 mt-5">
+                <div className="card" key={index}>
                   <Image src={item.img} objectFit="cover" className="image" />
                   <div className="card-body">
                     <h5 className="card-title flex">
                       {item.title}
-                      <p>4+ Rating</p>
+                      <p className="tax">
+                        <Image src={rating} alt="rating" />
+                        4+ Rating
+                      </p>
                     </h5>
                     <div className="d-flex justify-content-between align-items-center">
                       <div>{item.rating}</div>
                     </div>
                     <div className="d-flex">
                       <div>
-                        <div>Starting From:</div>
+                        <div className="text-xs">Starting From:</div>
                         <div>
-                          <div className="text-success">$2898</div>
+                          <div className="text-success">AED 140.00</div>
                           <div className="text-muted text-decoration-line-through">
-                            $3000
+                            AED 150.00
                           </div>
                         </div>
                         <div />
-                        <div className="text-muted mt-2">TAXES INCL/PERS</div>
                       </div>
-                      <button className="btn btn-primary">View Details</button>
+                      <div>
+                        <button className="btn btn-primary">
+                          View Details
+                        </button>
+                        <div className="text-muted tax">TAXES INCL/PERS</div>
+                      </div>
                     </div>
                   </div>
-                  <div className="floater"> 3 DAYS/4 NIGHT</div>
                 </div>
               </div>
             ))}

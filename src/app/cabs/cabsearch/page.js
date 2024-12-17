@@ -4,10 +4,10 @@ import Footer from "@/components/footer/Footer3";
 import Header from "@/components/header/Header";
 import Topbar from "@/components/topbar/Topbar";
 import Breadcrumb from "@/components/common/Breadcrumb";
-import image1 from "../../../../public/image/count-1.png";
-import image2 from "../../../../public/image/count-2.png";
-import image3 from "../../../../public/image/count-3.png";
-import image4 from "../../../../public/image/count-4.png";
+import adimg1 from "@/../public/image/activity/img1.png";
+import adimg2 from "@/../public/image/activity/img2.png";
+import adimg3 from "@/../public/image/activity/img3.png";
+import adimg4 from "@/../public/image/activity/img4.png";
 import img1 from "@/../public/image/icons/Frame.png";
 import img2 from "@/../public/image/icons/Frame (1).png";
 import img3 from "@/../public/image/icons/Frame (2).png";
@@ -19,71 +19,68 @@ import "@/app/cabs/cabsearch/page.css";
 import Image from "next/image";
 import QuantityCounter from "@/uitils/QuantityCounter";
 import "@/components/stylebook/Footer.css";
+import rating from "@/../public/image/rating.png";
 const CabSearch = () => {
-  const details = [
+  const ads = [
     {
-      img: image1,
+      img: adimg1,
       title: "Zip Lining",
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
     {
-      img: image2,
-      title: "Bungee Jumping",
+      img: adimg2,
+      title: "Bunglee Jumping",
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
     {
-      img: image3,
-      title: "Para Gliding",
+      img: adimg3,
+      title: "Rafting",
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
     {
-      img: image4,
-      title: "Surfing",
+      img: adimg4,
+      title: "Ski Touring",
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
     {
-      img: image1,
+      img: adimg1,
       title: "Zip Lining",
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
     {
-      img: image2,
-      title: "Bungee Jumping",
+      img: adimg2,
+      title: "Bunglee Jumping",
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
     {
-      img: image3,
-      title: "Para Gliding",
+      img: adimg3,
+      title: "Rafting",
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
     {
-      img: image4,
-      title: "Surfing",
+      img: adimg4,
+      title: "Ski Touring",
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
     {
-      img: image1,
+      img: adimg1,
       title: "Zip Lining",
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
     {
-      img: image2,
-      title: "Bungee Jumping",
+      img: adimg2,
+      title: "Bunglee Jumping",
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
     {
-      img: image3,
-      title: "Para Gliding",
+      img: adimg3,
+      title: "Rafting",
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
     {
-      img: image4,
-      title: "Surfing",
-    },
-    {
-      img: image1,
-      title: "Zip Lining",
-    },
-    {
-      img: image2,
-      title: "Bungee Jumping",
-    },
-    {
-      img: image3,
-      title: "Para Gliding",
-    },
-    {
-      img: image4,
-      title: "Surfing",
+      img: adimg4,
+      title: "Ski Touring",
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
   ];
   return (
@@ -91,7 +88,11 @@ const CabSearch = () => {
       <Topbar />
       <Header />
       <div className="bg">
-        <Breadcrumb pagename="Cab Search" pagetitle="Cab Search" />
+        <Breadcrumb
+          pagename="Cab Search"
+          pagetitle="Cab Search"
+          img={"/assets/cabsearch.png"}
+        />
         <div className="package-search-filter-wrapper">
           <div className="container">
             <div className="filter-group">
@@ -331,29 +332,29 @@ const CabSearch = () => {
           </div>
         </div>
 
-        <div className="container">
-          <div className="grid2">
-            <div className="crd active">
-              <Image src={img1} className="img" />
-              <p className="title active">Adventure Tours</p>
-            </div>
-            <div className="crd">
-              <Image src={img2} className="img" />
-              <p className="title">Cultural Tours</p>
-            </div>
-            <div className="crd">
-              <Image src={img3} className="img" />
-              <p className="title">Wildlife & Safarih</p>
-            </div>
-            <div className="crd">
-              <Image src={img4} className="img" />
-              <p className="title">Historical Tours</p>
-            </div>
-            <div className="crd">
-              <Image src={img5} className="img" />
-              <p className="title">Private Tours</p>
-            </div>
+        <div className="grid2 container">
+          <div className="crd active">
+            <Image src={img1} className="img" />
+            <p className="title active">Adventure Tours</p>
           </div>
+          <div className="crd">
+            <Image src={img2} className="img" />
+            <p className="title">Cultural Tours</p>
+          </div>
+          <div className="crd">
+            <Image src={img3} className="img" />
+            <p className="title">Wildlife & Safarih</p>
+          </div>
+          <div className="crd">
+            <Image src={img4} className="img" />
+            <p className="title">Historical Tours</p>
+          </div>
+          <div className="crd">
+            <Image src={img5} className="img" />
+            <p className="title">Private Tours</p>
+          </div>
+          <Image src={link} className="link left" />
+          <Image src={link} className="link right" style={{ rotate: "180deg" }} />
         </div>
       </div>
 
@@ -363,33 +364,39 @@ const CabSearch = () => {
       </div>
       <div className="container">
         <div className="grid">
-          {details.map((item, index) => (
-            <div className="card" key={index}>
-              <Image src={item.img} objectFit="cover" className="image" />
-              <div className="card-body">
-                <h5 className="card-title flex">
-                  {item.title}
-                  <p>4+ Rating</p>
-                </h5>
-                <div className="d-flex justify-content-between align-items-center">
-                  <div>{item.rating}</div>
-                </div>
-                <div className="d-flex">
-                  <div>
-                    <div>Starting From:</div>
-                    <div>
-                      <div className="text-success">$2898</div>
-                      <div className="text-muted text-decoration-line-through">
-                        $3000
-                      </div>
-                    </div>
-                    <div />
-                    <div className="text-muted mt-2">TAXES INCL/PERS</div>
+          {ads.map((item, index) => (
+            <div className="p-2">
+              <div className="card" key={index}>
+                <Image src={item.img} objectFit="cover" className="image" />
+                <div className="card-body">
+                  <h6 className="card-title flex">
+                    {item.title}
+                    <p className="tax">
+                      <Image src={rating} alt="rating" />
+                      4+ Rating
+                    </p>
+                  </h6>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <div>{item.rating}</div>
                   </div>
-                  <button className="btn btn-primary">View Details</button>
+                  <div className="d-flex">
+                    <div>
+                      <div className="text-xs">Starting From:</div>
+                      <div>
+                        <div className="text-success">AED 140.00</div>
+                        <div className="text-muted text-decoration-line-through">
+                          AED 150.00
+                        </div>
+                      </div>
+                      <div />
+                    </div>
+                    <div>
+                      <button className="btn btn-primary">View Details</button>
+                      <div className="text-muted tax">TAXES INCL/PERS</div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="floater"> 3 DAYS/4 NIGHT</div>
             </div>
           ))}
         </div>
