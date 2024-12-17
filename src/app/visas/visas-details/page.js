@@ -10,8 +10,7 @@ import "./visasdetail.css";
 import "@/components/stylebook/Footer.css";
 export const metadata = {
   title: "ATS - tour & travel",
-  description:
-    "ATS is a Tour and Travel Agency",
+  description: "ATS is a Tour and Travel Agency",
   icons: {
     icon: "/assets/img/sm-logo.svg",
   },
@@ -22,7 +21,6 @@ const page = () => {
       <Topbar />
       <Header />
       <Breadcrumb pagename="Visa Details" pagetitle="Visa Details" />
-      <div className="container">
       <div className="visa-details-pages pt-120 mb-120 visa-dtl-cstm">
         <div className="container">
           <div className="row g-lg-4 gy-5 visas-row-cstm">
@@ -364,7 +362,6 @@ const page = () => {
               <div className="visa-sidebar mb-30">
                 <div className="banner2-card mb-48">
                   <img src="/assets/img/activities/tele-cal.jpg" alt="" />
-                  
                 </div>
                 <div className="sidebar-top text-center">
                   <h4>Cost Summary</h4>
@@ -443,8 +440,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      </div>
-      {/* <Newslatter /> */}
+
       <Footer />
     </>
   );
