@@ -15,11 +15,13 @@ import img4 from "@/../public/image/icons/Frame (3).png";
 import img5 from "@/../public/image/icons/Frame (4).png";
 import head from "@/../public/image/icons/head.png";
 import link from "@/../public/image/link.png";
+import arrow from "@/../public/image/arrow.png";
 import "@/app/cabs/cabsearch/page.css";
 import Image from "next/image";
 import QuantityCounter from "@/uitils/QuantityCounter";
 import "@/components/stylebook/Footer.css";
 import rating from "@/../public/image/rating.png";
+import plane from "@/../public/image/SVG.png"
 const CabSearch = () => {
   const ads = [
     {
@@ -353,8 +355,8 @@ const CabSearch = () => {
             <Image src={img5} className="img" />
             <p className="title">Private Tours</p>
           </div>
-          <Image src={link} className="link left" />
-          <Image src={link} className="link right" style={{ rotate: "180deg" }} />
+          <Image src={arrow} className="link left" />
+          <Image src={arrow} className="link right" style={{ rotate: "180deg" }} />
         </div>
       </div>
 
@@ -373,7 +375,7 @@ const CabSearch = () => {
                     {item.title}
                     <p className="tax">
                       <Image src={rating} alt="rating" />
-                      4+ Rating
+                      <div>4+ Rating</div>
                     </p>
                   </h6>
                   <div className="d-flex justify-content-between align-items-center">
@@ -391,11 +393,12 @@ const CabSearch = () => {
                       <div />
                     </div>
                     <div>
-                      <button className="btn btn-primary">View Details</button>
+                      <button className="btn-primary">View Details <Image src={plane} className="plane"/></button>
                       <div className="text-muted tax">TAXES INCL/PERS</div>
                     </div>
                   </div>
                 </div>
+              <div className="floater">3 DAYS / 4 NIGHTS</div>
               </div>
             </div>
           ))}
