@@ -19,7 +19,7 @@ const CabDetail = () => {
       <Header />
       <Breadcrumb pagename="Cab Detail" pagetitle="Cab Detail" />
 
-      <div className="car-grid container">
+      <div className="car-grid container pt-10">
         <Image src={car3} className="big-car car" />
         <Image src={car1} className="car" />
         <Image src={car2} className="yellow car" />
