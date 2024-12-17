@@ -216,6 +216,13 @@
   .cabsearch-page .crd {
     padding-inline: 1rem;
     margin: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .cabsearch-page .crd p{
+    margin: 0rem;
   }
   .cabsearch-page .btn-primary {
     padding: 0.3rem;
