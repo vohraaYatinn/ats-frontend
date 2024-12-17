@@ -111,7 +111,6 @@
   align-items: start;
   gap: 1rem;
 }
-
 }
 @media (max-width: 575px) {
   .cab-details-search .cuscard {
@@ -123,6 +122,4 @@
 svg{
   display: none;
 }
-
-
 }
