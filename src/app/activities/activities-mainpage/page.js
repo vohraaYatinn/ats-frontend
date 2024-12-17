@@ -260,6 +260,10 @@ const ActivitiesMainPage = () => {
   };
 
   const sliderRef = useRef(null);
+  const sliderRefTopCities = useRef(null);
+  const sliderRefPopular = useRef(null);
+  const sliderRefExperience = useRef(null);
+  const sliderRefActivity = useRef(null);
   const [selectedOne, setSelectOne] = useState(1);
 
   const goToSlide = (slideIndex) => {
@@ -272,14 +276,35 @@ const ActivitiesMainPage = () => {
   const goToPreviousSlide = () => {
     sliderRef.current.slickNext(); // Navigate to the next slide
   };
+  const goToNextSlidePopularActivity = () => {
+    sliderRefActivity.current.slickPrev(); // Navigate to the previous slide
+  };
+
+  const goToPreviousSlideActivity = () => {
+    sliderRefActivity.current.slickNext(); // Navigate to the next slide
+  };
+  const goToNextSlidePopularsliderRefPopular = () => {
+    sliderRefTopCities.current.slickPrev(); // Navigate to the previous slide
+  };
+
+  const goToPreviousSlidesliderRefPopular = () => {
+    sliderRefTopCities.current.slickNext(); // Navigate to the next slide
+  };
+  const goToNextSlidesliderRefPopular = () => {
+    sliderRefPopular.current.slickPrev(); // Navigate to the previous slide
+  };
+
+  const goToPrevioussliderRefPopular = () => {
+    sliderRefPopular.current.slickNext(); // Navigate to the next slide
+  };
   return (
-    <>
+    <div className="activites-main-pagecontain">
       <Topbar />
       <Header />
       <Breadcrumb pagename="Activitis Details" pagetitle="Activities Details" img={"/assets/bg.png"} />
       <div>
         <div
-          className="country-top-destination countries-conatiner"
+          className="country-top-destination countries-conatiner "
           style={{ background: "white" }}
         >
           <div
@@ -306,7 +331,7 @@ const ActivitiesMainPage = () => {
             >
               <button
                 onClick={() => {
-                  goToNextSlide();
+                  goToNextSlidePopularsliderRefPopular();
                 }}
               >
                 <ArrowBackIosNewIcon
@@ -327,7 +352,7 @@ const ActivitiesMainPage = () => {
               </button>
               <button
                 onClick={() => {
-                  goToPreviousSlide();
+                  goToPreviousSlidesliderRefPopular();
                 }}
               >
                 <ArrowForwardIosIcon
@@ -349,7 +374,7 @@ const ActivitiesMainPage = () => {
           </div>
 
           {/* <div className="tour-boxes tour-boxes-countries "> */}
-          <Slider {...sliderSettings} ref={sliderRef}>
+          <Slider {...sliderSettings} ref={sliderRefTopCities}>
             {details.map((item, index) => (
               <div
                 key={index}
@@ -414,7 +439,7 @@ const ActivitiesMainPage = () => {
             >
               <button
                 onClick={() => {
-                  goToNextSlide();
+                  goToNextSlidesliderRefPopular();
                 }}
               >
                 <ArrowBackIosNewIcon
@@ -435,7 +460,7 @@ const ActivitiesMainPage = () => {
               </button>
               <button
                 onClick={() => {
-                  goToPreviousSlide();
+                  goToPrevioussliderRefPopular();
                 }}
               >
                 <ArrowForwardIosIcon
@@ -457,7 +482,7 @@ const ActivitiesMainPage = () => {
           </div>
 
           {/* <div className="tour-boxes tour-boxes-countries "> */}
-          <Slider {...sliderSettings} ref={sliderRef}>
+          <Slider {...sliderSettings} ref={sliderRefPopular}>
             {ads.map((item, index) => (
               <div className="p-2 mt-5">
                 <div className="card" key={index}>
@@ -526,7 +551,7 @@ const ActivitiesMainPage = () => {
             >
               <button
                 onClick={() => {
-                  goToNextSlide();
+                  goToNextSlidePopularActivity();
                 }}
               >
                 <ArrowBackIosNewIcon
@@ -547,7 +572,7 @@ const ActivitiesMainPage = () => {
               </button>
               <button
                 onClick={() => {
-                  goToPreviousSlide();
+                  goToPreviousSlideActivity();
                 }}
               >
                 <ArrowForwardIosIcon
@@ -569,7 +594,7 @@ const ActivitiesMainPage = () => {
           </div>
 
           {/* <div className="tour-boxes tour-boxes-countries "> */}
-          <Slider {...sliderSettings} ref={sliderRef}>
+          <Slider {...sliderSettings} ref={sliderRefActivity}>
             {ads.map((item, index) => (
               <div className="p-2 mt-5">
                 <div className="card" key={index}>
@@ -728,7 +753,7 @@ const ActivitiesMainPage = () => {
 
       
       <Footer />
-    </>
+    </div>
   );
 };
 

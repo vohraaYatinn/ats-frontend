@@ -1,42 +1,41 @@
 /* General styles remain unchanged */
-.grid {
+.activites-main-pagecontain .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
   gap: 1.25rem; /* Tailwind's gap-1 translates to 0.25rem or 4px */
   width: 100%;
 }
-.card {
+.activites-main-pagecontain .card {
   background-color: #fff7f0;
   border: 1px solid #f8bf86;
-  padding: 0.5rem;
+  padding: 1rem 1rem;
 }
 
-.image {
+.activites-main-pagecontain .image {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  max-height: 10rem;
+  max-height: 14rem;
 }
 
-.card-title {
-  font-size: 1.25rem;
+.activites-main-pagecontain .card-title {
+  font-size: 1rem;
   font-weight: bold;
   color: #333;
-  padding-bottom: 15px;
   border-bottom: 0.5px solid rgba(128, 128, 128, 0.493);
 }
 
-.card-body {
+.activites-main-pagecontain .card-body {
   padding: 1rem;
 }
 
-.d-flex {
+.activites-main-pagecontain .d-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.text-success {
+.activites-main-pagecontain .text-success {
   color: #f1871c !important;
   font-weight: 500;
   height: 20px;
@@ -44,53 +43,56 @@
   margin-top: 5px;
 }
 
-.text-muted {
+.activites-main-pagecontain .text-muted {
   color: #6c757d !important;
   font-size: 12px;
   height: 10px;
 }
-
-.tax {
+.activites-main-pagecontain .tax {
   text-align: right;
   font-size: 10px;
 }
 
-.text-decoration-line-through {
+.activites-main-pagecontain .text-decoration-line-through {
   text-decoration: line-through;
 }
-.btn-primary {
-  background: linear-gradient(to right, #F1871C, #E35515);
-  border-color: #007bff;
-  padding: 0.5rem;
+
+.activites-main-pagecontain .btn-primary {
+  background: linear-gradient(95deg, #F1871C 1.46%, #E35515 105.76%);
+  padding: 0.1rem 0.5rem;
   border-radius: 10px;
   color: white;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-size: 0.7rem;
+  justify-content: space-between;
+  gap: 0.2rem;
 }
 
-.btn-primary:hover {
+.activites-main-pagecontain .btn-primary:hover {
   background-color: #0056b3;
   border-color: #004085;
 }
 
-.container {
+.activites-main-pagecontain .container {
   padding: 1rem;
   position: relative;
 }
 
-.plane {
+.activites-main-pagecontain .plane {
   margin-left: 3px;
 }
 
-.bg {
+.activites-main-pagecontain .bg {
   background-color: #fff6ef;
 }
 
-.grid2 {
+.activites-main-pagecontain .grid2 {
   display: flex;
   justify-content: center;
 }
 
-.crd {
+.activites-main-pagecontain .crd {
   background-color: white;
   border-radius: 15px;
   padding-inline: 2.5rem;
@@ -102,27 +104,27 @@
   flex-direction: column;
 }
 
-.active {
+.activites-main-pagecontain .active {
   background-color: #e65e17;
   color: white;
 }
 
-.flex {
+.activites-main-pagecontain .flex {
   display: flex;
   justify-content: space-between;
   align-items: start;
 }
 
-.drpdown {
+.activites-main-pagecontain .drpdown {
   height: 3rem;
   width: 18rem;
 }
 
-.w-5 {
+.activites-main-pagecontain .w-5 {
   width: 15rem;
 }
 
-.floater {
+.activites-main-pagecontain .floater {
   position: absolute;
   background: linear-gradient(to right, #f1871c, #e35515);
   left: 0;
@@ -131,72 +133,70 @@
   color: white;
 }
 
-.text-xs {
+.activites-main-pagecontain .text-xs {
   font-size: 10px;
   height: 15px;
 }
 
 /* === RESPONSIVE STYLES FOR MOBILE === */
 @media (max-width: 768px) {
-  .grid {
+  .activites-main-pagecontain .grid {
     grid-template-columns: 1fr; /* Single column layout */
     gap: 0.75rem; /* Smaller gap for mobile */
   }
 
-  .card,
-  .card-body,
-  .crd,
-  .btn-primary {
+  .activites-main-pagecontain .card,
+  .activites-main-pagecontain .card-body,
+  .activites-main-pagecontain .crd,
+  .activites-main-pagecontain .btn-primary {
     text-align: center; /* Center align all content */
   }
 
-  .flex {
+  .activites-main-pagecontain .flex {
     flex-direction: column; /* Stack flex items vertically */
     align-items: center; /* Center align items horizontally */
   }
 
-  .text-success,
-  .text-muted,
-  .tax,
-  .card-title,
-  
-
-  
-  .btn-primary {
+  .activites-main-pagecontain .text-success,
+  .activites-main-pagecontain .text-muted,
+  .activites-main-pagecontain .tax,
+  .activites-main-pagecontain .card-title,
+  .activites-main-pagecontain .btn-primary {
     display: inline-flex !important; /* Use inline-flex to keep the button inline while using flexbox */
     align-items: center !important; /* Vertically align text and image */
     justify-content: center !important; /* Horizontally center text and image */
     gap: 8px !important; /* Add space between the text and image */
     padding: 10px 20px !important; /* Adjust padding for a better look */
-    background-color : #006370 !important; /* Example background color */
+    background-color: #006370 !important; /* Example background color */
     color: white !important;
     border: none !important;
     border-radius: 5px !important;
     font-size: 16px !important;
- 
     cursor: pointer;
     text-align: center;
   }
-  .btn-primary:hover {
+
+  .activites-main-pagecontain .btn-primary:hover {
     background-color: #004d50 !important; /* Darker shade on hover */
   }
-  
-  .plane {
+
+  .activites-main-pagecontain .plane {
     width: 20px; /* Adjust the size of the airplane image */
     height: auto;
   }
-  
-  .text-muted.tax {
+
+  .activites-main-pagecontain .text-muted.tax {
     margin-top: 5px;
     font-size: 12px;
     color: #888;
   }
-  .drpdown,
-  .w-5 {
+
+  .activites-main-pagecontain .drpdown,
+  .activites-main-pagecontain .w-5 {
     width: 100%; /* Full width dropdown */
   }
 
-  .floater {
+  .activites-main-pagecontain .floater {
     position: relative; /* Adjust positioning */
     text-align: center;
   }
