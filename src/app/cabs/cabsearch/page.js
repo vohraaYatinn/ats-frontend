@@ -86,7 +86,7 @@ const CabSearch = () => {
     },
   ];
   return (
-    <>
+    <div className="cabsearch-page">
       <Topbar />
       <Header />
       <div className="bg">
@@ -335,6 +335,7 @@ const CabSearch = () => {
         </div>
 
         <div className="grid2 container">
+          
           <div className="crd active">
             <Image src={img1} className="img" />
             <p className="title active">Adventure Tours</p>
@@ -355,8 +356,7 @@ const CabSearch = () => {
             <Image src={img5} className="img" />
             <p className="title">Private Tours</p>
           </div>
-          <Image src={arrow} className="link left" />
-          <Image src={arrow} className="link right" style={{ rotate: "180deg" }} />
+
         </div>
       </div>
 
@@ -414,7 +414,7 @@ const CabSearch = () => {
       </div>
 
       <Footer />
-    </>
+    </div>
   );
 };
 

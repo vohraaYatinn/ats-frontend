@@ -315,7 +315,7 @@ const ActivitiesMainPage = () => {
               width: "100%",
             }}
           >
-            <div style={{ marginBottom: "3rem" }}>
+            <div>
               <h2>Top Cities to Visit</h2>
               <span>
                 Uncover secret wonders and celebrated attractions in top travel
@@ -374,7 +374,7 @@ const ActivitiesMainPage = () => {
           </div>
 
           {/* <div className="tour-boxes tour-boxes-countries "> */}
-          <Slider {...sliderSettings} ref={sliderRefTopCities}>
+          <Slider {...sliderSettings} ref={sliderRefTopCities} className="slick-top-cities-visit">
             {details.map((item, index) => (
               <div
                 key={index}

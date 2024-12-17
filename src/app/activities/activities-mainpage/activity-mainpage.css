@@ -69,10 +69,7 @@
   gap: 0.2rem;
 }
 
-.activites-main-pagecontain .btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #004085;
-}
+
 
 .activites-main-pagecontain .container {
   padding: 1rem;
@@ -157,24 +154,7 @@
     align-items: center; /* Center align items horizontally */
   }
 
-  .activites-main-pagecontain .text-success,
-  .activites-main-pagecontain .text-muted,
-  .activites-main-pagecontain .tax,
-  .activites-main-pagecontain .card-title,
-  .activites-main-pagecontain .btn-primary {
-    display: inline-flex !important; /* Use inline-flex to keep the button inline while using flexbox */
-    align-items: center !important; /* Vertically align text and image */
-    justify-content: center !important; /* Horizontally center text and image */
-    gap: 8px !important; /* Add space between the text and image */
-    padding: 10px 20px !important; /* Adjust padding for a better look */
-    background-color: #006370 !important; /* Example background color */
-    color: white !important;
-    border: none !important;
-    border-radius: 5px !important;
-    font-size: 16px !important;
-    cursor: pointer;
-    text-align: center;
-  }
+
 
   .activites-main-pagecontain .btn-primary:hover {
     background-color: #004d50 !important; /* Darker shade on hover */
@@ -200,4 +180,11 @@
     position: relative; /* Adjust positioning */
     text-align: center;
   }
+  .activites-main-pagecontain .heading-for-all{
+    text-align: center;
+  }
 }
+.slick-top-cities-visit{
+  margin-top: 3rem;
+}
+
