@@ -1,8 +1,8 @@
 import Breadcrumb from "@/components/common/Breadcrumb";
 export const metadata = {
-  title: "TripRex - Tour & Travel Agency  NextJs Template",
+  title: "ATS - tour & travel",
   description:
-    "TripRex is a NextJs Template for Tour and Travel Agency purpose",
+    "ATS is a Tour and Travel Agency",
   icons: {
     icon: "/assets/img/sm-logo.svg",
   },

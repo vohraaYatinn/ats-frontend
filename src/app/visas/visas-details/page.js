@@ -9,9 +9,9 @@ import Image from "next/image";
 import "./visasdetail.css";
 import "@/components/stylebook/Footer.css";
 export const metadata = {
-  title: "TripRex - Tour & Travel Agency  NextJs Template",
+  title: "ATS - tour & travel",
   description:
-    "TripRex is a NextJs Template for Tour and Travel Agency purpose",
+    "ATS is a Tour and Travel Agency",
   icons: {
     icon: "/assets/img/sm-logo.svg",
   },
@@ -22,6 +22,7 @@ const page = () => {
       <Topbar />
       <Header />
       <Breadcrumb pagename="Visa Details" pagetitle="Visa Details" />
+      <div className="container">
       <div className="visa-details-pages pt-120 mb-120 visa-dtl-cstm">
         <div className="container">
           <div className="row g-lg-4 gy-5 visas-row-cstm">
@@ -441,6 +442,7 @@ const page = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
       {/* <Newslatter /> */}
       <Footer />

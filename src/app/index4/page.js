@@ -14,9 +14,9 @@ import Home4Team from "@/components/team/Home4Team";
 import Home4Testimonail from "@/components/testimonial/Home4Testimonail";
 import Home4Vissa from "@/components/visaComponents/Home4Vissa";
 export const metadata = {
-  title: "TripRex - Tour & Travel Agency  NextJs Template",
+  title: "ATS - tour & travel",
   description:
-    "TripRex is a NextJs Template for Tour and Travel Agency purpose",
+    "ATS is a Tour and Travel Agency",
   icons: {
     icon: "/assets/img/sm-logo.svg",
   },
