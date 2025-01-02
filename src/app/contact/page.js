@@ -6,8 +6,13 @@ const page = () => {
       <div className="contact-page pt-120 contact-page-all-css">
         <div className="container">
           <div className="row g-lg-4 gy-5 main-container-contact">
+<<<<<<< HEAD
             <div className="col-lg-4 left-side-contact-container">
               <div className="single-contact">
+=======
+            <div className="col-lg-4">
+              <div className="single-contact mb-40">
+>>>>>>> 43452952a699b4e080adc7996952241e5c3a04a2
                 <div className="title">
                   <h6>Phone</h6>
                 </div>

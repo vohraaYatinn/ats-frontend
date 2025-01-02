@@ -1570,7 +1570,7 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--primary-color1);
+  color: #F1871C;
   font-family: var(--font-satisfy);
   font-size: 17px;
   font-weight: 400;
@@ -22904,8 +22904,12 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 }
 
 .contact-map {
+  width: 85%;
   line-height: 0.6;
   position: relative;
+          border: 1px solid transparent;
+        border-radius: 45px;
+        overflow: hidden; 
 }
 .contact-map .banner3-section {
   margin: 0;

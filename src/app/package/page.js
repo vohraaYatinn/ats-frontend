@@ -1497,7 +1497,119 @@ const page = () => {
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
 
+=======
+            <div className="col-lg-4">
+              <div className="sidebar-area package-sidebar">
+                <div className="single-widget mb-30">
+                  <h5 className="widget-title">Activity</h5>
+                  <ul className="category-list">
+                    <li>
+                      <Link href="/blog">All Package</Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">Beaches</Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">City Tours</Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">Cruises</Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">Hiking</Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">Historical</Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">Museum Tours</Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">Adventure</Link>
+                    </li>
+                  </ul>
+                </div>
+                <div className="single-widget mb-30">
+                  <h5 className="widget-title">Destination</h5>
+                  <ul className="category-list two">
+                    <li>
+                      <Link href="/blog">
+                        Indonesia
+                        <span>20</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">
+                        Switzerland
+                        <span>35</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">
+                        Egypt
+                        <span>25</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">
+                        Saudi Arab
+                        <span>18</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">
+                        Europe
+                        <span>06</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">
+                        Bangladesh
+                        <span>08</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">
+                        Luxury Retreat
+                        <span>15</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">
+                        Photography Expedition
+                        <span>25</span>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+                <div className="single-widget mb-30">
+                  <h5 className="widget-title">Durations</h5>
+                  <ul className="category-list">
+                    <li>
+                      <Link href="/blog">1 - 2 Days Tour</Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">2 - 3 Days Tour</Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">4 - 5 Days Tour</Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">6 - 7 Days Tour</Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">8 - 9 Days Tour</Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">10 - 13 Days Tour</Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+>>>>>>> 43452952a699b4e080adc7996952241e5c3a04a2
           </div>
         </div>
       </div>
