@@ -1,6 +1,7 @@
 const currentDate = new Date();
 const apiKeyEmail = process.env.NEXT_PUBLIC_EMAIL_API_KEY;
 const formattedDate = currentDate.toLocaleString(); 
+import { test_url } from '@/config/environment';
 import axios from 'axios';
 
 export const sendEmail = async (name, email, phone, service, message) => {
@@ -348,3 +349,13 @@ export const sendEmail = async (name, email, phone, service, message) => {
         "ZW": { primary: "Zimbabwe", secondary: "+263" }
   };
   
+  export const buyFunction = async () => {
+    try {
+      const response = await axios.post(test_url+'api/payment');
+      if (response.status === 200) {
+        window.location.href = response.data.url;
+      }
+    } catch (error) {
+      console.log('Error processing payment:', error);
+    }
+  };

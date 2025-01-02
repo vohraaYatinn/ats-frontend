@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const Breadcrumb = ({ pagename, pagetitle }) => {
+const Breadcrumb = ({ pagename, pagetitle,img }) => {
   return (
     <div
       className="breadcrumb-section"
@@ -9,7 +9,7 @@ const Breadcrumb = ({ pagename, pagetitle }) => {
         display:'flex',
         alignItems:"center",
         backgroundImage:
-          "linear-gradient(270deg, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.3) 101.02%), url(/assets/img/activities/banner.png)",
+          `linear-gradient(270deg, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.3) 101.02%), url(${img!==undefined? img: "/assets/img/activities/banner.png"})`,
       }}
     >
       <div className="container">

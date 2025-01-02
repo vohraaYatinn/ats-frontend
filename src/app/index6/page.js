@@ -13,9 +13,9 @@ import Home6Testimonial from "@/components/testimonial/Home6Testimonial";
 import Home6TourPackage from "@/components/tourPackage/Home6TourPackage";
 import Home6Visa from "@/components/visaComponents/Home6Visa";
 export const metadata = {
-  title: "TripRex - Tour & Travel Agency  NextJs Template",
+  title: "ATS - tour & travel",
   description:
-    "TripRex is a NextJs Template for Tour and Travel Agency purpose",
+    "ATS is a Tour and Travel Agency",
   icons: {
     icon: "/assets/img/sm-logo.svg",
   },

@@ -24,9 +24,9 @@ import './style.css'
 import Header6 from "@/components/header/Header6";
 import HomeBannerSlide from "@/components/destinationSlider/HomeBannerSlide";
 export const metadata = {
-  title: "TripRex - Tour & Travel Agency  NextJs Template",
+  title: "ATS - tour & travel",
   description:
-    "TripRex is a NextJs Template for Tour and Travel Agency purpose",
+    "ATS is a Tour and Travel Agency",
   icons: {
     icon: "/assets/img/sm-logo.svg",
   },
